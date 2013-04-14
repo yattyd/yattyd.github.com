@@ -4,8 +4,8 @@ title: Hello Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
-	<p><a href="YaTTYD">Downloads</a></p>
-
+[downloads]: ./YaTTYD/        "Downloads"
+[google]: http://google.com/        "Google"
     
 ## My Posts
 
@@ -17,7 +17,7 @@ title: Hello Welcome to YaTTYD
 
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
-<script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(548097,"","ffffff");</script>
+<script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(548097,"","000000");</script>
 
 <!-- END: Powered by Supercounters.com -->
 <!-- END: Powered by Supercounters.com -->
