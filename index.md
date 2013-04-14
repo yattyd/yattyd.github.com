@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Hello Welcome to YaTTYD
+title: Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
-[Download] [3]
+[Downloads] [3]
 
   [1]: http://google.com/        "Google"
   [2]: http://search.yahoo.com/  "Yahoo Search"
@@ -18,6 +18,8 @@ title: Hello Welcome to YaTTYD
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
+
+This is [an example](https://Google.com/ "Google") inline link.
 
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
