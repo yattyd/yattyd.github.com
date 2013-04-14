@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Hello Welcome to YaTTYD
-tagline: Supporting tagline
 ---
 {% include JB/setup %}
 
