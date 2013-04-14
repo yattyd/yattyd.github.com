@@ -8,7 +8,7 @@ title: Hello Welcome to YaTTYD
 
   [1]: http://google.com/        "Google"
   [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: ./Downloads   "Downloads"
+  [3]: ./YaTTYD   "Downloads"
 
     
 ## My Posts
