@@ -4,7 +4,7 @@ title: Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
-Download the latest version [here](./Downloads/YaTTYD   "Downloads).
+Download the latest version [here](./Downloads/YaTTYD   "Downloads").
 
 
     
