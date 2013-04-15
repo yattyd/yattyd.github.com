@@ -5,10 +5,7 @@ title: Welcome to YaTTYD
 {% include JB/setup %}
 
 ## Update
-- Download the latest version [here](./Downloads/YaTTYD   "Downloads"). Any comments or bugs report to yattyd@gmail.com please.
-[me](mailto:yattyd@gmail.com)
-
-<A href="mailto:yattyd@gmail.com">email</A>
+- Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
 
 ## My Posts
 
