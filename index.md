@@ -17,8 +17,8 @@ Download the latest version [here](./Downloads/YaTTYD   "Downloads").
 </ul>
 
 ##Links
--[Google][1]
--[Yahoo][2]
+- [Google][1]
+- [Yahoo][2]
 
   [1]: http://google.com/        "Google"
   [2]: http://search.yahoo.com/  "Yahoo Search"
