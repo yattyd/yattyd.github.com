@@ -4,10 +4,9 @@ title: Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
+## Update
 Download the latest version [here](./Downloads/YaTTYD   "Downloads"). Any comments or bugs report to yattyd@gmail.com please.
 
-
-    
 ## My Posts
 
 <ul class="posts">
