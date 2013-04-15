@@ -6,6 +6,9 @@ title: Welcome to YaTTYD
 
 ## Update
 - Download the latest version [here](./Downloads/YaTTYD   "Downloads"). Any comments or bugs report to yattyd@gmail.com please.
+[me](mailto:yattyd@gmail.com)
+
+<A href="mailto:yattyd@gmail.com">email</A>
 
 ## My Posts
 
