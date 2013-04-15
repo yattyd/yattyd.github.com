@@ -4,6 +4,8 @@ title: Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
+[Downloads](./Downloads/YaTTYD   "Downloads) the latest version [here](./Downloads/YaTTYD   "Downloads).
+
 [Downloads] [3]
 
   [1]: http://google.com/        "Google"
@@ -19,7 +21,13 @@ title: Welcome to YaTTYD
   {% endfor %}
 </ul>
 
-This is [an example](https://Google.com/ "Google") inline link.
+##Links
+	[Google][1]
+	[Yahoo][2]
+
+  [1]: http://google.com/        "Google"
+  [2]: http://search.yahoo.com/  "Yahoo Search"
+  [3]: ./Downloads/YaTTYD   "Downloads"
 
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
