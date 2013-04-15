@@ -19,10 +19,12 @@ title: Welcome to YaTTYD
 - [Google][1]
 - [Yahoo][2]
 - [Downloads][3]
+- [Bug report][4]
 
   [1]: http://google.com/        "Google"
   [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: ./Downloads/YaTTYD   "Downloads"
+  [3]: ./Downloads/YaTTYD        "Downloads"
+  [4]: mailto:yattyd@gmail.com   "E-mail"
 
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
