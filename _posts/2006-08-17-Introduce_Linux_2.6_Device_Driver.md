@@ -36,40 +36,40 @@ b) 保存容器之间的层次关系
 c) 为每个容器的属性提供一个用户视图
 
 
-struct kobject{
-char             * k_name;
-char               name[20];
-struct k_ref       kref;
-struct list_head   entry;
-struct kobject   * parent;
-struct kset      * kset;
-struct ktype     * ktype;
-struct dentry    * dentry;
-};
-struct kobj_type{
-void (*release) (struct kobject *);
-struct sysfs_ops *sysfs_ops;
-struct attribute **default_attrs;
-};
+	struct kobject{
+		char             * k_name;
+		char               name[20];
+		struct k_ref       kref;
+		struct list_head   entry;
+		struct kobject   * parent;
+		struct kset      * kset;
+		struct ktype     * ktype;
+		struct dentry    * dentry;
+	};
+	struct kobj_type{
+		void (*release) (struct kobject *);
+		struct sysfs_ops *sysfs_ops;
+		struct attribute **default_attrs;
+	};
 3.2 Kset
 一个kset是嵌入相同类型结构的kobject集合。
 
 
-struct kset{
-struct subsystem * subsys;
-struct kobj_type   ktype;
-struct list_head   list;
-struct kobject     kobj;
-struct kset_hotplug_ops * hotplug_ops;
-};
+	struct kset{
+	struct subsystem * subsys;
+	struct kobj_type   ktype;
+	struct list_head   list;
+	struct kobject     kobj;
+	struct kset_hotplug_ops * hotplug_ops;
+	};
 3.3 Subsystem
 一系列的kset就组成了subsystem. subsystem可以包括不同类型的kset， 它只有两个成员
 
 
-struct subsystem{
-struct kset kset;
-struct rw_semaphore rwsem;
-};
+	struct subsystem{
+	struct kset kset;
+	struct rw_semaphore rwsem;
+	};
 4.设备驱动模型的组件
 4.1 device
 4.2 drive
