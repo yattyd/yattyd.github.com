@@ -12,7 +12,7 @@ title: Links
 - <http://en.wikipedia.org/wiki/Dennis_Ritchie>
 - <http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/string/>
 - <http://www.cs.princeton.edu/~bwk/>
-- <http://os.51cto.com/col/957/　>
+- <http://os.51cto.com/col/957/>
 - <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
 - <http://c-faq.com/>
 *  
