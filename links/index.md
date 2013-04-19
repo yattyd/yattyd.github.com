@@ -32,7 +32,7 @@ title: Links
 - <http://www.linuxeden.com/>
 - <http://www.chinaunix.net/>
 - <http://linuxtoy.org/>
-- <http://www.rolia.net/f/>
+- <http://www.rolia.net/f/>  <http://www.rolia.net/f/#f0>
 - <http://www.csdn.net/>
 - <http://china21.com/>
 - <http://os.51cto.com/col/957/>
