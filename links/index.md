@@ -8,11 +8,9 @@ title: Links
 
 - <http://www.kernel.org/> ~~~ <ftp://ftp.kernel.org/pub/linux/kernel/v3.x/ftp://ftp.kernel.org/pub/linux/kernel/v3.x/>
 - <http://www.denx.de/wiki/U-Boot> ~~~ <ftp://ftp.denx.de/pub/u-boot/>
-- <http://www.gnu.org/software/make/manual/make.html>
-- <http://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html>
-- <http://opensource.apple.com/source/>
+- <http://www.gnu.org/software/make/manual/make.html> ~~~ <http://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html>
+- <http://opensource.apple.com/source/> ~~~ <http://www.opensource.apple.com/>
 - <http://publib.boulder.ibm.com/infocenter/zvm/v6r1/index.jsp?topic=/com.ibm.zvm.v610.edclv/rdirnm.htm>
-- <http://www.opensource.apple.com/>
 - <http://en.wikipedia.org/wiki/Dennis_Ritchie>
 - <http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/string/>
 
@@ -21,11 +19,9 @@ title: Links
 - <http://dunkels.com/adam/index.html>
 - <http://exmortis.narod.ru/index_eng.html>
 - <http://graphics.stanford.edu/~seander/bithacks.html>
-- <http://www-cs-students.stanford.edu/~blynn/gitmagic/>
-- <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
+- <http://www-cs-students.stanford.edu/~blynn/gitmagic/> ~~~ <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
 - <http://www.cs.princeton.edu/~bwk/>
-- <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
-- <http://c-faq.com/>
+- <http://c-faq.com/> ~~~ <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
 
 #### 中文 Zh-cn
 - <http://www.linuxeden.com/>
