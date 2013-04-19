@@ -10,10 +10,12 @@ title: YaTTYD
 
 ----------------------------------
 
-## Updates <p id="updates"></p>
+## Updates 
+<p id="updates"></p>
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
 
-## My Posts <p id="posts"></p>
+## My Posts 
+<p id="posts"></p>
 
 <ul class="posts">
   {% for post in site.posts %}
@@ -21,7 +23,8 @@ title: YaTTYD
   {% endfor %}
 </ul>
 
-##Links <p id="links"></p>
+##Links 
+<p id="links"></p>
 - [Google][1]
 - [Downloads][4]
 - [Bug report][5]
