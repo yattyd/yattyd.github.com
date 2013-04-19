@@ -10,8 +10,9 @@ title: YaTTYD
 
 ----------------------------------
 
-## Updates 
 <p id="updates"></p>
+## Updates 
+
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
 
 - 1234
@@ -36,9 +37,9 @@ title: YaTTYD
 - 1234
 - 1234
 
-
-## My Posts 
 <p id="posts"></p>
+## My Posts 
+
 
 <ul class="posts">
   {% for post in site.posts %}
@@ -68,8 +69,9 @@ title: YaTTYD
 - 1234
 - 1234
 
-##Links 
 <p id="links"></p>
+##Links 
+
 - [Google][1]
 - [Downloads][4]
 - [Bug report][5]
