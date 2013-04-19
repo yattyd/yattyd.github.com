@@ -21,13 +21,14 @@ title: Welcome to YaTTYD
 - [Parallela][3]
 - [Downloads][4]
 - [Bug report][5]
+- [more][6]
 
   [1]: http://google.com/        "Google"
   [2]: http://www.raspberrypi.org/ "Respberry Pi"
   [3]: http://www.adapteva.com/introduction/ "Parallela"
   [4]: ./Downloads/YaTTYD        "Downloads"
   [5]: mailto:yattyd@gmail.com   "E-mail"
-
+  [6]: ./links "more links"
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
 <script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(548097,"","000000");</script>
