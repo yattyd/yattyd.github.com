@@ -1,7 +1,7 @@
 ---
 layout: default
 date: 2006-08-16
-title: More Links
+title: Hardware
 ---
 
 # {{ page.title }}

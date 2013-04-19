@@ -26,7 +26,9 @@ title: YaTTYD
 - [Downloads][4]
 - [Bug report][5]
 - [more][6]
+- [Hardware][101]
 
+  [101]: ./links/hardware "hardware links"
   [1]: http://google.com/        "Google"
   [4]: ./Downloads/YaTTYD        "Downloads"
   [5]: mailto:yattyd@gmail.com   "E-mail"
