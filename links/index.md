@@ -35,8 +35,7 @@ title: Links
 - <http://www.opensource.apple.com/>
 *
 - [Hardware][101]
-- [YaTTYD at Github][7]
 
   [101]: ./hardware "hardware links"
-  [7]: http://yattyd.github.com "yattyd at github"
+
  
