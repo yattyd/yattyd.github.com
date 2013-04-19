@@ -4,13 +4,11 @@ title: Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
-+ [Updates](#updates)
++ [Updates](#updates) 
 + [My Posts](#posts)
 + [Links](#links)
 
 ----------------------------------
-
-## 1. Read me first <p id="partI"></p>
 
 ## Updates <p id="updates"></p>
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
