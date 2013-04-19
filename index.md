@@ -15,27 +15,6 @@ title: YaTTYD
 
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
 
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
 
 <p id="posts"></p>
 ## My Posts 
@@ -47,27 +26,7 @@ title: YaTTYD
   {% endfor %}
 </ul>
 
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
+
 
 <p id="links"></p>
 ##Links 
@@ -84,27 +43,6 @@ title: YaTTYD
   [5]: mailto:yattyd@gmail.com   "E-mail"
   [6]: ./links "more links"
   
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
-- 1234
 
   
 <!-- BEGIN: Powered by Supercounters.com -->
