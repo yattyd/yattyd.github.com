@@ -6,8 +6,8 @@ title: Links
 
 # {{ page.title }}
 
-- <http://www.kernel.org/> ～～～ <ftp://ftp.kernel.org/pub/linux/kernel/v3.x/ftp://ftp.kernel.org/pub/linux/kernel/v3.x/>
-- <http://www.denx.de/wiki/U-Boot> ～～～ <ftp://ftp.denx.de/pub/u-boot/>
+- <http://www.kernel.org/> ~~~ <ftp://ftp.kernel.org/pub/linux/kernel/v3.x/ftp://ftp.kernel.org/pub/linux/kernel/v3.x/>
+- <http://www.denx.de/wiki/U-Boot> ~~~ <ftp://ftp.denx.de/pub/u-boot/>
 - <http://www.gnu.org/software/make/manual/make.html>
 - <http://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html>
 - <http://opensource.apple.com/source/>
@@ -32,7 +32,7 @@ title: Links
 - <http://www.linuxeden.com/>
 - <http://www.chinaunix.net/>
 - <http://linuxtoy.org/>
-- <http://www.rolia.net/f/> ～～～ <http://www.rolia.net/f/#f0>
+- <http://www.rolia.net/f/> ~~~ <http://www.rolia.net/f/#f0>
 - <http://www.csdn.net/>
 - <http://china21.com/>                                         
 - <http://os.51cto.com/col/957/>
