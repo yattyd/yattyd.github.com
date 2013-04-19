@@ -38,10 +38,10 @@ title: YaTTYD
 - [Hardware][101]
 
 
-  [101]: ./links/hardware "hardware links"
-  [1]: http://google.com/        "Google"
-  [4]: ./Downloads/YaTTYD        "Downloads"
-  [5]: mailto:yattyd@gmail.com   "E-mail"
+  [101]: ./links/hardware         "hardware links"
+  [1]: http://google.com/         "Google"
+  [4]: ./Downloads                "Downloads"
+  [5]: mailto:yattyd@gmail.com    "E-mail"
   [6]: ./links "more links"
 
   
