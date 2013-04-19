@@ -6,5 +6,5 @@ title: Utilities
 
 # {{ page.title }}
 
-- <www.7-zip.org/>
+- <http://www.7-zip.org/>
 - <http://www.chiark.greenend.org.uk/~sgtatham/putty/> 
