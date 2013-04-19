@@ -34,5 +34,7 @@ title: Links
 - <http://publib.boulder.ibm.com/infocenter/zvm/v6r1/index.jsp?topic=/com.ibm.zvm.v610.edclv/rdirnm.htm>
 - <http://www.opensource.apple.com/>
 - 
-- <./index2.html>
+- [more][6]
+
+  [6]: ./urls2 "more links"
  
