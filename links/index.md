@@ -16,6 +16,7 @@ title: Links
 - <http://en.wikipedia.org/wiki/Dennis_Ritchie>
 - <http://www.openbsd.org/cgi-bin/cvsweb/src/lib/libc/string/>
 
+
 - <http://www.moorecad.com/standardpascal/pascals.html>
 - <http://dunkels.com/adam/index.html>
 - <http://exmortis.narod.ru/index_eng.html>
@@ -26,6 +27,7 @@ title: Links
 - <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
 - <http://c-faq.com/>
 
+
 - <http://man.chinaunix.net/>
 - <http://www.linuxeden.com/>
 - <http://www.chinaunix.net/>
@@ -34,7 +36,6 @@ title: Links
 - <http://www.csdn.net/>
 - <http://china21.com/>
 - <http://os.51cto.com/col/957/>
-
 - <http://delphi32bit.bitbucket.org/vcl.vclxx.com/DELPHIGB/DEFAULT.HTM>
  
 
