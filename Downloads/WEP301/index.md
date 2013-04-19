@@ -28,6 +28,26 @@ Standby mode.
 If the blue indicator light remains lit, retry
 pairing.
 
+In Active mode
+
+Press the Multi-function button to:
+
+End a call
+
+Transfer a call from the phone to the headset
+
+Press and hold the Multi-function button to:
+
+Place a call on hold
+
+Answer a second call
+
+Retrieve a call on hold
+
+Press [+] or [-] to adjust the volume.
+
+Press and hold [+] or [-] to turn the microphone off
+or on.
 
 - [WEP301_qsg.pdf][301]
 
