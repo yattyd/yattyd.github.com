@@ -14,7 +14,28 @@ title: YaTTYD
 <p id="updates"></p>
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+
 
 ## My Posts 
 <p id="posts"></p>
@@ -25,7 +46,27 @@ title: YaTTYD
   {% endfor %}
 </ul>
 
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
 
 ##Links 
 <p id="links"></p>
@@ -41,7 +82,28 @@ title: YaTTYD
   [5]: mailto:yattyd@gmail.com   "E-mail"
   [6]: ./links "more links"
   
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+- 1234
+
   
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
