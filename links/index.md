@@ -6,7 +6,7 @@ title: Links
 
 # {{ page.title }}
 
-- <https://www.kernel.org/>
+- <http://www.kernel.org/>
 - <http://www.denx.de/wiki/U-Boot>    <ftp://ftp.denx.de/pub/u-boot/>
 - <http://www.gnu.org/software/make/manual/make.html>
 - <http://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html>
