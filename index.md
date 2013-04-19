@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Welcome to YaTTYD
+title: YaTTYD
 ---
 {% include JB/setup %}
 
