@@ -49,7 +49,8 @@ title: YaTTYD
 ##Contact Info   
 - [E-Mail: yattyd@gmail.com][11]
   [11]: mailto:yattyd@gmail.com    "E-mail"
-- [Phone: +1(289)588-7111]
+- [Phone: +1(289)588-7111][12]
+  [12]: tel:+1(289)588-7111    "Phone"
 
 
   
