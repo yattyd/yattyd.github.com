@@ -7,6 +7,7 @@ title: YaTTYD
 + [Updates](#updates) 
 + [My Posts](#posts)
 + [Links](#links)
++ [Contact](#contact)
 
 ----------------------------------
 
