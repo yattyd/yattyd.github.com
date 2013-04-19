@@ -4,10 +4,18 @@ title: Welcome to YaTTYD
 ---
 {% include JB/setup %}
 
-## Update
++ [Updates](#updates)
++ [My Posts](#posts)
++ [Links](#links)
+
+----------------------------------
+
+## 1. Read me first <p id="partI"></p>
+
+## Updates <p id="updates"></p>
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
 
-## My Posts
+## My Posts <p id="posts"></p>
 
 <ul class="posts">
   {% for post in site.posts %}
@@ -15,7 +23,7 @@ title: Welcome to YaTTYD
   {% endfor %}
 </ul>
 
-##Links
+##Links <p id="links"></p>
 - [Google][1]
 - [RespberryPi][2]
 - [Parallela][3]
