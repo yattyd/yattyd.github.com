@@ -44,7 +44,12 @@ title: YaTTYD
   [5]: mailto:yattyd@gmail.com    "E-mail"
   [6]: ./links "more links"
 
-  
+<p id="contact"></p>
+##Contact Info   
+- [E-Mail: yattyd@gmail.com][11]
+  [11]: mailto:yattyd@gmail.com    "E-mail"
+- [Phone: +1(289)588-7111]
+
 
   
 <!-- BEGIN: Powered by Supercounters.com -->
