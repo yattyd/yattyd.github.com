@@ -77,6 +77,26 @@ Press [+] or [-] to adjust the volume.
 Press and hold [+] or [-] to turn the microphone off
 or on.
 
+##Specifications
+Item Specifications and description
+
+Bluetooth version
+
+Compatible with Bluetooth 2.0 or
+earlier
+
+Support profile Headset Profile, Hands-Free Profile
+
+Operating range Up to 30 feet (10 meters)
+
+Standby time Up to 80 hours*
+
+Talk time Up to 5 hours*
+
+* Depending on the phone type and usage, the actual time may
+vary.
+
 - [WEP301_qsg.pdf][301]
+
 
   [301]: ./WEP301_qsg.pdf          "WEP301_qsg.pdf"
