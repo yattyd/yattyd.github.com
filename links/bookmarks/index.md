@@ -8,8 +8,8 @@ title: Bookmarks
 
 - Google Voice <https://www.google.com/voice>
 - GMail <https://gmail.google.com/>
-- Google ZH <http://www.google.com/intl/zh-CN>
-- Google TW <http://www.google.com/intl/zh-TW/>
+- Google ZH <https://www.google.com/intl/zh-CN>
+- Google TW <https://www.google.com/intl/zh-TW/>
 - <http://dict.bing.com.cn/>
 - <http://www.raspberrypi.org/>
 - <http://www.adapteva.com/introduction/> 
