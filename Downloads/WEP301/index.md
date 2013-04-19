@@ -6,7 +6,7 @@ title: Headset WEP301
 
 # {{ page.title }}
 
-Pairing with your Bluetooth phone
+##Pairing with your Bluetooth phone
 
 1 Enter Pairing mode.
 
@@ -28,7 +28,35 @@ Standby mode.
 If the blue indicator light remains lit, retry
 pairing.
 
-In Active mode
+NOTE:
+When the headset and the phone are paired, the
+headset attempts to reconnect automatically each
+time it turns on. Otherwise, press the Multi-function
+button to reconnect.
+
+##Using call functions
+
+Some features may not be supported by your phone.
+
+###In Standby mode
+
+Press the Multi-function button to:
+
+Answer an incoming call
+
+Redial the last number called
+
+Press and hold the Multi-function button to:
+
+Make a voice-activated call
+
+Reject an incoming call
+
+Press and hold [+] and [-] at the same time to turn
+
+the indicator light on or off.
+
+###In Active mode
 
 Press the Multi-function button to:
 
