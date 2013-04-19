@@ -28,9 +28,8 @@ title: Links
 - <http://c-faq.com/>
 
 #### 中文 Zh-cn
-- <http://man.chinaunix.net/>
 - <http://www.linuxeden.com/>
-- <http://www.chinaunix.net/>
+- <http://www.chinaunix.net/> ~~~ <http://man.chinaunix.net/>
 - <http://linuxtoy.org/>
 - <http://www.rolia.net/f/> ~~~ <http://www.rolia.net/f/#f0>
 - <http://www.csdn.net/>
