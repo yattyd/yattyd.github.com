@@ -15,7 +15,7 @@ title: Links
 - <http://os.51cto.com/col/957/　>
 - <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
 - <http://c-faq.com/>
-- 
+*  
 - <http://man.chinaunix.net/>
 - <http://www.linuxeden.com/>
 - <http://www.chinaunix.net/>
@@ -33,7 +33,7 @@ title: Links
 - <http://www.moorecad.com/standardpascal/pascals.html>
 - <http://publib.boulder.ibm.com/infocenter/zvm/v6r1/index.jsp?topic=/com.ibm.zvm.v610.edclv/rdirnm.htm>
 - <http://www.opensource.apple.com/>
-- 
+*
 - [more][6]
 
   [6]: ./urls2 "more links"
