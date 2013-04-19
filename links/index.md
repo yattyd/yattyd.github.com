@@ -29,7 +29,7 @@ title: Links
 - <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
 - <http://dunkels.com/adam/index.html>
 - <http://exmortis.narod.ru/index_eng.html>
-- </exmortis.narod.ru>
+- 
 - <http://www.moorecad.com/standardpascal/pascals.html>
 - <http://publib.boulder.ibm.com/infocenter/zvm/v6r1/index.jsp?topic=/com.ibm.zvm.v610.edclv/rdirnm.htm>
 - <http://www.opensource.apple.com/>
