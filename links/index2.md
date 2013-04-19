@@ -33,6 +33,4 @@ title: Links
 - <http://www.moorecad.com/standardpascal/pascals.html>
 - <http://publib.boulder.ibm.com/infocenter/zvm/v6r1/index.jsp?topic=/com.ibm.zvm.v610.edclv/rdirnm.htm>
 - <http://www.opensource.apple.com/>
-- 
-- <./index2.html>
  
