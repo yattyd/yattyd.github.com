@@ -34,8 +34,8 @@ title: YaTTYD
 - [Google][1]
 - [Downloads][4]
 - [Bug report][5]
-- [more][6]
 - [Hardware][101]
+- [more][6]
 
 
   [101]: ./links/hardware         "hardware links"
