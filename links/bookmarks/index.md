@@ -8,3 +8,4 @@ title: Bookmarks
 
 - <http://www.raspberrypi.org/>
 - <http://www.adapteva.com/introduction/> 
+- <http://blog.csdn.net/hcfalan/article/details/194597>
