@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+</head>
+<body>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left">layout: page</td>
+</tr>
+<tr class="even">
+<td align="left">title: Welcome to YaTTYD</td>
+</tr>
+</tbody>
+</table>
+<p>{% include JB/setup %}</p>
+<h2 id="update">Update</h2>
+<ul>
+<li>Download the latest version <a href="./Downloads/YaTTYD" title="Downloads">here</a>. Any comments or bugs report to <script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x79;&#x61;&#116;&#116;&#x79;&#100;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'me'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#x6d;&#x65;&#32;&#40;&#x79;&#x61;&#116;&#116;&#x79;&#100;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript> please.</li>
+</ul>
+<h2 id="my-posts">My Posts</h2>
+<ul class="posts">
+  
+{% for post in site.posts %}
+<li>
+<span>{{ post.date | date_to_string }}</span> » <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+</li>
+  
+{% endfor %}
+</ul>
+
+<h2 id="links">Links</h2>
+<ul>
+<li><a href="http://google.com/" title="Google">Google</a></li>
+<li><a href="http://www.raspberrypi.org/" title="Respberry Pi">RespberryPi</a></li>
+<li><a href="http://www.adapteva.com/introduction/" title="Parallela">Parallela</a></li>
+<li><a href="./Downloads/YaTTYD" title="Downloads">Downloads</a></li>
+<li><script type="text/javascript">
+<!--
+h='&#x67;&#x6d;&#x61;&#x69;&#108;&#46;&#x63;&#x6f;&#x6d;';a='&#64;';n='&#x79;&#x61;&#116;&#116;&#x79;&#100;';e=n+a+h;
+document.write('<a h'+'ref'+'="ma'+'ilto'+':'+e+'">'+'Bug report'+'<\/'+'a'+'>');
+// -->
+</script><noscript>&#66;&#x75;&#x67;&#32;&#114;&#x65;&#112;&#x6f;&#114;&#116;&#32;&#40;&#x79;&#x61;&#116;&#116;&#x79;&#100;&#32;&#x61;&#116;&#32;&#x67;&#x6d;&#x61;&#x69;&#108;&#32;&#100;&#x6f;&#116;&#32;&#x63;&#x6f;&#x6d;&#x29;</noscript></li>
+<li><a href="./links" title="more links">more</a></li>
+</ul>
+<!-- BEGIN: Powered by Supercounters.com -->
+<script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
+<script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(548097,"","000000");</script>
+
+<!-- END: Powered by Supercounters.com -->
+<!-- END: Powered by Supercounters.com -->
+
+</body>
+</html>
