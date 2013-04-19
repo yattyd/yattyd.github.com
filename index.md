@@ -13,6 +13,7 @@ title: YaTTYD
 ## Updates 
 <p id="updates"></p>
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
 ## My Posts 
 <p id="posts"></p>
@@ -22,7 +23,7 @@ title: YaTTYD
     <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
   {% endfor %}
 </ul>
-
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 ##Links 
 <p id="links"></p>
 - [Google][1]
