@@ -17,14 +17,16 @@ title: Welcome to YaTTYD
 
 ##Links
 - [Google][1]
-- [Yahoo][2]
-- [Downloads][3]
-- [Bug report][4]
+- [RespberryPi][2]
+- [Parallela][3]
+- [Downloads][4]
+- [Bug report][5]
 
   [1]: http://google.com/        "Google"
-  [2]: http://search.yahoo.com/  "Yahoo Search"
-  [3]: ./Downloads/YaTTYD        "Downloads"
-  [4]: mailto:yattyd@gmail.com   "E-mail"
+  [2]: http://www.raspberrypi.org/ "Respberry Pi"
+  [3]: http://www.adapteva.com/introduction/ "Parallela"
+  [4]: ./Downloads/YaTTYD        "Downloads"
+  [5]: mailto:yattyd@gmail.com   "E-mail"
 
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
