@@ -6,7 +6,7 @@ title: YaTTYD
 
 {% include JB/setup %}
 
-<table>
+<table width="100%">
     <tr>
         <td><a href="#updates">Updates</a></td>
         <td><a href="#posts">Posts</a></td>
