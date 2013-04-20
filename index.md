@@ -58,15 +58,11 @@ title: YaTTYD
   [11]: mailto:yattyd@gmail.com    "E-mail"
 - [Phone: +1(289)588-7111][12]
   [12]: tel:+1(289)588-7111        "Phone"
-
 ******************************
-  
 <!-- BEGIN: Powered by Supercounters.com -->
 <script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script>
 <script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(548097,"","000000");</script>
-
 <!-- END: Powered by Supercounters.com -->
 <!-- END: Powered by Supercounters.com -->
-
 <p id="bottom"></p>
 + [Top](#top)
