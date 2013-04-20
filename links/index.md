@@ -24,7 +24,6 @@ title: Links
 - <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
 - <http://www.cs.princeton.edu/~bwk/>
 - <http://c-faq.com/> ~~~ <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
-- <http://www.w3school.com/> ~~~ <http://www.w3school.com.cn/>
 
 #### 中文 Zh-cn
 - <http://www.linuxeden.com/>
@@ -35,6 +34,7 @@ title: Links
 - <http://china21.com/>                                         
 - <http://os.51cto.com/col/957/>
 - <http://delphi32bit.bitbucket.org/vcl.vclxx.com/DELPHIGB/DEFAULT.HTM>
+- <http://www.w3school.com.cn/>
                                                                       
 #### Even more
 - [Hardware][101]
