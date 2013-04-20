@@ -19,7 +19,8 @@ title: Links
 - <http://dunkels.com/adam/index.html>
 - <http://exmortis.narod.ru/index_eng.html>
 - <http://graphics.stanford.edu/~seander/bithacks.html>
-- <http://www-cs-students.stanford.edu/~blynn/gitmagic/> ~~~ <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
+- <http://www-cs-students.stanford.edu/~blynn/gitmagic/> 
+- <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
 - <http://www.cs.princeton.edu/~bwk/>
 - <http://c-faq.com/> ~~~ <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
 
