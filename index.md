@@ -6,10 +6,7 @@ title: YaTTYD
 
 <table>
     <tr>
-        <td>[Updates](#updates)</td>
-	<td>[My Posts](#posts)</td>
-	<td>[Links](#links)</td>
-	<td>[Contact](#contact)</td>
+        <td><a name="updates">Updates</a></td>
     </tr>
 </table>
 + [Updates](#updates) 
