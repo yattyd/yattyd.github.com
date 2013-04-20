@@ -11,6 +11,7 @@ title: YaTTYD
         <td><a href="#updates">Updates</a></td>
         <td><a href="#posts">Posts</a></td>
         <td><a href="#links">Links</a></td>
+        <td><a href=./links>More links</a></td>
         <td><a href="#contact">Contact</a></td>
     </tr>
 </table>
