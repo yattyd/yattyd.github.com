@@ -1,0 +1,571 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 11">
+<meta name=Originator content="Microsoft Word 11">
+<link rel=File-List
+href="Linux%20files%20system%20special%20for%20embedded_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="Linux%20files%20system%20special%20for%20embedded_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Linux for PowerPC Embedded Systems HOWTO</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>stone</o:Author>
+  <o:LastAuthor>User</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>4</o:TotalTime>
+  <o:Created>2013-03-12T16:49:00Z</o:Created>
+  <o:LastSaved>2013-03-12T16:49:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1058</o:Words>
+  <o:Characters>6033</o:Characters>
+  <o:Lines>50</o:Lines>
+  <o:Paragraphs>14</o:Paragraphs>
+  <o:CharactersWithSpaces>7077</o:CharactersWithSpaces>
+  <o:Version>11.5606</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:PunctuationKerning/>
+  <w:DrawingGridVerticalSpacing>7.8 pt</w:DrawingGridVerticalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:SelectEntireFieldWithStartOrEnd/>
+   <w:UseWord2002TableStyleRules/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:黑体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimHei;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:"\@黑体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:1 135135232 16 0 262144 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:0cm;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	mso-pagination:none;
+	font-size:10.5pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:宋体;
+	color:windowtext;
+	mso-font-kerning:1.0pt;}
+h1
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:24.0pt;
+	font-family:宋体;
+	color:black;
+	font-weight:bold;}
+h2
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:18.0pt;
+	font-family:宋体;
+	color:black;
+	font-weight:bold;}
+h3
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:13.5pt;
+	font-family:宋体;
+	color:black;
+	font-weight:bold;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+p
+	{mso-margin-top-alt:auto;
+	margin-right:0cm;
+	mso-margin-bottom-alt:auto;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:宋体;
+	mso-bidi-font-family:"Times New Roman";
+	color:black;}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
+	font-size:10.0pt;
+	font-family:黑体;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";
+	color:black;}
+tt
+	{font-family:黑体;
+	mso-ascii-font-family:黑体;
+	mso-fareast-font-family:黑体;
+	mso-hansi-font-family:"Courier New";
+	mso-bidi-font-family:"Courier New";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:595.3pt 841.9pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:49.6pt;
+	mso-paper-source:0;
+	layout-grid:15.6pt;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="2050"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
+</head>
+
+<body lang=ZH-CN link=blue vlink=purple style='tab-interval:21.0pt;text-justify-trim:
+punctuation'>
+
+<div class=Section1 style='layout-grid:15.6pt'>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:0cm;mso-padding-alt:0cm 0cm 0cm 0cm'>
+ <tr>
+  <td colspan=3 style='padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  lang=EN-US>Linux for PowerPC Embedded Systems HOWTO</span></b><b><span
+  lang=EN-US style='font-size:12.0pt;font-family:宋体;color:black'><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td width="10%" valign=bottom style='width:10.0%;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal><span lang=EN-US><a
+  href="http://penguinppc.org/embedded/howto/library.html">Prev</a></span><span
+  lang=EN-US style='font-size:12.0pt;font-family:宋体;color:black'><o:p></o:p></span></p>
+  </td>
+  <td width="80%" valign=bottom style='width:80.0%;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=center style='text-align:center'><span lang=EN-US
+  style='font-size:12.0pt;font-family:宋体;color:black'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width="10%" valign=bottom style='width:10.0%;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=right style='text-align:right'><span lang=EN-US><a
+  href="http://penguinppc.org/embedded/howto/floating.html">Next</a></span><span
+  lang=EN-US style='font-size:12.0pt;font-family:宋体;color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<div class=MsoNormal align=left style='text-align:left;mso-pagination:widow-orphan'><span
+lang=EN-US>
+
+<hr size=2 width="100%" align=left>
+
+</span></div>
+
+<h1><span lang=EN-US>13. Root <span class=SpellE>Filesystem</span></span></h1>
+
+<p><span lang=EN-US>The kernel needs a root <span class=SpellE>filesystem</span>
+to mount at startup. There are many options, and the best one will generally
+depend on whether your system needs to be able to store persistent data (which
+must survive power cycling) in the field.</span></p>
+
+<p><span lang=EN-US>See <a
+href="http://lists.linuxppc.org/listarcs/linuxppc-embedded/200003/msg00067.html"
+target="_top">http://lists.linuxppc.org/listarcs/linuxppc-embedded/
+200003/msg00067.html</a></span></p>
+
+<p><span lang=EN-US>Your best bet is likely to be the root <span class=SpellE>filesystem</span>
+from <a href="http://penguinppc.org/embedded/howto/x348.html#HARD-HAT">Hard Hat
+Linux</a>. Extract all the <span class=SpellE>RPMs</span> matching </span><tt><span
+lang=EN-US style='font-size:10.0pt'>*.<span class=SpellE>noarch.rpm</span></span></tt><span
+lang=EN-US>, and use the image in </span><tt><span lang=EN-US style='font-size:
+10.0pt'>opt/hardhat/devkit/ppc/8xx/target</span></tt><span lang=EN-US> as the
+root <span class=SpellE>filesystem</span>.</span></p>
+
+<h2><span lang=EN-US>13.1. NFS Mounted</span></h2>
+
+<p><span lang=EN-US>During development, the embedded <span class=GramE>system
+can</span> NFS-mount its root <span class=SpellE>filesystem</span> from your
+file sever to provide a complete diskless Linux system. The file server need
+not be the same architecture as the embedded client. Answer &quot;Y&quot; to
+the kernel configuration questions regarding NFS client and root <span
+class=SpellE>filesystem</span> via NFS, and &quot;make <span class=SpellE>zImage</span>&quot;.
+The embedded system will attempt to mount its root <span class=SpellE>filesystem</span>
+from the server as </span><tt><span lang=EN-US style='font-size:10.0pt'>/<span
+class=SpellE>tftpboot</span>/&lt;<span class=SpellE>ipaddress</span>&gt;</span></tt><span
+lang=EN-US>, where &lt;<span class=SpellE>ipaddress</span>&gt; is its IP
+address. Install your root <span class=SpellE>filesystem</span> image in this
+directory as root on the server, and export the directory tree with an entry in
+</span><tt><span lang=EN-US style='font-size:10.0pt'>/etc/exports</span></tt><span
+lang=EN-US> on the server, like: </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>/<span
+  class=SpellE>tftpboot</span><span style='mso-spacerun:yes'>&nbsp;&nbsp; </span>(<span
+  class=SpellE>rw,no_root_squash</span>)</span></pre><pre><span lang=EN-US><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span lang=EN-US>If your system has a hard disk, you can start by using NFS
+then build a root file system on the disk and boot from that.</span></p>
+
+<p><span lang=EN-US>If your system has no network, you may want to start
+developing on a board that does.</span></p>
+
+<h2><span lang=EN-US>13.2. Initial <span class=SpellE>Ramdisk</span>: <span
+class=SpellE>initrd</span></span></h2>
+
+<p><span lang=EN-US>To make a diskless system standalone, you need an initial <span
+class=SpellE>ramdisk</span> image containing an ext2 <span class=SpellE>filesystem</span>
+to put in </span><tt><span lang=EN-US style='font-size:10.0pt'>arch/<span
+class=SpellE>ppc/mbxboot/ramdisk.image.gz</span></span></tt><span lang=EN-US>.
+Then, build <span class=GramE>with</span> </span><tt><span lang=EN-US
+style='font-size:10.0pt'>make <span class=SpellE>zImage.initrd</span></span></tt><span
+lang=EN-US> and the <span class=SpellE>ramdisk</span> image will be mounted as
+the root <span class=SpellE>filesystem</span> at startup. See </span><tt><span
+lang=EN-US style='font-size:10.0pt'>Documentation/initrd.txt</span></tt><span
+lang=EN-US> in the kernel source tree.</span></p>
+
+<p><span lang=EN-US>You need to select both CONFIG_BLK_DEV_RAM and
+CONFIG_BLK_DEV_INITRD to build <span class=SpellE>zImage.initrd</span>. You
+also need a file in </span><tt><span lang=EN-US style='font-size:10.0pt'>arch/<span
+class=SpellE>ppc/mbxboot</span></span></tt><span lang=EN-US> called </span><span
+class=SpellE><tt><span lang=EN-US style='font-size:10.0pt'>ramdisk.image.gz</span></tt></span><span
+lang=EN-US>. When you build </span><span class=SpellE><tt><span lang=EN-US
+style='font-size:10.0pt'>zImage.initrd</span></tt></span><span lang=EN-US>, the
+secondary boot loader is re-compiled with INITRD_OFFSET and INITRD_SIZE set,
+which are used to locate the start and end of the </span><span class=SpellE><tt><span
+lang=EN-US style='font-size:10.0pt'>ramdisk.image.gz</span></tt></span><span
+lang=EN-US> file in memory. The start and end are passed to the kernel in
+registers (r4/r5??), which it saves into the variables </span><span
+class=SpellE><tt><span lang=EN-US style='font-size:10.0pt'>initrd_start</span></tt></span><span
+lang=EN-US> and </span><span class=SpellE><tt><span lang=EN-US
+style='font-size:10.0pt'>initrd_end</span></tt></span><span lang=EN-US>. The
+secondary boot loader also changes the kernel command line arguments so that </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>root=/dev/ram</span></pre><pre><span
+  lang=EN-US><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span class=GramE><span lang=EN-US>instead</span></span><span lang=EN-US> of
+</span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>root=/dev/<span
+  class=SpellE>nfs</span></span></pre><pre><span lang=EN-US><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span lang=EN-US>The kernel does various things if </span><span
+class=SpellE><tt><span lang=EN-US style='font-size:10.0pt'>initrd_start</span></tt></span><span
+lang=EN-US> is non-zero, but the main one is to decompress the </span><span
+class=SpellE><tt><span lang=EN-US style='font-size:10.0pt'>ramdisk.image.gz</span></tt></span><span
+lang=EN-US> data into <span class=SpellE>ramdisk</span> 0, and because </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>root=/dev/ram</span></pre><pre><span
+  lang=EN-US><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span class=GramE><span lang=EN-US>this</span></span><span lang=EN-US> is
+then mounted as the root <span class=SpellE>filesystem</span>.</span></p>
+
+<p><span lang=EN-US>If your <span class=SpellE>ramdisk</span> is larger than 4
+MB, you will need to add </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+  class=SpellE>ramdisk</span>=<span class=SpellE>xxxx</span></span></pre><pre><span
+  lang=EN-US><span style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span class=GramE><span lang=EN-US>to</span></span><span lang=EN-US> the
+kernel command line at boot time, or modify </span><tt><span lang=EN-US
+style='font-size:10.0pt'>drivers/block/<span class=SpellE>rd.c</span></span></tt><span
+lang=EN-US>.</span></p>
+
+<p><span lang=EN-US>Beware that the CPU6 workarounds in the <span class=SpellE>MontaVista</span>
+2.2.x kernel clobber the kernel command line, and cause the initial <span
+class=SpellE>ramdisk</span> mount to fail. See the thread at <a
+href="http://lists.linuxppc.org/listarcs/linuxppc-embedded/200004/msg00103.html"
+target="_top">http://lists.linuxppc.org/listarcs/
+linuxppc-embedded/200004/msg00103.html</a></span></p>
+
+<p><span lang=EN-US>A number of ways to create an initial <span class=SpellE>ramdisk</span>
+image are described below. For more information on building a root <span
+class=SpellE>filesystem</span>, see the <span class=SpellE>Bootdisk</span>
+HOWTO at <a
+href="http://www.linux.org/docs/ldp/howto/Bootdisk-HOWTO/buildroot.html"
+target="_top">http://www.linux.org/docs/ldp/howto/
+Bootdisk-HOWTO/buildroot.html</a></span></p>
+
+<h3><span lang=EN-US>13.2.1. Examples</span></h3>
+
+<p><span lang=EN-US>An example </span><span class=SpellE><tt><span lang=EN-US
+style='font-size:10.0pt'>ramdisk.image.gz</span></tt></span><span lang=EN-US>
+is already included in the <a
+href="http://penguinppc.org/embedded/howto/x348.html#HARD-HAT">Hard Hat</a>
+kit.</span></p>
+
+<p><span lang=EN-US>A simple <span class=SpellE>ramdisk</span> for use with <a
+href="http://penguinppc.org/embedded/howto/rom-monitor.html#PPCBOOT">ppcboot</a>
+is available at the <a
+href="http://penguinppc.org/embedded/howto/x348.html#DENX-FTP">Denx ftp site</a>.</span></p>
+
+<h3><span lang=EN-US>13.2.2. Using a <span class=SpellE>ramdisk</span></span></h3>
+
+<p><span lang=EN-US>You can also create your own on your development machine in
+a <span class=SpellE>filesystem</span> on </span><tt><span lang=EN-US
+style='font-size:10.0pt'>/dev/ram</span></tt><span lang=EN-US>. If your <span
+class=SpellE>ramdisk</span> is larger than 4 MB, you will need to increase the
+default <span class=SpellE>ramdisk</span> size on your development machine
+accordingly.</span></p>
+
+<p><span lang=EN-US>LILO users can do this by adding the following line to the
+first section of </span><tt><span lang=EN-US style='font-size:10.0pt'>/etc/<span
+class=SpellE>lilo.conf</span></span></tt><span lang=EN-US>: </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
+  class=SpellE>ramdisk</span>=65536</span></pre><pre><span lang=EN-US><span
+  style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span lang=EN-US>There is no real harm in asking for an excessive size, as </span><tt><span
+lang=EN-US style='font-size:10.0pt'>/dev/ram*</span></tt><span lang=EN-US> only
+allocates pages it actually needs to the <span class=SpellE>ramdisk</span>.
+However, you should use the </span><tt><i><span lang=EN-US style='font-size:
+10.0pt'>blocks-count</span></i></tt><span lang=EN-US> parameter to limit the <span
+class=SpellE>filesystem</span> size when you run <b>mke2fs</b> to prevent it
+creating unnecessarily large <span class=SpellE>filesystem</span> structures.</span></p>
+
+<h3><span lang=EN-US>13.2.3. Using the loop device</span></h3>
+
+<p><span lang=EN-US>Another approach is to use the loop device on your Linux
+development host to mount the <span class=SpellE>ramdisk</span> image as a
+local <span class=SpellE>filesystem</span>, and then copy the files you require
+into it. To allow users to mount the </span><span class=SpellE><tt><span
+lang=EN-US style='font-size:10.0pt'>ramdisk.image</span></tt></span><span
+lang=EN-US> on </span><tt><span lang=EN-US style='font-size:10.0pt'>/<span
+class=SpellE>mnt</span>/loop</span></tt><span lang=EN-US> with </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US>mount /<span
+  class=SpellE>mnt</span>/loop</span></pre><pre><span lang=EN-US><span
+  style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span class=GramE><span lang=EN-US>add</span></span><span lang=EN-US> the
+following entry to your </span><tt><span lang=EN-US style='font-size:10.0pt'>/etc/<span
+class=SpellE>fstab</span></span></tt><span lang=EN-US>: </span></p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="100%"
+ style='width:100.0%;mso-cellspacing:1.5pt;background:#E0E0E0'>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td style='padding:.75pt .75pt .75pt .75pt'><pre><span lang=EN-US>/path/to/<span
+  class=SpellE>ramdisk.image</span><span style='mso-spacerun:yes'>&nbsp; </span>/<span
+  class=SpellE>mnt</span>/loop<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>auto<span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span><span
+  class=SpellE>user,noauto,rw,loop</span><span style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp; </span>0 <span
+  class=SpellE>0</span></span></pre><pre><span lang=EN-US><span
+  style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></pre></td>
+ </tr>
+</table>
+
+<p><span lang=EN-US>Note that the <span class=SpellE>minix</span> file system
+code in Linux is not <span class=SpellE>endian-independant</span>, so you can't
+build a <span class=SpellE>minix</span> file system image on an x86 machine and
+expect to read it on a PowerPC machine. <span class=GramE>ext2</span> does not
+suffer from this problem. </span></p>
+
+<p><span lang=EN-US>For more info, see the <span class=SpellE>Loopback</span>-Root-FS
+HOWTO at <a href="http://linuxdoc.org/HOWTO/mini/Loopback-Root-FS.html"
+target="_top">http://linuxdoc.org/HOWTO/mini/Loopback-Root-FS.html </a></span></p>
+
+<h2><span lang=EN-US>13.3. ROMFS Flash <span class=SpellE>Filesystem</span></span></h2>
+
+<p><span lang=EN-US>Search for <a
+href="http://lists.linuxppc.org/cgi-bin/wilma/wilma_glimpse/linuxppc-embedded?query=romfs"
+target="_top">ROMFS</a>.</span></p>
+
+<h2><span lang=EN-US>13.4. <span class=SpellE><span class=GramE>cramfs</span></span></span></h2>
+
+<p><span lang=EN-US>The 2.4 kernel series has a compressed read-only <span
+class=SpellE>filesystem</span> (<span class=SpellE>cramfs</span>) aimed at
+embedded systems, which can be back-ported to 2.2 kernels. If you're cross-
+developing, you need to modify </span><span class=SpellE><tt><span lang=EN-US
+style='font-size:10.0pt'>mkcramfs</span></tt></span><span lang=EN-US> to swap
+between little and big <span class=SpellE>endian</span>.</span></p>
+
+<p><span lang=EN-US>It turns out that <span class=SpellE>cramfs</span> is not
+supported for a root <span class=SpellE>fs</span> or <span class=SpellE>initrd</span>.
+Basically, the kernel checks a <span class=SpellE>hardcoded</span> list of
+supported <span class=SpellE>filesystems</span> and if the MAGIC number doesn't
+match it bails.</span></p>
+
+<h2><span lang=EN-US>13.5. <span class=SpellE><span class=GramE>ramfs</span></span></span></h2>
+
+<p><span class=SpellE><span class=GramE><span lang=EN-US>ramfs</span></span></span><span
+lang=EN-US> from the 2.4 kernel is a simple <span class=SpellE>filesystem</span>
+ideal for use in a <span class=SpellE>ramdisk</span>. It can be used in
+combination with a <span class=SpellE>cramfs</span> read-only root <span
+class=SpellE>filesystem</span>, to mount writable <span class=SpellE>filesystems</span>
+on </span><tt><span lang=EN-US style='font-size:10.0pt'>/<span class=SpellE>tmp</span></span></tt><span
+lang=EN-US> and </span><tt><span lang=EN-US style='font-size:10.0pt'>/<span
+class=SpellE>var</span></span></tt><span lang=EN-US>, which typically need to
+be writable. This combination is ideal for systems which don't require
+persistent storage.</span></p>
+
+<h2><span lang=EN-US>13.6. Journaling Flash <span class=SpellE><span
+class=GramE>FileSystem</span></span><span class=GramE>(</span>JFFS)</span></h2>
+
+<p><span lang=EN-US><a href="http://www.developer.axis.com/software/jffs/"
+target="_top">http://www.developer.axis.com/software/jffs/</a></span></p>
+
+<p><span lang=EN-US>JFFS allows persistent storage, <span class=SpellE>optimised</span>
+for flash memories rather than block devices like hard disks. It is aimed at
+providing a crash/<span class=SpellE>powerdown</span>-safe <span class=SpellE>filesystem</span>
+for disk-less embedded devices and is a better option than the <span
+class=SpellE>cramfs/ramfs</span> combination if your application requires
+persistent storage. You use it with the <a
+href="http://penguinppc.org/embedded/howto/device-drivers.html#MTD">MTD</a>
+subsystem.</span></p>
+
+<p class=MsoNormal><span lang=EN-US><o:p>&nbsp;</o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
