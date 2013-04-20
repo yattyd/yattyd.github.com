@@ -6,7 +6,7 @@ title: YaTTYD
 
 <table>
     <tr>
-        <td><a name="updates">Updates</a></td>
+        <td><a name="#updates">Updates</a></td>
     </tr>
 </table>
 + [Updates](#updates) 
