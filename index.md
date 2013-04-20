@@ -14,15 +14,12 @@ title: YaTTYD
         <td><a href="#contact">Contact</a></td>
     </tr>
 </table>
-
 ----------------------------------
-
 <p id="updates"></p>
 <a name="updates"></a>
 ## Updates 
 
 - Download the latest version [here](./Downloads/YaTTYD "Downloads"). Any comments or bugs report to [me](mailto:yattyd@gmail.com "E-mail") please.
-
 
 <p id="posts"></p>
 <a name="posts"></a>
