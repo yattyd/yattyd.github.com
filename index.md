@@ -15,7 +15,6 @@ title: YaTTYD
     </tr>
 </table>
 
-
 ----------------------------------
 
 <p id="updates"></p>
