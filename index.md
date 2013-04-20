@@ -7,6 +7,7 @@ title: YaTTYD
 <table>
     <tr>
         <td><a name="#updates">Updates</a></td>
+        <a href="#tips">有用的提示</a>
     </tr>
 </table>
 + [Updates](#updates) 
@@ -14,6 +15,7 @@ title: YaTTYD
 + [Links](#links)
 + [Contact](#contact)
 
+<a name="tips">基本的注意事项 - 有用的提示</a>
 ----------------------------------
 
 <p id="updates"></p>
