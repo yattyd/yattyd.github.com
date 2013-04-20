@@ -7,9 +7,9 @@ title: YaTTYD
 <table>
     <tr>
         <td><a href="#updates">Updates</a></td>
-        <td><a href="#posts">Updates</a></td>
-        <td><a href="#links">Updates</a></td>
-        <td><a href="#contact">Updates</a></td>
+        <td><a href="#posts">Posts</a></td>
+        <td><a href="#links">Links</a></td>
+        <td><a href="#contact">Contact</a></td>
     </tr>
 </table>
 
