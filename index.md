@@ -2,6 +2,8 @@
 layout: page
 title: YaTTYD
 ---
+<p id="top"></p>
+
 {% include JB/setup %}
 
 <table>
@@ -13,7 +15,6 @@ title: YaTTYD
     </tr>
 </table>
 
-+ [Bottom](#bottom)
 
 ----------------------------------
 
@@ -72,3 +73,4 @@ title: YaTTYD
 <!-- END: Powered by Supercounters.com -->
 
 <p id="bottom"></p>
++ [Top](#top)
