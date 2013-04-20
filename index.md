@@ -7,17 +7,16 @@ title: YaTTYD
 <table>
     <tr>
         <td><a href="#updates">Updates</a></td>
-        <td><a href="#tips">有用的提示</a></td>
+        <td><a href="#posts">Updates</a></td>
+        <td><a href="#links">Updates</a></td>
+        <td><a href="#contact">Updates</a></td>
     </tr>
 </table>
-+ [Updates](#updates) 
-+ [My Posts](#posts)
-+ [Links](#links)
-+ [Contact](#contact)
+
++ [Bottom](#bottom)
 
 ----------------------------------
 
-<a name="tips">基本的注意事项 - 有用的提示</a>
 <p id="updates"></p>
 <a name="updates"></a>
 ## Updates 
@@ -26,6 +25,7 @@ title: YaTTYD
 
 
 <p id="posts"></p>
+<a name="posts"></a>
 ## My Posts 
 
 
@@ -38,6 +38,7 @@ title: YaTTYD
 
 
 <p id="links"></p>
+<a name="links"></a>
 ##Links 
 
 - [Google][1]
@@ -54,6 +55,7 @@ title: YaTTYD
   [6]: ./links "more links"
 
 <p id="contact"></p>
+<a name="contact"></a>
 ##Contact Info   
 - [E-Mail: yattyd@gmail.com][11]
   [11]: mailto:yattyd@gmail.com    "E-mail"
@@ -68,3 +70,5 @@ title: YaTTYD
 
 <!-- END: Powered by Supercounters.com -->
 <!-- END: Powered by Supercounters.com -->
+
+<p id="bottom"></p>
