@@ -1,0 +1,1506 @@
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+
+
+
+
+<link rel=File-List href="Linux%202.6内核中Driver开发的34个新变化_files/filelist.xml">
+<title> </title>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:UseWord2002TableStyleRules/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" LatentStyleCount="156">
+ </w:LatentStyles>
+</xml><![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:宋体;
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-alt:SimSun;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+@font-face
+	{font-family:Georgia;
+	panose-1:2 4 5 2 5 4 5 2 3 3;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"\@宋体";
+	panose-1:2 1 6 0 3 1 1 1 1 1;
+	mso-font-charset:134;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:3 135135232 16 0 262145 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin:4.5pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:18.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	color:black;
+	mso-font-kerning:0pt;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+h2
+	{mso-style-next:Normal;
+	margin-top:11.25pt;
+	margin-right:0cm;
+	margin-bottom:11.25pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:14.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.75pt;
+	margin-right:0cm;
+	margin-bottom:12.75pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:4;
+	font-size:10.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+h5
+	{mso-style-next:Normal;
+	margin-top:12.75pt;
+	margin-right:0cm;
+	margin-bottom:12.75pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:5;
+	font-size:8.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+h6
+	{mso-style-next:Normal;
+	margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:18.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	mso-outline-level:6;
+	font-size:8.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:24.0pt;
+	margin-right:4.5pt;
+	margin-bottom:6.0pt;
+	margin-left:4.5pt;
+	mso-pagination:widow-orphan;
+	font-size:36.0pt;
+	font-family:Verdana;
+	mso-fareast-font-family:Verdana;
+	mso-bidi-font-family:"Times New Roman";
+	color:black;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	font-weight:bold;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{margin-top:18.0pt;
+	margin-right:4.5pt;
+	margin-bottom:4.0pt;
+	margin-left:4.5pt;
+	mso-pagination:widow-orphan;
+	font-size:24.0pt;
+	font-family:Georgia;
+	mso-fareast-font-family:Georgia;
+	mso-bidi-font-family:Georgia;
+	color:#666666;
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	font-style:italic;}
+@page Section1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 72.0pt 72.0pt 72.0pt;
+	mso-header-margin:35.4pt;
+	mso-footer-margin:35.4pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Times New Roman";
+	mso-ansi-language:#0400;
+	mso-fareast-language:#0400;
+	mso-bidi-language:#0400;}
+</style>
+<![endif]-->
+</head>
+
+<body lang=ZH-CN style='tab-interval:36.0pt'>
+
+<div class=Section1>
+
+<p class=MsoNormal style='margin-top:4.5pt;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:0cm'>&nbsp;</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr>
+  <td valign=top style='border:none black 1.0pt;mso-border-alt:none black 0cm;
+  background:white;mso-shading:white;mso-pattern:solid white;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+  style='mso-bidi-font-family:Verdana'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td valign=top style='border:none black 1.0pt;border-top:none;mso-border-top-alt:
+  none black 0cm;mso-border-alt:none black 0cm;background:white;mso-shading:
+  white;mso-pattern:solid white;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+  style='mso-bidi-font-family:Verdana'>Linux 2.6内核中Driver开发的34个新变化</span></b><span
+  style='mso-bidi-font-family:Verdana'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-lastrow:yes'>
+  <td valign=top style='border:none black 1.0pt;border-top:none;mso-border-top-alt:
+  none black 0cm;mso-border-alt:none black 0cm;background:white;mso-shading:
+  white;mso-pattern:solid white;padding:0cm 0cm 0cm 0cm'>
+  <p class=MsoNormal align=right style='margin:0cm;margin-bottom:.0001pt;
+  text-align:right'><span style='mso-bidi-font-family:Verdana'>[ 2008-6-14
+  13:35:00 | By: 夏虫 ]<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt;line-height:115%'><o:p>&nbsp;</o:p></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-yfti-tbllook:1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:
+ .5pt solid windowtext;mso-border-insidev:.5pt solid windowtext'>
+ <tr style='mso-yfti-lastrow:yes;height:2.0pt'>
+  <td valign=top style='border:none black 1.0pt;mso-border-alt:none black 0cm;
+  background:white;mso-shading:white;mso-pattern:solid white;padding:0cm 0cm 0cm 0cm;
+  height:2.0pt'>
+  <p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+  style='mso-bidi-font-family:Verdana'>&nbsp;<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>1、 使用新的入口</span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>必须包含<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>module_init(your_init_func);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>module_exit(your_exit_func);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：int init_module(void);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void cleanup_module(voi);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2.4中两种都可以用，对如后面的入口函数不必要显示包含任何头文件。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>2、 GPL<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>MODULE_LICENSE(&quot;Dual
+BSD/GPL&quot;);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>老版本：</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'>MODULE_LICENSE(&quot;GPL&quot;);</span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>3、 模块参数<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>必须显式包含<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>module_param(name, type,
+perm);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>module_param_named(name,
+value, type, perm);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>参数定义<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>module_param_string(name,
+string, len, perm);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>module_param_array(name,
+type, num, perm);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：MODULE_PARM(variable,type);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>MODULE_PARM_DESC(variable,type);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>4、 模块别名<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>MODULE_ALIAS(&quot;alias-name&quot;);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>这是新增的，在老版本中需在</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'>/etc/modules.conf</span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>配置，现在在代码中就可以实现。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>5、 模块计数<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>int
+try_module_get(&amp;module);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>module_put();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>老版本：</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'>MOD_INC_USE_COUNT </span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>和</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'> MOD_DEC_USE_COUNT</span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>6、 符号导出<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>只有显示的导出符号才能被其他模块使用，默认不导出所有的符号，不必使用EXPORT_NO_SYMBOLS<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老板本：默认导出所有的符号，除非使用EXPORT_NO_SYMBOLS<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>7、 内核版本检查<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>需要在多个文件中包含时，不必定义__NO_VERSION__<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：在多个文件中包含时，除在主文件外的其他文件中必须定义__NO_VERSION__，防止版本重复定义。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>8、 设备号<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>kdev_t被废除不可用，新的dev_t拓展到了32位，12位主设备号，20位次设备号。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int iminor(struct
+inode *inode);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int imajor(struct
+inode *inode);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：8位主设备号，8位次设备号<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int MAJOR(kdev_t dev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int MINOR(kdev_t dev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>9、 内存分配头文件变更<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>所有的内存分配函数包含在头文件，而原来的不存在<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：内存分配函数包含在头文件<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>10、 结构体的初试化<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>gcc开始采用ANSI C的struct结构体的初始化形式：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>static struct some_structure
+= {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>.field1 = value,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>.field2 = value,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：非标准的初试化形式<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>static struct some_structure
+= {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>field1: value,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>field2: value,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>...<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>11、 用户模式帮助器<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>int
+call_usermodehelper(char *path, char **argv, char **envp,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>int wait);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>新增</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'>wait</span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>参数<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>12、
+request_module()<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>request_module(&quot;foo-device-%d&quot;,
+number);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>char module_name[32];<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>printf(module_name,
+&quot;foo-device-%d&quot;, number);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>request_module(module_name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>13、 dev_t引发的字符设备的变化<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、取主次设备号为<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned iminor(struct inode
+*inode);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned imajor(struct inode
+*inode);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、老的register_chrdev()用法没变，保持向后兼容，但不能访问设备号大于256的设备。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>3、新的接口为<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>a)注册字符设备范围<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+register_chrdev_region(dev_t from, unsigned count, char *name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>b)动态申请主设备号<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+alloc_chrdev_region(dev_t *dev, unsigned baseminor, unsigned count, char
+*name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>看了这两个函数郁闷吧^_^！怎么和file_operations结构联系起来啊？别急！<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>c)包含 ，利用struct cdev和file_operations连接<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct cdev
+*cdev_alloc(void);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void cdev_init(struct cdev
+*cdev, struct file_operations *fops);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int cdev_add(struct cdev
+*cdev, dev_t dev, unsigned count);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>（分别为，申请cdev结构，和fops连接，将设备加入到系统中！好复杂啊！）<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>d)void
+cdev_del(struct cdev *cdev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>只有在</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'>cdev_add</span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>执行成功才可运行。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>e)辅助函数<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>kobject_put(&amp;cdev-&gt;kobj);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct kobject
+*cdev_get(struct cdev *cdev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void cdev_put(struct cdev
+*cdev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>这一部分变化和新增的/sys/dev有一定的关联。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>14、 新增对/proc的访问操作<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>以前的/proc中只能得到string,
+seq_file操作能得到如long等多种数据。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>相关函数：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>static struct seq_operations
+必须实现这个类似file_operations得数据中得各个成员函数。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>seq_printf()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int seq_putc(struct seq_file
+*m, char c);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int seq_puts(struct seq_file
+*m, const char *s);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int seq_escape(struct
+seq_file *m, const char *s, const char *esc);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int seq_path(struct seq_file
+*m, struct vfsmount *mnt,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct dentry *dentry, char
+*esc);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>seq_open(file,
+&amp;ct_seq_ops);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>等等<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>15、 底层内存分配<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、头文件改为<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、分配标志GFP_BUFFER被取消，取而代之的是GFP_NOIO
+和 GFP_NOFS<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>3、新增__GFP_REPEAT，__GFP_NOFAIL，__GFP_NORETRY分配标志<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>4、页面分配函数alloc_pages()，get_free_page()被包含在中<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>5、对NUMA系统新增了几个函数：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>a) struct page *alloc_pages_node(int
+node_id,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int gfp_mask,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int order);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>b) void free_hot_page(struct
+page *page);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>c) void
+free_cold_page(struct page *page);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>6、 新增Memory pools<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>mempool_t
+*mempool_create(int min_nr,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>mempool_alloc_t *alloc_fn,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>mempool_free_t *free_fn,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void *pool_data);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+*mempool_alloc(mempool_t *pool, int gfp_mask);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void mempool_free(void
+*element, mempool_t *pool);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int mempool_resize(mempool_t
+*pool, int new_min_nr, int gfp_mask);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>16、 per-CPU变量<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>get_cpu_var();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>put_cpu_var();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void *alloc_percpu(type);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void free_percpu(const void
+*);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>per_cpu_ptr(void *ptr, int
+cpu)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>get_cpu_ptr(ptr)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>put_cpu_ptr(ptr)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本使用<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DEFINE_PER_CPU(type, name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>EXPORT_PER_CPU_SYMBOL(name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>EXPORT_PER_CPU_SYMBOL_GPL(name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DECLARE_PER_CPU(type, name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DEFINE_PER_CPU(int,
+mypcint);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2.6内核采用了可剥夺得调度方式这些宏都不安全。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>17、 内核时间变化<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、现在的各个平台的HZ为<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>Alpha: 1024/1200; ARM:
+100/128/200/1000; CRIS: 100; i386: 1000; IA-64: 1024; M68K: 100; M68K-nommu:
+50-1000; MIPS: 100/128/1000; MIPS64: 100; PA-RISC: 100/1000; PowerPC32: 100;
+PowerPC64: 1000; S/390: 100; SPARC32: 100; SPARC64: 100; SuperH: 100/1000; UML:
+100; v850: 24-100; x86-64: 1000.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、由于HZ的变化，原来的jiffies计数器很快就溢出了，引入了新的计数器jiffies_64<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>3、＃i nclude<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>u64 my_time =
+get_jiffies_64();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>4、新的时间结构增加了纳秒成员变量<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct timespec
+current_kernel_time(void);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>5、他的timer函数没变，新增<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void add_timer_on(struct
+timer_list *timer, int cpu);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>6、新增纳秒级延时函数<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>ndelay()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>7、POSIX clocks 参考kernel/posix-timers.c<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>18、 工作队列（workqueue）<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、任务队列（task queue ）接口函数都被取消，新增了workqueue接口函数<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct workqueue_struct
+*create_workqueue(const char *name);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DECLARE_WORK(name, void
+(*function)(void *), void *data);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>INIT_WORK(struct work_struct
+*work,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void (*function)(void *),
+void *data);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>PREPARE_WORK(struct
+work_struct *work,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void (*function)(void *),
+void *data);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、申明struct work_struct结构<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int queue_work(struct
+workqueue_struct *queue,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct work_struct *work);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+queue_delayed_work(struct workqueue_struct *queue,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct work_struct *work,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long delay);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+cancel_delayed_work(struct work_struct *work);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void flush_workqueue(struct
+workqueue_struct *queue);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void destroy_workqueue(struct
+workqueue_struct *queue);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int schedule_work(struct
+work_struct *work);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+schedule_delayed_work(struct work_struct *work, unsigned long delay);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>19、 新增创建VFS的&quot;libfs&quot;<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>libfs给创建一个新的文件系统提供了大量的API.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>主要是对struct file_system_type的实现。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>参考源代码：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>drivers/hotplug/pci_hotplug_core.c<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>drivers/usb/core/inode.c<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>drivers/oprofile/oprofilefs.c<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>fs/ramfs/inode.c<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>fs/nfsd/nfsctl.c
+(simple_fill_super() example)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>20、 DMA的变化<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>未变化的有：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+*pci_alloc_consistent(struct pci_dev *dev, size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>dma_addr_t *dma_handle);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+pci_free_consistent(struct pci_dev *dev, size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void *cpu_addr, dma_addr_t
+dma_handle);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>变化的有：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、 void
+*dma_alloc_coherent(struct device *dev, size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>dma_addr_t *dma_handle, int
+flag);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+dma_free_coherent(struct device *dev, size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void *cpu_addr, dma_addr_t
+dma_handle);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、列举了映射方向：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>enum dma_data_direction {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DMA_BIDIRECTIONAL = 0,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DMA_TO_DEVICE = 1,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DMA_FROM_DEVICE = 2,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>DMA_NONE = 3,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>3、单映射<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>dma_addr_t
+dma_map_single(struct device *dev, void *addr,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>enum dma_data_direction direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void dma_unmap_single(struct
+device *dev, dma_addr_t dma_addr,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>enum dma_data_direction
+direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>4、页面映射<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>dma_addr_t
+dma_map_page(struct device *dev, struct page *page,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long offset, size_t
+size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>enum dma_data_direction direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void dma_unmap_page(struct
+device *dev, dma_addr_t dma_addr,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>enum dma_data_direction
+direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>5、有关scatter/gather的函数：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int dma_map_sg(struct device
+*dev, struct scatterlist *sg,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int nents, enum
+dma_data_direction direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void dma_unmap_sg(struct
+device *dev, struct scatterlist *sg,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int nhwentries, enum
+dma_data_direction direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>6、非一致性映射（Noncoherent DMA
+mappings）<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+*dma_alloc_noncoherent(struct device *dev, size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>dma_addr_t *dma_handle, int
+flag);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void dma_sync_single_range(struct
+device *dev, dma_addr_t dma_handle,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long offset, size_t
+size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>enum dma_data_direction
+direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+dma_free_noncoherent(struct device *dev, size_t size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void *cpu_addr, dma_addr_t
+dma_handle);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>7、DAC (double address cycle)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int pci_dac_set_dma_mask(struct
+pci_dev *dev, u64 mask);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+pci_dac_dma_sync_single(struct pci_dev *dev,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>dma64_addr_t dma_addr,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>size_t len, int direction);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>21、 互斥<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>新增seqlock主要用于：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、少量的数据保护<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、数据比较简单(没有指针)，并且使用频率很高<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>3、对不产生任何副作用的数据的访问<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>4、访问时写者不被饿死<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>初始化<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>seqlock_t lock1 =
+SEQLOCK_UNLOCKED;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>或seqlock_t lock2;
+seqlock_init(&amp;lock2);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void write_seqlock(seqlock_t
+*sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_sequnlock(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+write_tryseqlock(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_seqlock_irqsave(seqlock_t *sl, long flags);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_sequnlock_irqrestore(seqlock_t *sl, long flags);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_seqlock_irq(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_sequnlock_irq(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_seqlock_bh(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+write_sequnlock_bh(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int
+read_seqbegin(seqlock_t *sl);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int read_seqretry(seqlock_t
+*sl, unsigned int iv);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int
+read_seqbegin_irqsave(seqlock_t *sl, long flags);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+read_seqretry_irqrestore(seqlock_t *sl, unsigned int iv, long flags);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>22、 内核可剥夺<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>preempt_disable()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>preempt_enable_no_resched()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>preempt_enable_noresched()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>preempt_check_resched()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>23、 眠和唤醒<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、原来的函数可用，新增下列函数：<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>prepare_to_wait_exclusive()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>prepare_to_wait()；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、等待队列的变化<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>typedef int
+(*wait_queue_func_t)(wait_queue_t *wait,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned mode, int sync);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+init_waitqueue_func_entry(wait_queue_t *queue,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>wait_queue_func_t func);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>24、 新增完成事件（completion
+events）<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>init_completion(&amp;my_comp);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+wait_for_completion(struct completion *comp);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void complete(struct
+completion *comp);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void complete_all(struct
+completion *comp);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>25、 RCU（Read-copy-update）<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>rcu_read_lock();<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void call_rcu(struct
+rcu_head *head, void (*func)(void *arg),<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void *arg);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>26、 中断处理<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、中断处理有返回值了。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>IRQ_RETVAL(handled)；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、cli(), sti(),
+save_flags(), 和 restore_flags()不再有效，应该使用local_save_flags() 或local_irq_disable()。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>3、synchronize_irq()函数有改动<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>4、新增int
+can_request_irq(unsigned int irq, unsigned long flags);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>5、 request_irq() 和free_irq()
+从改到了<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>27、 异步I/O(AIO)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'><o:p>&nbsp;</o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>ssize_t (*aio_read) (struct
+kiocb *iocb, char __user *buffer,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>size_t count, loff_t pos);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>ssize_t (*aio_write) (struct
+kiocb *iocb, const char __user *buffer,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>size_t count, loff_t pos);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int (*aio_fsync) (struct
+kiocb *, int datasync);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>新增到了file_operation结构中。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>is_sync_kiocb(struct kiocb
+*iocb)；<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int aio_complete(struct
+kiocb *iocb, long res, long res2);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>28、 网络驱动<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、struct net_device
+*alloc_netdev(int sizeof_priv, const char *name,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void (*setup)(struct
+net_device *));<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct net_device
+*alloc_etherdev(int sizeof_priv);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、新增NAPI(New API)<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+netif_rx_schedule(struct net_device *dev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void
+netif_rx_complete(struct net_device *dev);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int netif_rx_ni(struct
+sk_buff *skb);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>(老版本为netif_rx())<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>29、 USB驱动<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>老版本struct usb_driver取消了，新的结构体为<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct usb_class_driver {<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>char *name;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct file_operations
+*fops;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>mode_t mode;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int minor_base;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>};<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int usb_submit_urb(struct
+urb *urb, int mem_flags);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int (*probe) (struct
+usb_interface *intf,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>const struct usb_device_id
+*id);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>30、 block
+I/O 层<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>这一部分做的改动最大。不祥叙。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>31、 mmap()<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int remap_page_range(struct
+vm_area_struct *vma, unsigned long from,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long to, unsigned
+long size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>pgprot_t prot);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int
+io_remap_page_range(struct vm_area_struct *vma, unsigned long from,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long to, unsigned
+long size,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>pgprot_t prot);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct page
+*(*nopage)(struct vm_area_struct *area,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long address,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int *type);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int (*populate)(struct
+vm_area_struct *area, unsigned long address,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long len, pgprot_t
+prot, unsigned long pgoff,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int nonblock);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int install_page(struct
+mm_struct *mm, struct vm_area_struct *vma,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long addr, struct
+page *page,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>pgprot_t prot);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct page
+*vmalloc_to_page(void *address);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>32、 零拷贝块I/O(Zero-copy
+block I/O)<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct bio
+*bio_map_user(struct block_device *bdev,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long uaddr,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned int len,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int write_to_vm);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>void bio_unmap_user(struct
+bio *bio, int write_to_vm);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int get_user_pages(struct
+task_struct *task,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct mm_struct *mm,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>unsigned long start,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int len,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int write,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>int force,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct page **pages,<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>struct vm_area_struct
+**vmas);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>33、 高端内存操作kmaps<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>void
+*kmap_atomic(struct page *page, enum km_type type);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>void
+kunmap_atomic(void *address, enum km_type type);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>struct page
+*kmap_atomic_to_page(void *address);<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>老版本：</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'>kmap() </span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>和</span><span
+style='mso-bidi-font-family:Verdana;color:#333333'> kunmap()</span><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><b><span
+style='font-size:12.0pt;mso-bidi-font-family:Verdana;color:#333333'>34、 驱动模型<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>主要用于设备管理。<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>1、 sysfs<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin:0cm;margin-bottom:.0001pt'><span
+style='mso-bidi-font-family:Verdana;color:#333333'>2、 Kobjects<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>
