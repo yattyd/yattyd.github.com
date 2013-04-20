@@ -6,7 +6,7 @@ title: YaTTYD
 
 <table>
     <tr>
-        <td><a name="#updates">Updates</a></td>
+        <td><a href="#updates">Updates</a></td>
         <td><a href="#tips">有用的提示</a></td>
     </tr>
 </table>
