@@ -1,6 +1,7 @@
 ---
 layout: default
 title: K&R itoa.c
+date: 2006-09-16
 ---
 
 # {{ page.title }}
