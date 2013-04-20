@@ -4,6 +4,14 @@ title: YaTTYD
 ---
 {% include JB/setup %}
 
+<table>
+    <tr>
+        <td>[Updates](#updates)</td>
+	<td>[My Posts](#posts)</td>
+	<td>[Links](#links)</td>
+	<td>[Contact](#contact)</td>
+    </tr>
+</table>
 + [Updates](#updates) 
 + [My Posts](#posts)
 + [Links](#links)
