@@ -6,7 +6,8 @@ title: Links
 
 # {{ page.title }}
 
-- <http://www.kernel.org/> ~~~ <ftp://ftp.kernel.org/pub/linux/kernel/v3.x/ftp://ftp.kernel.org/pub/linux/kernel/v3.x/>
+- <http://www.kernel.org/>
+- <ftp://ftp.kernel.org/pub/linux/kernel/v3.x/ftp://ftp.kernel.org/pub/linux/kernel/v3.x/>
 - <http://www.denx.de/wiki/U-Boot> ~~~ <ftp://ftp.denx.de/pub/u-boot/>
 - <http://www.gnu.org/software/make/manual/make.html> ~~~ <http://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html>
 - <http://opensource.apple.com/source/> ~~~ <http://www.opensource.apple.com/>
@@ -23,6 +24,7 @@ title: Links
 - <http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/>
 - <http://www.cs.princeton.edu/~bwk/>
 - <http://c-faq.com/> ~~~ <http://c-faq-chn.sourceforge.net/ccfaq/index.html>
+- <http://www.w3school.com/> ~~~ <http://www.w3school.com.cn/>
 
 #### 中文 Zh-cn
 - <http://www.linuxeden.com/>
@@ -33,7 +35,6 @@ title: Links
 - <http://china21.com/>                                         
 - <http://os.51cto.com/col/957/>
 - <http://delphi32bit.bitbucket.org/vcl.vclxx.com/DELPHIGB/DEFAULT.HTM>
-- <http://www.w3school.com.cn/>
                                                                       
 #### Even more
 - [Hardware][101]
