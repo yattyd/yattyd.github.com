@@ -3,9 +3,7 @@ layout: page
 title: YaTTYD
 ---
 <p id="top"></p>
-
 {% include JB/setup %}
-
 <table width="100%">
     <tr>
         <td><a href="#updates">Updates</a></td>
