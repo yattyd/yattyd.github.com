@@ -26,7 +26,65 @@ title: My favorite batch scripts
     C:\Windows\System32\netsh advfirewall set allprofiles state off
     C:\Windows\System32\netsh advfirewall set allprofiles state on
     pause
+
+### run-vs.bat
+
+    REM Starts SlickEdit and creates a versioned Configuration
+    REM Directory in the SlickEdit installation directory.
+    set SlickEdit=c:\usr\bin\SlickEditV14.0.2
+    start %SlickEdit%\win\vs.exe -sc %SlickEdit%\config\
     
+### open-cygwin-here.reg
+
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CLASSES_ROOT\Directory\shell\bash]
+    @="Open Bash Shell Here"
+    
+    [HKEY_CLASSES_ROOT\Directory\shell\bash\command]
+    @="c:\\cygwin\\bin\\bash.exe --login -i -c 'cd \"`cygpath \"$*\"`\";bash' bash %L"
+    
+    [HKEY_CLASSES_ROOT\Drive\shell\bash]
+    @="Open Bash Shell Here"
+    
+    [HKEY_CLASSES_ROOT\Drive\shell\bash\command]
+    @="c:\\cygwin\\bin\\bash.exe --login -i -c 'cd \"`cygpath \"$*\"`\";bash' bash %L"
+    
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\mintty_bash]
+    @="Open MinTTY Bash Shell Here"
+    
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\mintty_bash\command]
+    @="C:\\cygwin\\bin\\mintty.exe -e c:\\cygwin\\bin\\bash -c \"/bin/xhere /bin/bash.exe '%L'\""
+    
+### path-completion.reg
+    
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Command Processor]
+    "AutoRun"=""
+    "CompletionChar"=dword:00000009
+    "PathCompletionChar"=dword:00000009
+
+### remote-desktop-port.reg
+
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\TerminalServer\WinStations\RDP-Tcp\PortNumber]
+    @="33089"
+
+### search-win2k-style.reg
+
+    Windows Registry Editor Version 5.00
+    
+    [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\CabinetState]
+    "Use Search Asst"="0"
+    
+    [HKEY_CURRENT_USER\Control Panel\Desktop]
+    "MenuShowDelay"="0"
+    
+    [HKEY_CURRENT_USER\Control Panel\Desktop\WindowMetrics]
+    "MinAnimate"="0"
+            
 ### nx.bat
 
     REM net use ?
