@@ -22,6 +22,7 @@ title: Using NETSH command
 ### nx.bat
 
     rem net use ?
+    rem user-name: bar; password: foo.
     net use * /delete /yes
     net use x: \\192.168.1.101\pub foo /USER:bar /PERSISTENT:NO
     net use x: \\192.168.1.102\pub foo /USER:bar /PERSISTENT:NO
