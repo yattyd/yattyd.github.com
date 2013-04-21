@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using NETSH command 
+title: My favorite batch scripts
 ---
 
 # {{ page.title }}
@@ -21,11 +21,16 @@ title: Using NETSH command
 
 ### nx.bat
 
-    rem net use ?
-    rem user-name: bar; password: foo.
+    REM net use ?
+    REM user-name: bar; password: foo.
     net use * /delete /yes
     net use x: \\192.168.1.101\pub foo /USER:bar /PERSISTENT:NO
     net use y: \\192.168.1.102\pub foo /USER:bar /PERSISTENT:NO
+    REM =========================================================
+    net share pub /DELETE
+    net share pub=e:\pub
+    net share tftpboot /DELETE
+    net share tftpboot=e:\tftpboot
     pause 
     
 ### nx-vbox.bat
@@ -34,6 +39,27 @@ title: Using NETSH command
     subst   a: \\Vboxsvr\my_pub 
     subst   b: \\Vboxsvr\pub
     pause 
+
+### ln-s.bat
+
+    copy .\bin\SysinternalsSuite\junction.exe c:\windows
+    junction.exe -d c:\usr 
+    junction.exe -d c:\home
+    junction.exe -d c:\tmp
+    junction.exe -d c:\opt\d
+    junction.exe -d c:\opt
+    junction.exe -d c:\tftpboot
+    junction.exe -d c:\pub
+    
+    mkdir c:\d
+    
+    junction.exe c:\usr         e:\usr
+    junction.exe c:\opt         e:\opt
+    junction.exe c:\home        e:\home
+    junction.exe c:\tmp         e:\tmp
+    junction.exe c:\tftpboot    e:\tftpboot
+    junction.exe c:\pub         e:\pub
+    pause
 
 ## Usage
     
