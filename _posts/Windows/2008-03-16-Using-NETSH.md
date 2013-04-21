@@ -26,7 +26,7 @@ title: My favorite batch scripts
     net use * /delete /yes
     net use x: \\192.168.1.101\pub foo /USER:bar /PERSISTENT:NO
     net use y: \\192.168.1.102\pub foo /USER:bar /PERSISTENT:NO
-    REM =========================================================
+    
     net share pub /DELETE
     net share pub=e:\pub
     net share tftpboot /DELETE
