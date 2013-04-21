@@ -12,7 +12,7 @@ title: QQ 下载
 
 
 - [QQ视频桌面版 (老年人适用)][202]
-
+- MD5: 34c0648abd669fd1e08536c1b84de004 *QQVideoDesktop1.0final.exe
   [202]: ./QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
 
 
