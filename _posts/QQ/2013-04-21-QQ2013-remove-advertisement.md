@@ -15,7 +15,7 @@ title: QQ2013 去广告
 ### QQ本地下载
 
 - [QQ视频桌面版 (老年人适用)][202]
-- 34c0648abd669fd1e08536c1b84de004 *QQVideoDesktop1.0final.exe
+- MD5: 34c0648abd669fd1e08536c1b84de004 *QQVideoDesktop1.0final.exe
 
   [202]: /Downloads/QQ/QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
 
