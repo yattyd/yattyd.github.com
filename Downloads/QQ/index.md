@@ -7,7 +7,6 @@ title: QQ2013 去广告
 # {{ page.title }}
 
 
-- [qq2013去广告.7z][301]
-
-
-  [301]: ./qq2013去广告.7z          "qq2013去广告.7z"
+- qq2013最新版去广告教程 <http://jingyan.baidu.com/article/b87fe19edb86d852183568a2.html>
+- QQ2013如何去广告？ <http://jingyan.baidu.com/article/48b37f8d40b6c71a646488cf.html>
+ 
