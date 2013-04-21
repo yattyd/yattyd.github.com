@@ -19,6 +19,21 @@ title: Using NETSH command
     netsh set dns name="Local Area Connection" source=static addr=8.8.8.8 
     pause
 
+### nx.bat
+
+    rem net use ?
+    net use * /delete /yes
+    net use x: \\192.168.1.101\pub foo /USER:bar /PERSISTENT:NO
+    net use x: \\192.168.1.102\pub foo /USER:bar /PERSISTENT:NO
+    pause 
+    
+### nx-vbox.bat
+    subst   a: /D
+    subst   b: /D
+    subst   a: \\Vboxsvr\my_pub 
+    subst   b: \\Vboxsvr\pub
+    pause 
+
 ## Usage
     
     Usage: netsh [-a AliasFile] [-c Context] [-r RemoteMachine] 
