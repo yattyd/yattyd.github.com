@@ -25,7 +25,7 @@ title: Using NETSH command
     rem user-name: bar; password: foo.
     net use * /delete /yes
     net use x: \\192.168.1.101\pub foo /USER:bar /PERSISTENT:NO
-    net use x: \\192.168.1.102\pub foo /USER:bar /PERSISTENT:NO
+    net use y: \\192.168.1.102\pub foo /USER:bar /PERSISTENT:NO
     pause 
     
 ### nx-vbox.bat
