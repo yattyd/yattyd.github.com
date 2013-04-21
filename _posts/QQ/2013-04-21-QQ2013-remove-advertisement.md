@@ -16,7 +16,7 @@ title: QQ2013 去广告
 
 - [QQ视频桌面版 (老年人适用)][202]
 
-  [202]: ./QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
+  [202]: /Downloads/QQ/QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
 
 
 -----------------------------------------------
