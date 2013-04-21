@@ -18,7 +18,15 @@ title: My favorite batch scripts
     netsh interface ip set address name="Local Area Connection" static 192.168.2.101 255.255.255.0 192.168.2.1 1
     netsh set dns name="Local Area Connection" source=static addr=8.8.8.8 
     pause
+    
+### set-firewall.bat
 
+    rem C:\Windows\System32\netsh.exe firewall set opmode disable
+    rem C:\Windows\System32\netsh.exe firewall set opmode enable
+    C:\Windows\System32\netsh advfirewall set allprofiles state off
+    C:\Windows\System32\netsh advfirewall set allprofiles state on
+    pause
+    
 ### nx.bat
 
     REM net use ?
@@ -59,6 +67,17 @@ title: My favorite batch scripts
     junction.exe c:\tmp         e:\tmp
     junction.exe c:\tftpboot    e:\tftpboot
     junction.exe c:\pub         e:\pub
+    pause
+
+### right_click_menu_add.bat
+
+    reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\dos" /f
+    reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cygwin_mintty" /f
+    reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\cygwin" /f
+    pause
+    
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\dos" /ve /d DOS-Prompt(^&Y) /f
+    reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Classes\Directory\shell\dos\command" /ve /d "cmd.exe /k cd %%1" /f
     pause
 
 ## Usage
