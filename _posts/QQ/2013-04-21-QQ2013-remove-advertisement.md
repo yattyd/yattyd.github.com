@@ -10,6 +10,16 @@ title: QQ2013 去广告
 - qq2013最新版去广告教程 <http://jingyan.baidu.com/article/b87fe19edb86d852183568a2.html>
 - QQ2013如何去广告？ <http://jingyan.baidu.com/article/48b37f8d40b6c71a646488cf.html>
 
+#### rm-adv.bat
+
+    REM replace 1234567890 with your QQ number
+    set QQ_NUM=123456780
+    del %appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db
+    mkdir %appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db 
+    dir %appdata%\Tencent\Users\%QQ_NUM%\QQ\
+    pause    
+
+
 -----------------------------------------------
 
 ### QQ本地下载
