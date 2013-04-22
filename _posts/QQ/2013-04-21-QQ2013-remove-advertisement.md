@@ -19,7 +19,15 @@ title: QQ2013 去广告
     dir %appdata%\Tencent\Users\%QQ_NUM%\QQ\
     pause    
 
+#### rm-adv2.bat
 
+    REM set your QQ installation director, "E:\bin" for example
+    REM set PROG_INST=%ProgramFiles%
+    set PROG_INST=E:\bin
+    rem del %PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb
+    copy nul  %PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb
+    pause
+    
 -----------------------------------------------
 
 ### QQ本地下载
