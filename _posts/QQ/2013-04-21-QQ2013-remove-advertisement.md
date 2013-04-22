@@ -19,7 +19,8 @@ title: QQ2013 去广告
 
   [202]: /Downloads/QQ/QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
 
-+ [Reference scripts](#scripts)
+- [Reference scripts](#scripts)
+
 -----------------------------------------------
 ### QQ官方下载
 
