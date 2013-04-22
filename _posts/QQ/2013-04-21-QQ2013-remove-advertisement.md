@@ -41,11 +41,11 @@ title: QQ2013 去广告
     pause    
 
 #### rm-adv2.bat
-
-    REM set your QQ installation director, "E:\bin" for example
+    REM Ensure that all QQ instances are NOT running
+    REM set your QQ installation directory, "E:\bin" for example
     REM set PROG_INST=%ProgramFiles%
     set PROG_INST=E:\bin
     rem del %PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb
-    copy nul  %PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb
+    copy NUL %PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb
     pause
     
