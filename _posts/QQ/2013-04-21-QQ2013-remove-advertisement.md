@@ -35,12 +35,17 @@ title: QQ2013 去广告
 #### rm-adv.bat
 
     REM replace 1234567890 with your QQ number
+    REM 把下面一行的 1234567890 换成你自己的qq号码
     set QQ_NUM=123456780
     del %appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db
     mkdir %appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db 
     dir %appdata%\Tencent\Users\%QQ_NUM%\QQ\
     pause    
 
+- [点击下载][203]
+
+  [203]: /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
+  
 #### rm-adv2.bat
     REM Ensure that all QQ instances are NOT running
     REM set your QQ installation directory, "E:\bin" for example
