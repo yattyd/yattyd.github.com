@@ -9,6 +9,7 @@ title: QQ2013 去广告
 
 - qq2013最新版去广告教程 <http://jingyan.baidu.com/article/b87fe19edb86d852183568a2.html>
 - QQ2013如何去广告？ <http://jingyan.baidu.com/article/48b37f8d40b6c71a646488cf.html>
+- [Reference scripts](#scripts)
 
 -----------------------------------------------
 
@@ -18,8 +19,6 @@ title: QQ2013 去广告
 - MD5: 34c0648abd669fd1e08536c1b84de004 *QQVideoDesktop1.0final.exe
 
   [202]: /Downloads/QQ/QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
-
-- [Reference scripts](#scripts)
 
 -----------------------------------------------
 ### QQ官方下载
