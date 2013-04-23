@@ -42,7 +42,7 @@ title: QQ2013 去广告
     dir "%appdata%\Tencent\Users\%QQ_NUM%\QQ\"
     pause    
 
-- [点击下载][203]
+- [下载][203]
 
   [203]: /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
   
@@ -56,6 +56,6 @@ title: QQ2013 去广告
     copy NUL "%PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb"
     pause
     
-- [点击下载][204]
+- [下载][204]
 
   [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
