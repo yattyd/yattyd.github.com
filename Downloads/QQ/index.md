@@ -24,3 +24,15 @@ title: QQ 下载
 - QQ视频桌面版(Senior 适用) <http://dldir1.qq.com/qqfile/qqvideo/QQVideoDesktop1.0final.exe>
 - 所有版本 <http://im.qq.com/qq/all.shtml>
 
+-----------------------------------------------
+### Scripts 下载
+
+- [rm-adv.bat][203]
+
+  [203]: /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
+  
+    
+- [rm-adv2.bat][204]
+
+  [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
+
