@@ -79,8 +79,9 @@ title: "QQ2013 去广告"
     {
     	char line[1024], *p;
     	fgets(line, 1024, stdin);
-    	p  = strstr(line, "\r\n");
-    	if (p != NULL)  *p = '\0';
+    	if (line == NULL) {return -1;}
+    	p = strstr(line, "\r\n");
+    	if (p != NULL) {*p = '\0';}
     	printf(line);
     	return 0;
     }
