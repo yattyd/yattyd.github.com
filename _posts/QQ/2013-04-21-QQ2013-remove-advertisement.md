@@ -44,9 +44,12 @@ title: "QQ2013 去广告"
     pause    
 
 - [下载][203]
-- <a href="#read">read.exe</a>
+- [read.exe][2031]
+
+- <a href="#read">read.c</a>
 
   [203]: /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
+  [2031]: /Downloads/QQ/read.exe   "read.exe"
   
 #### rm-adv2.bat
     REM Ensure that all QQ instances are NOT running
