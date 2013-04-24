@@ -3,7 +3,7 @@ layout: default
 title: "astyle 参数" 
 ---
 
-# {{ page.title }}
+{{ page.title }}
 
 
     -s4 --indent=spaces=4                             四个空格缩进
