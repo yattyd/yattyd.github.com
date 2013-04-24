@@ -37,6 +37,7 @@ title: "QQ2013 去广告"
     REM replace 1234567890 with your QQ number
     REM 把下面一行的 1234567890 换成你自己的qq号码
     set QQ_NUM=123456780
+    REM for /f  %%i in ('read.exe -d') do set QQ_NUM=%%i
     del "%appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db"
     mkdir "%appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db" 
     dir "%appdata%\Tencent\Users\%QQ_NUM%\QQ\"
@@ -61,10 +62,7 @@ title: "QQ2013 去广告"
   [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
 
 #### read.c
-    #include <stdlib.h>     
     #include <stdio.h>     
-    #include <string.h>     
-    #include <unistd.h>
          
     int readline(char *line, int siz)
     {
@@ -79,6 +77,7 @@ title: "QQ2013 去广告"
     	}	
     	return 0;
     } 
+
     int main(int argc, char **argv)
     {
     	char line[1024];
