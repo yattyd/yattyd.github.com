@@ -44,6 +44,7 @@ title: "QQ2013 去广告"
     pause    
 
 - [下载][203]
+- <a href="#read">read.exe</a>
 
   [203]: /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
   
@@ -61,6 +62,7 @@ title: "QQ2013 去广告"
 
   [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
 
+<a name="read"></a>
 #### read.c
     #include <stdio.h>     
          
