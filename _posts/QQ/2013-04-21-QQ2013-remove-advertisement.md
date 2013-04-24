@@ -1,7 +1,6 @@
 ---
 layout: default
-title: QQ2013 去广告 
-tag:QQ
+title: "QQ2013 去广告" 
 ---
 
 # {{ page.title }}
@@ -60,3 +59,60 @@ tag:QQ
 - [下载][204]
 
   [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
+  
+#### rm-adv3.c
+    #include <stdlib.h>     
+    #include <stdio.h>     
+    #include <string.h>     
+    #include <unistd.h>
+         
+    int readline(char *line, int siz)
+    {
+    	char *p;
+    	
+    	fgets(line, siz, stdin);
+    	for (p=line; *p; ++p) {
+    	        if (*p == '\r' || *p == '\n') {
+    			*p = '\0';
+    			break;		
+    		}
+    	}	
+    	return 0;
+    } 
+     
+    int main(int argc, char **argv)
+    {
+    	int err;
+    	char cmdline[256], path[256];
+    	char qq[32];
+    	char *p;
+    	char *appdata = getenv("APPDATA");  
+    
+    	printf("Your QQ number:");
+    	readline(qq, sizeof(qq));
+    	
+    	snprintf(path, sizeof(path), 
+    		"\"%s\\Tencent\\Users\\%s\\QQ\\Misc.db\"", 
+    		appdata, qq);
+    	{
+    		snprintf(cmdline, sizeof(cmdline), "del %s", path);
+    		printf("%s\n", cmdline);
+    		system(cmdline);
+    	}
+    	{
+    		snprintf(cmdline, sizeof(cmdline), "mkdir %s", path);
+    		printf("%s\n", cmdline);
+    		system(cmdline);
+    	}
+    	//err = unlink(cmdline);
+    	//printf("err=%d\n", err);
+    	//mkdir(cmdline);	
+    		     
+    	return 0;
+    }
+    
+- [下载][205]
+
+  [204]: /Downloads/QQ/rm-adv3.7z    "rm-adv3"
+
+  
