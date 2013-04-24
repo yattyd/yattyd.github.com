@@ -34,24 +34,27 @@ title: "QQ2013 去广告"
 
 #### rm-adv.bat
 
+    @echo off
     REM replace 1234567890 with your QQ number
     REM 把下面一行的 1234567890 换成你自己的qq号码
     set QQ_NUM=123456780
     
-    REM echo 请输入QQ号码：
+    REM echo 请输入QQ号码 (Please enter your QQ id):
     REM for /f  %%i in ('read.exe -d') do set QQ_NUM=%%i
+    REM echo Your QQ ID is ``%QQ_NUM%``
     
     del "%appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db"
     mkdir "%appdata%\Tencent\Users\%QQ_NUM%\QQ\Misc.db" 
     dir "%appdata%\Tencent\Users\%QQ_NUM%\QQ\"
-    pause    
+    pause   
+     
 
 - [下载][203]
 - [read.exe][2031]
 - <a href="#read">read.c</a>
 
-  [203]: /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
-  [2031]: /Downloads/QQ/read.exe   "read.exe"
+  [203]:  /Downloads/QQ/rm-adv.bat    "rm-adv.bat"
+  [2031]: /Downloads/QQ/read.exe      "read.exe"
   
 #### rm-adv2.bat
     REM Ensure that all QQ instances are NOT running
