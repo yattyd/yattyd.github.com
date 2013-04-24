@@ -59,7 +59,35 @@ title: "QQ2013 去广告"
 - [下载][204]
 
   [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
-  
+
+#### read.c
+    #include <stdlib.h>     
+    #include <stdio.h>     
+    #include <string.h>     
+    #include <unistd.h>
+         
+    int readline(char *line, int siz)
+    {
+    	char *p;
+    	
+    	fgets(line, siz, stdin);
+    	for (p=line; *p; ++p) {
+    	        if (*p == '\r' || *p == '\n') {
+    			*p = '\0';
+    			break;		
+    		}
+    	}	
+    	return 0;
+    } 
+    int main(int argc, char **argv)
+    {
+    	char line[1024];
+    	readline(line, 1024);
+    	printf(line);
+    	return 0;
+    }
+
+
 #### rm-adv3.c
     #include <stdlib.h>     
     #include <stdio.h>     
@@ -83,9 +111,7 @@ title: "QQ2013 去广告"
     int main(int argc, char **argv)
     {
     	int err;
-    	char cmdline[256], path[256];
-    	char qq[32];
-    	char *p;
+    	char cmdline[256], path[256], qq[32];
     	char *appdata = getenv("APPDATA");  
     
     	printf("Your QQ number:");
