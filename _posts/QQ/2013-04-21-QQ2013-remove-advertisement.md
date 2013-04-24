@@ -64,6 +64,7 @@ title: "QQ2013 去广告"
 
 <a name="read"></a>
 #### read.c
+    /* compiling: tcc read.c -o read.exe */
     #include <stdio.h>     
          
     int readline(char *line, int siz)
