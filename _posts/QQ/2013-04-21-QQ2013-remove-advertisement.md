@@ -74,19 +74,13 @@ title: "QQ2013 去广告"
 #### read.c
     /* compiling: tcc read.c -o read.exe */
     #include <stdio.h>     
-         
-    int readline(char *line, int siz)
+    #include <string.h>
+             
+    void readline(char *line, int siz)
     {
-    	char *p;
-    	
     	fgets(line, siz, stdin);
-    	for (p=line; *p; ++p) {
-    	        if (*p == '\r' || *p == '\n') {
-    			*p = '\0';
-    			break;		
-    		}
-    	}	
-    	return 0;
+    	line  = strstr(line, "\r\n");
+    	if (line != NULL)  *line = '\0';
     } 
 
     int main(int argc, char **argv)
