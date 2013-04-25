@@ -7,6 +7,10 @@ categories: "日常"
 
 # {{ page.title }}
 
+### 由来
+
+~!@#$%^&*()...
+
 ### 教程
 
 - qq2013最新版去广告教程 <http://jingyan.baidu.com/article/b87fe19edb86d852183568a2.html>
