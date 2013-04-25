@@ -82,7 +82,7 @@ categories: "日常"
 	 * sample code in batch file:
 	 *   @echo off 
 	 *   echo Please input (...): 
-	 *   for /f  %%i in ('read.exe -d') do set IN_STR=%%i
+	 *   for /f  %%i in ('read.exe') do set IN_STR=%%i
 	 *   echo %IN_STR% 
 	 */
 	#include <stdio.h>     
