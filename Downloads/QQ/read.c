@@ -1,4 +1,10 @@
-/* compiling: tcc read.c -o read.exe */
+/* compiling: tcc read.c -o read.exe 
+ * sample code in batch file:
+ *   @echo off 
+ *   echo Please input (...): 
+ *   for /f  %%i in ('read.exe -d') do set IN_STR=%%i
+ *   echo %IN_STR% 
+ */
 #include <stdio.h>     
 #include <string.h>
 int main(int argc, char **argv)
