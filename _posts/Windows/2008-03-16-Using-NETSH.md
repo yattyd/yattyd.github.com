@@ -1,6 +1,7 @@
 ---
 layout: default
 title: My favorite batch scripts
+tag: "Win"
 ---
 
 # {{ page.title }}
