@@ -5,6 +5,7 @@ tags: "C"
 categories: "Training"
 ---
 
+# {{ page.title }}
 
 	dbg_printf("0x%04X\r\n", __TCPLUSPLUS__);
 	dbg_printf("0x%04X\r\n", __BCPLUSPLUS__);
