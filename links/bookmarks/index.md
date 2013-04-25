@@ -2,6 +2,7 @@
 layout: default
 date: 2006-08-16
 title: Bookmarks
+categories: "Links"
 ---
 
 # {{ page.title }}
