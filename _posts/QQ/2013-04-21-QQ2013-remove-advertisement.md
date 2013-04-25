@@ -143,6 +143,6 @@ tag: "IM"
 
 - [Tiny CC][501]
   
-  [501] http://www.tinycc.org/    "tinyc"
+  [501]: http://www.tinycc.org/    "tinyc"
   
   
