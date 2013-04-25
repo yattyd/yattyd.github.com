@@ -25,6 +25,10 @@ categories: "日常"
 - MD5: 34c0648abd669fd1e08536c1b84de004 *QQVideoDesktop1.0final.exe
 
   [202]: /Downloads/QQ/QQVideoDesktop1.0final.exe    "QQVideoDesktop1.0final.exe"
+  
+- [more][2021]
+
+  [2021]: /Downloads/QQ   "QQ"  
 
 -----------------------------------------------
 ### QQ官方下载
