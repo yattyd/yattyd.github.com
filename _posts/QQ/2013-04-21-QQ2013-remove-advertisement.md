@@ -143,8 +143,6 @@ tag: "IM"
 
 - [Tiny CC][501]
   
-  [501] http://bellard.org/tcc/    "tinyc"
+  [501] http://www.tinycc.org/    "tinyc"
   
-- [Google][1]
-  [1]: http://google.com/         "Google"
   
