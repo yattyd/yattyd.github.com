@@ -12,3 +12,9 @@ categories: "Training"
 	dbg_printf("0x%04X\r\n", __BORLANDC__);
 	dbg_printf("0x%04X\r\n", __TURBOC__);
 	
+	0x0621
+	0x0621
+	0x0621
+	0x0621
+
+	
