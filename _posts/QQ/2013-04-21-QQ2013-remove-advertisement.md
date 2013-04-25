@@ -1,6 +1,7 @@
 ---
 layout: default
-title: "QQ2013 去广告" 
+title: "QQ2013 去广告"
+tag: "IM" 
 ---
 
 # {{ page.title }}
