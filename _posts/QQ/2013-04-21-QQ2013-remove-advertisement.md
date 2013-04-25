@@ -2,6 +2,7 @@
 layout: default
 title: "QQ2013 去广告"
 tag: "IM" 
+categories: "日常"
 ---
 
 # {{ page.title }}

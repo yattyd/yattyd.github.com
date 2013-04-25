@@ -3,6 +3,7 @@ layout: default
 date: 2006-08-16
 title: ??__init?__initdata?__exit?__exitdata?????
 tag: "Linux"
+categories: "Driver"
 ---
 
 # {{ page.title }}

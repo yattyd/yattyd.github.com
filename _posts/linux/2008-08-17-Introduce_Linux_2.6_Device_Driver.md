@@ -3,6 +3,7 @@ layout: default
 date: 2008-08-17
 title: 详细介绍 Linux 2.6 设备的驱动模型
 tag: "Linux"
+categories: "Driver"
 ---
 
 # {{ page.title }}

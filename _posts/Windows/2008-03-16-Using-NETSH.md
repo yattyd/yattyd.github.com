@@ -2,6 +2,7 @@
 layout: default
 title: My favorite batch scripts
 tag: "Win"
+categories: "网络"
 ---
 
 # {{ page.title }}
