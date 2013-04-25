@@ -1,0 +1,1012 @@
+---
+layout: default
+title: "Pre-defined C/C++ Compiler Macros"
+---
+
+# {{ page.title }}
+
+<http://beefchunk.com/documentation/lang/c/pre-defined-c/precomp.html>
+
+
+<!DOCTYPE doctype PUBLIC "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="generator" content="DocBook XSL Stylesheets V1.40">
+  <meta name="GENERATOR" content="Mozilla/4.51 [en] (X11; I; Linux 2.2.7 i686) [Netscape]">
+  <title>Pre-defined C/C++ Compiler Macros</title>
+</head>
+<body>
+<center>
+<h1> Pre-defined C/C++ Compiler Macros</h1>
+</center>
+<hr>
+<h2> Compilers</h2>
+Most compilers defines macros to indicate the compiler and its version.
+These are useful to avoid bugs in certain compiler versions, or to check
+for the existance of certain features.
+<blockquote>&nbsp;
+  <table nosave="" border="1">
+    <tbody>
+      <tr>
+        <th>Name</th>
+        <th>Macro</th>
+        <th>Version</th>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.borland.com/borlandcpp/" target="_top">Borland
+Turbo C</a></td>
+        <td>__TURBOC__</td>
+        <td>__TURBOC__&nbsp;
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Turbo C</th>
+              <th>__TURBOC__</th>
+            </tr>
+            <tr>
+              <td align="center">2.0</td>
+              <td align="center">397</td>
+            </tr>
+            <tr>
+              <td align="center">3.0</td>
+              <td align="center">661</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.inprise.com/bcppbuilder/freecompiler/" target="_top">Borland C++</a></td>
+        <td>__BORLANDC__</td>
+        <td>__BORLANDC__&nbsp;
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Borland C++</th>
+              <th>C++ Builder</th>
+              <th>__BORLANDC__</th>
+            </tr>
+            <tr>
+              <td align="center">2.0</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">0x200</td>
+            </tr>
+            <tr>
+              <td align="center">3.0</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">0x400</td>
+            </tr>
+            <tr>
+              <td align="center">3.1</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">0x410</td>
+            </tr>
+            <tr>
+              <td align="center">4.0</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">0x452</td>
+            </tr>
+            <tr>
+              <td align="center">5.0</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">0x500</td>
+            </tr>
+            <tr>
+              <td align="center">5.02</td>
+              <td align="center">1.0</td>
+              <td align="center">0x520</td>
+            </tr>
+            <tr>
+              <td align="center">&nbsp;</td>
+              <td align="center">3.0</td>
+              <td align="center">0x530</td>
+            </tr>
+            <tr>
+              <td align="center">&nbsp;</td>
+              <td align="center">4.0</td>
+              <td align="center">0x540</td>
+            </tr>
+            <tr>
+              <td align="center">5.5</td>
+              <td align="center">5.0</td>
+              <td align="center">0x550</td>
+            </tr>
+            <tr>
+              <td align="center">5.51</td>
+              <td align="center">&nbsp;</td>
+              <td align="center">0x551</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.comeaucomputing.com/" target="_top">Comeau
+C++</a></td>
+        <td>__COMO__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__COMO_VERSION__ = VRR</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Comeau C++</th>
+              <th>__COMO_VERSION__</th>
+            </tr>
+            <tr>
+              <td align="center">2.30</td>
+              <td align="center">230</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.openvms.compaq.com/openvms/brochures/deccplus/" target="_top">Compaq C</a></td>
+        <td>__DECC <br>
+VAXC <br>
+__VAXC</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__DECC_VER = VVRRTPPPP</td>
+              <td>VV = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>T = Type (9 = official)</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>PPPP = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>DEC C</th>
+              <th>__DECC_VER</th>
+            </tr>
+            <tr>
+              <td align="center">6.0-001</td>
+              <td align="center">60090001</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>The older bundled DEC C compiler does not define __DECC.
+Instead the following can be used </p>
+        <pre>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__osf__) &amp;&amp; defined(__LANGUAGE_C__)<br>&nbsp;&nbsp;&nbsp;&nbsp; /* Old DEC C compiler */<br>&nbsp;&nbsp;&nbsp;&nbsp; #endif<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td>Compaq C++</td>
+        <td>__DECCXX</td>
+        <td>As __DECC (using __DECCXX_VER)</td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.cray.com/products/software/cplus.html" target="_top">Cray C/C++</a></td>
+        <td>_CRAYC</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>_REVISION = V</td>
+              <td>V = Version</td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.cygwin.com/" target="_top">Cygwin</a></td>
+        <td>__CYGWIN__</td>
+        <td>?</td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.windriver.com/products/html/dcc_compiler.html" target="_top">Diab C/C++</a></td>
+        <td>__DCC__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__VERSION_NUMBER__ = VRPP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>PP = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Diab C/C++</th>
+              <th>__VERSION_NUMBER__</th>
+            </tr>
+            <tr>
+              <td align="center">4.4q</td>
+              <td align="center">4426</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.digitalmars.com/" target="_top">Digital
+Mars</a> <br>
+Symatec C++ <br>
+Zortech C++</td>
+        <td>__DMC__ <br>
+__SC__ <br>
+__ZTC__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__DMC__ = 0xVRP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>P = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Digital Mars</th>
+              <th>__DMC__</th>
+            </tr>
+            <tr>
+              <td align="center">7.0</td>
+              <td align="center">0x700</td>
+            </tr>
+            <tr>
+              <td align="center">7.2</td>
+              <td align="center">0x720</td>
+            </tr>
+            <tr>
+              <td align="center">8.0</td>
+              <td align="center">0x800</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://gcc.gnu.org/" target="_top">GCC</a></td>
+        <td>__GNUC__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__GNUC__</td>
+              <td>Version</td>
+            </tr>
+            <tr>
+              <td>__GNUC_MINOR__</td>
+              <td>Revision</td>
+            </tr>
+            <tr>
+              <td>__GNUC_PATCHLEVEL__</td>
+              <td>Patch (Introduced with version 3.x)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>GCC</th>
+              <th>__GNUC__</th>
+              <th>__GNUC_MINOR__</th>
+              <th>__GNUC_PATCHLEVEL__</th>
+            </tr>
+            <tr>
+              <td align="center">2.7.x</td>
+              <td align="center">2</td>
+              <td align="center">7</td>
+              <td align="center"><br>
+              </td>
+            </tr>
+            <tr>
+              <td align="center">3.0.2</td>
+              <td align="center">3</td>
+              <td align="center">0</td>
+              <td align="center">2</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>If you prefer a single version macro, you can define the
+following. </p>
+        <blockquote>
+          <pre>#if defined(__GNUC__)<br># if defined(__GNU_PATCHLEVEL__)<br>#&nbsp; define __GNUC_VERSION__ (__GNUC__ * 10000 \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + __GNUC_MINOR__ * 100 \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + __GNUC_PATCHLEVEL__)<br># else<br>#&nbsp; define __GNUC_VERSION__ (__GNUC__ * 10000 \<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; + __GNUC_MINOR__ * 100)<br># endif<br>#endif</pre>
+        </blockquote>
+The syntax of this new macro is: <br>
+&nbsp;
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__GNUC_VERSION__ = VVRRPP</td>
+              <td>VV = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>PP = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>GCC</th>
+              <th>__GNUC_VERSION__</th>
+            </tr>
+            <tr>
+              <td align="center">2.7.x</td>
+              <td align="center">20700</td>
+            </tr>
+            <tr>
+              <td align="center">3.0.2</td>
+              <td align="center">30002</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://devresource.hp.com/devresource/Tools/lang.html" target="_top">HP ANSI C / aC++</a></td>
+        <td>__HP_cc <br>
+__HP_aCC</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__HP_aCC = VVRRPP</td>
+              <td>VV = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>PP = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>HP aC++</th>
+              <th>__HP_aCC</th>
+            </tr>
+            <tr>
+              <td align="center">A.01.21</td>
+              <td align="center">012100</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>The __HP_aCC macro was introduced in version A.01.15 (and
+A.03.13), where it is set to 1. Beginning with version A.01.21 (and
+A.03.25) __HP_aCC is set as above. </p>
+        <p>The C compiler defines the __HP_cc macro, and the C++
+compiler the __HP_aCC macro.</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.ibm.com/software/ad/caix/" target="_top">IBM
+xlC</a></td>
+        <td>__xlC__ <br>
+__IBMC__ <br>
+__IBMCPP__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__xlC__ = 0xVVRR</td>
+              <td>VV = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>IBM xlC</th>
+              <th>__xlC__</th>
+            </tr>
+            <tr>
+              <td align="center">3.1</td>
+              <td align="center">0x0301</td>
+            </tr>
+            <tr>
+              <td align="center">5.0</td>
+              <td align="center">0x0500</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>Older versions of xlC does not define any of these macros,
+but can be detected with </p>
+        <pre>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(_AIX) &amp;&amp; !defined(__GNUC__)<br>&nbsp;&nbsp;&nbsp;&nbsp; /* Old xlC compiler */<br>&nbsp;&nbsp;&nbsp;&nbsp; #endif<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.intel.com/software/products/index.htm" target="_top">Intel</a></td>
+        <td>__INTEL_COMPILER <br>
+__ICC</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__INTEL_COMPILER = VRP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>P = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Intel C</th>
+              <th>__INTEL_COMPILER</th>
+            </tr>
+            <tr>
+              <td align="center">4.0</td>
+              <td align="center">400</td>
+            </tr>
+            <tr>
+              <td align="center">5.0</td>
+              <td align="center">500</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://developer.intel.com/software/products/kcc/" target="_top">KAI C++</a></td>
+        <td>__KCC</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__KCC_VERSION = 0xVRPP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>PP = Patch (a = 01, b = 02, ...)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>KAI C++</th>
+              <th>__KCC_VERSION</th>
+            </tr>
+            <tr>
+              <td align="center">4.0d</td>
+              <td align="center">4004</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>Please note that Intel has has <a href="http://developer.intel.com/software/products/kcc/announcement.htm" target="_top">discontinued</a> development of the KAI C++ compiler in
+spring 2002.</p>
+        </td>
+      </tr>
+      <tr nosave="">
+        <td nosave="" valign="top"><a href="http://www.cs.virginia.edu/%7Elcc-win32/">LCC</a></td>
+        <td>__LCC__</td>
+        <td>?</td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.metaware.com/" target="_top">MetaWare
+High C/C++</a></td>
+        <td>__HIGHC__</td>
+        <td>?</td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.metrowerks.com/platforms/" target="_top">Metrowerks
+Codewarrior</a></td>
+        <td>__MWERKS__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__MWERKS__ = 0xVRPP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>PP = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Metrowerks C/C++</th>
+              <th>__MWERKS__</th>
+            </tr>
+            <tr>
+              <td align="center">2.0</td>
+              <td align="center">0x2000</td>
+            </tr>
+            <tr>
+              <td align="center">2.2</td>
+              <td align="center">0x2200</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>Starting with CodeWarrior 7 __MWERKS__ is defined as above
+(prior versions defined __MWERKS__ to 1).</p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.mingw.org/" target="_top">MinGW</a></td>
+        <td>__MINGW32__</td>
+        <td>?</td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.sgi.com/developers/devtools/languages/mipspro.html" target="_top">MIPSpro</a></td>
+        <td>sgi <br>
+__sgi</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__COMPILER_VERSION = VRP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>P = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>MIPSpro</th>
+              <th>__COMPILER_VERSION</th>
+            </tr>
+            <tr>
+              <td align="center">6.0.2</td>
+              <td align="center">602</td>
+            </tr>
+            <tr>
+              <td align="center">7.2.1</td>
+              <td align="center">721</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://developer.apple.com/tools/mpw-tools/" target="_top">MPW C++</a></td>
+        <td>__MRC__ <br>
+MPW_C <br>
+MPW_CPLUS</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__MRC__ = 0xVVRR</td>
+              <td>VV = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>MPW C++</th>
+              <th>__MRC__</th>
+            </tr>
+            <tr>
+              <td align="center">5.0</td>
+              <td align="center">0x500</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://msdn.microsoft.com/visualc/" target="_top">MS
+Visual C++</a></td>
+        <td>_MSC_VER</td>
+        <td>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Visual C++</th>
+              <th>_MSC_VER</th>
+            </tr>
+            <tr>
+              <td align="center">1.0</td>
+              <td align="center">800</td>
+            </tr>
+            <tr>
+              <td align="center">3.0</td>
+              <td align="center">900</td>
+            </tr>
+            <tr>
+              <td align="center">4.0</td>
+              <td align="center">1000</td>
+            </tr>
+            <tr>
+              <td align="center">4.2</td>
+              <td align="center">1020</td>
+            </tr>
+            <tr>
+              <td align="center">5.0</td>
+              <td align="center">1100</td>
+            </tr>
+            <tr>
+              <td align="center">6.0</td>
+              <td align="center">1200</td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="" target="_top">Norcroft C</a></td>
+        <td>__CC_NORCROFT</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__ARMCC_VERSION = V.R</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Notice that the __ARMCC_VERSION macro is assigned a
+floating-point number, so it cannot be used by the preprocessor to
+compare versions.&nbsp; </p>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Norcroft C</th>
+              <th>__ARMCC_VERSION</th>
+            </tr>
+            <tr>
+              <td align="center">4.69</td>
+              <td align="center">4.69</td>
+            </tr>
+            <tr>
+              <td align="center">4.90</td>
+              <td align="center">4.90</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.sas.com/products/sasc/">SAS/C</a></td>
+        <td>SASC <br>
+__SASC <br>
+__SASC__</td>
+        <td>
+        <table width="100%">
+          <tbody>
+            <tr>
+              <td>__SASC__ = VRR <br>
+__VERSION__ =V <br>
+__REVISION__ = RR</td>
+              <td>V = Version <br>
+RR = Revision</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples </p>
+        <blockquote>&nbsp;
+          <table width="90%">
+            <tbody>
+              <tr>
+                <th>SAS/C</th>
+                <th>__SASC__</th>
+                <th>__VERSION__</th>
+                <th>__REVISION__</th>
+              </tr>
+              <tr align="center">
+                <td>5.10</td>
+                <td><br>
+                </td>
+                <td>5</td>
+                <td nosave="">10</td>
+              </tr>
+              <tr align="center">
+                <td>6.50</td>
+                <td>650</td>
+                <td><br>
+                </td>
+                <td><br>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.caldera.com/products/unixware/udk.html" target="_top">SCO OpenServer</a></td>
+        <td>_SCO_DS</td>
+        <td>N/A</td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.sun.com/forte/cplusplus/index.html" target="_top">Sun Workshop C/C++</a></td>
+        <td>__SUNPRO_C <br>
+__SUNPRO_CC</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__SUNPRO_C = 0xVRP</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>R = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>P = Patch</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Workshop Pro</th>
+              <th>__SUNPRO_C</th>
+            </tr>
+            <tr>
+              <td align="center">4.2</td>
+              <td align="center">0x420</td>
+            </tr>
+            <tr>
+              <td align="center">5.0</td>
+              <td align="center">0x500</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        <hr>
+        <p>__SUNPRO_C is defined when compiling C, and __SUNPRO_CC when
+compiling C++.&nbsp; </p>
+        <p>The version of the compiler can be determined from either of
+these macros, but is illustrated above for the __SUNPRO_C macro. It may
+be a good idea to define a version macro like this </p>
+        <pre>&nbsp;&nbsp;&nbsp;&nbsp; #if defined(__SUNPRO_C)<br>&nbsp;&nbsp;&nbsp;&nbsp; # define __SUNPRO_VERSION __SUNPRO_C<br>&nbsp;&nbsp;&nbsp;&nbsp; #elif defined(__SUNPRO_CC_<br>&nbsp;&nbsp;&nbsp;&nbsp; # define __SUNPRO_VERSION __SUNPRO_CC<br>&nbsp;&nbsp;&nbsp;&nbsp; #endif<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</pre>
+        </td>
+      </tr>
+      <tr>
+        <td style="vertical-align: top;"><a href="http://tinycc.org/">Tiny
+C</a><br>
+        </td>
+        <td style="vertical-align: top;">__TINYC__<br>
+        </td>
+        <td style="vertical-align: top;">Always set to 1<br>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://www.caldera.com/products/unixware/udk.html" target="_top">USL C</a></td>
+        <td>__USLC__</td>
+        <td>
+        <table border="0" width="100%">
+          <tbody>
+            <tr>
+              <td>__SCO_VERSION__ = 0xVRRYYYYMM</td>
+              <td>V = Version</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>RR = Revision</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>YYYY = Year</td>
+            </tr>
+            <tr>
+              <td><br>
+              </td>
+              <td>MM = Month</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>USL C</th>
+              <th>__SCO_VERSION</th>
+            </tr>
+            <tr>
+              <td align="center">3.2</td>
+              <td align="center">302199801</td>
+            </tr>
+          </tbody>
+        </table>
+        </p>
+        </td>
+      </tr>
+      <tr valign="top">
+        <td><a href="http://openwatcom.com/" target="_top">Watcom C++</a></td>
+        <td>__WATCOMC__</td>
+        <td>Examples <br>
+&nbsp;
+        <table width="100%">
+          <tbody>
+            <tr>
+              <th>Watcom C++</th>
+              <th>__WATCOMC__</th>
+            </tr>
+            <tr>
+              <td align="center">10.5</td>
+              <td align="center">1050</td>
+            </tr>
+            <tr>
+              <td align="center">11.0</td>
+              <td align="center">1100</td>
+            </tr>
+          </tbody>
+        </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</blockquote>
+<h3> Example: int8_t</h3>
+<blockquote>Expanding on the int8_t example from the Standards section.
+ <pre># if defined(_MSC_VER) &amp;&amp; (_MSC_VER &gt;= 1100)<br>typedef __int8 int8_t;<br># endif</pre>
+</blockquote>
+<hr>&nbsp;
+
+
+</body></html>
