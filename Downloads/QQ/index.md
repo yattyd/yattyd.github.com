@@ -36,8 +36,9 @@ title: QQ 下载
 
   [204]: /Downloads/QQ/rm-adv2.bat    "rm-adv2.bat"
 
-- [read.exe][205]  [src][2051]  [Compiler][501]
+- [read.exe][205]  [src][2051] [sample][2052]  [Compiler][501]
 
   [205]: /Downloads/QQ/read.exe    "read.exe"
   [2051]: /Downloads/QQ/read.c    "read.c"
+  [2051]: /Downloads/QQ/read-sample.bat   "read-sample.bat"
   [501]: http://www.tinycc.org/    "tinycc"
