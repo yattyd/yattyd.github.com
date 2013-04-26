@@ -40,5 +40,5 @@ title: QQ 下载
 
   [205]: /Downloads/QQ/read.exe    "read.exe"
   [2051]: /Downloads/QQ/read.c    "read.c"
-  [2051]: /Downloads/QQ/read-sample.bat   "read-sample.bat"
+  [2052]: /Downloads/QQ/read-sample.bat   "read-sample.bat"
   [501]: http://www.tinycc.org/    "tinycc"
