@@ -16,7 +16,7 @@ categories: "日常"
 - qq2013最新版去广告教程 <http://jingyan.baidu.com/article/b87fe19edb86d852183568a2.html>
 - QQ2013如何去广告？ <http://jingyan.baidu.com/article/48b37f8d40b6c71a646488cf.html>
 - [Reference scripts](#scripts)
-
+- 适用 QQ2013 新春版 （2013 Beta2 8056）<http://dldir1.qq.com/qqfile/qq/QQ2013/2013Beta2/8056/QQ2013Beta2.exe>
 -----------------------------------------------
 
 ### QQ本地下载
@@ -72,8 +72,9 @@ categories: "日常"
     REM set PROG_INST=E:\bin
     
     set PROG_INST=%ProgramFiles%
-    rem del "%PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb"
-    copy NUL "%PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb"
+    del "%PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb"
+    mkdir "%PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb"
+    rem copy NUL "%PROG_INST%\Tencent\QQ\Plugin\Com.Tencent.Advertisement\Bundle.rdb"
     pause
     
 - [下载][204]
