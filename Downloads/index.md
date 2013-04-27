@@ -15,3 +15,10 @@ title: Downloads
 
 - [QQ][401]
   [401]: ./QQ          "QQ"
+  
+- 解压 <http://www.7-zip.org/>
+- 编辑器 <http://www.pspad.com/en/>
+- 串口 <http://www.chiark.greenend.org.uk/~sgtatham/putty/>   
+- <http://www.cygwin.com/>
+- GNU utilities for Win32 <http://unxutils.sourceforge.net/>
+- <https://github.com/pclouds/busybox-w32>
