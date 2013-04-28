@@ -1,0 +1,2700 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=gb2312">
+<meta name=ProgId content=PowerPoint.Slide>
+<meta name=Generator content="Microsoft PowerPoint 11">
+<link id=Main-File rel=Main-File href="../Samsung-Bluetooth.htm">
+<link rel=Preview href=preview.wmf>
+<meta name=Robots content=NoIndex>
+<script src=script.js></script><script><!--
+
+if( !(IsWin("PPTOtl")||IsWin("PPTNav")||IsWin("PPTOtlNav")) )
+{
+	obj = GetObj("Main-File")
+	parent.location.href=obj.href
+}
+
+var gOtlHiliteClr="#ffffff",gOtlNormalClr="#000000",gOtlActiveClr="#ffff00",gSelected="",gTxtState=false,gChildEntryTable=new Array()
+
+function Load()
+{
+	if( IsWin("PPTOtl" ) ){ LoadOtl(); parent.gOtlLoaded=true; return }
+	if( g_supportsPPTHTML ) {
+		if( IsWin("PPTNav" ) ){ LoadNav("NavObj",UpdNav); parent.gNavLoaded=true; return }
+		if( IsWin("PPTOtlNav" ) ){ LoadNav("OtlNavObj",UpdOtlNav); parent.gOtlNavLoaded=true; return }
+	}
+}
+function Upd(){ if( IsWin("PPTNav") ) LoadNav("NavObj",UpdNav) }
+function LoadNav( oId,UpdFunc )
+{
+	document.ondragstart=CancelDrag
+	document.onselectstart=CancelDrag
+	document.body.style.margin=2
+	UpdFunc()
+	obj=document.all.item(oId)
+	obj.style.display="block"
+	obj.style.visibility="visible"
+	document.bgColor="threedface"
+
+	if( parent.frames["PPTNts"] )
+		notesBtn.style.display = ""
+	if( parent.gHasNarration )
+		nb_voiceBorder.style.display = ""
+}
+function LoadOtl()
+{
+	var otl=GetObj("OtlObj")
+	otl.style.display="block"
+	otl.style.visibility="visible"
+	if( gOtlActiveClr == "" ) gOtlActiveClr=document.linkColor
+	if( gOtlHiliteClr == "" ) gOtlHiliteClr=document.fgColor
+	if( gOtlNormalClr == "" )
+		gOtlNormalClr=document.bgColor
+	else
+		document.bgColor=gOtlNormalClr  
+
+	InitArray()
+
+	if( ObjExists( parent.gCurSld ) ) {
+		ChangeState( parent.gCurSld,gOtlNormalClr,gOtlHiliteClr )
+		gSelected=parent.gCurSld
+	}
+	else gSelected = -1
+
+	UpdOtl()
+}
+function UpdOtl(){ UpdIdx(parent.gCurSld) }
+function UpdIdx( idx )
+{
+	if( gSelected != idx ) {
+		if( gSelected > 0 )
+			ChangeState( gSelected,gOtlHiliteClr,gOtlNormalClr )
+
+		if( ObjExists( idx ) ) {
+			gSelected = idx
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+		}
+		else gSelected = -1
+	}
+
+	if( gTxtState != parent.gOtlTxtExp ) {
+		state = "block"
+		if( !parent.gOtlTxtExp )
+			state="none"
+
+		for(ii=0; ii<gChildEntryTable.length; ii++) {
+			obj=gChildEntryTable[ii];
+			if( obj.id == null ) continue;
+
+			if( obj.id.indexOf("PPTC") >= 0 )
+				obj.style.display=state;
+		} 
+		gTxtState=parent.gOtlTxtExp
+		if( ObjExists( gSelected ) )
+			ChangeState( gSelected,gOtlNormalClr,gOtlHiliteClr )
+	}
+}
+function InitArray()
+{
+	count=0
+	var list=GetTags(document,"DIV");
+	for(ii=0; ii<list.length; ii++) {
+		obj=list.item(ii)
+		if( obj.id == null ) continue
+
+		if( obj.id.indexOf("PPTC") >= 0 )  
+			gChildEntryTable[count++]=obj
+	}
+}
+function ChangeState( idx,fgColor,bgColor )
+{
+	obj=GetObj("PPTL"+idx)
+	obj.style.color=fgColor
+
+	obj=GetObj("PPTP"+idx)
+	obj.style.backgroundColor=bgColor
+}
+function ChgClr( o,clr ){ if( o.id != "PPTL"+gSelected ) o.style.color=clr }
+function Over( src ){ ChgClr(GetLink(src),gOtlActiveClr) }
+function Out( src ){ ChgClr(GetLink(src),gOtlHiliteClr) }
+function Follow(src){ window.location.href = GetLink(src).href; }
+function ObjExists( ii ) { obj=GetObj("PPTP"+ii ); return( obj ) }
+function GoToSld( href ){ UpdIdx(parent.GetSldNum(href)); parent.GoToSld( href ) }
+function CancelDrag(){ window.event.cancelBubble=true;window.event.returnValue=false}
+function GetLink(src)
+{
+   if(src.tagName=="A") return src
+   else return GetTags(src,"A").item(0)
+}
+
+function UpdNav()
+{
+	txt = "<center>";
+	if( parent.GetHrefObj( parent.gCurSld ).mOrigVis == 1 )
+		txt += "Slide " + parent.GetCurSldNum() + " of " + parent.GetNumSlds()
+	else
+		txt += "Hidden Slide"
+	txt += "</center>";
+	nav_text.innerHTML = txt;
+
+	if( !parent.HasPrevSld() )
+		gBtnArr["nb_prev"].Enabled(0)
+	else
+		gBtnArr["nb_prev"].Enabled(1)
+
+	if( !parent.HasNextSld() )
+		gBtnArr["nb_next"].Enabled(0)
+	else
+		gBtnArr["nb_next"].Enabled(1)
+	gBtnArr["nb_nts"].Enabled(1)
+	gBtnArr["nb_ntsBorder"].SetFlag( parent.gHasNts )
+
+	gBtnArr["nb_sldshw"].Enabled(1)
+	gBtnArr["nb_voice"].Enabled(1)
+}
+
+function ExecBtn()
+{
+	if (event.keyCode == 13)
+	{
+		BtnOnDown();
+		BtnOnUp();
+	}
+}
+function UpdOtlNav()
+{
+	gBtnArr["nb_otl"].SetEnabled();
+
+	if( parent.gOtlOpen )
+		gBtnArr["nb_otlTxt"].Enabled( true );
+	else
+		document.all.item("nb_otlTxtBorder").style.visibility = "hidden";
+}
+
+
+
+
+//--></script>
+<style>
+<!--.PTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;
+	padding-left:2px;
+	font-weight:bold;}
+.CTxt
+	{position:relative;
+	width:100%;
+	margin-top:5px;}
+a
+	{color:white;
+	text-decoration:none;}
+ul
+	{color:white;
+	margin-bottom:0px;
+	margin-left:20px;}
+.sldNum
+	{margin-top:5px;
+	color:white;}
+.button
+	{position:absolute;
+	width:32px;
+	height:20px;
+	border-style:solid;
+	border-width:1px;
+	border-color:threedface;}
+-->
+</style>
+</head>
+
+<body onload="Load()" style='margin:2px'>
+
+<div id=NavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+<table id="notesBtn" style='display:none;position:relative;width:55px' align=left cellpadding=0
+ cellspacing=0>
+ <td nowrap>
+ <div id="nb_ntsElem" title="Show/Hide
+Notes" align=center style='position:relative;margin-left:5px;margin-right:5px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt; cursor:default'>
+ <img src="notes_flag.gif" id="nb_nts" style='display:none'> &nbsp;Notes</div>
+ <div id="nb_ntsBorder" title ="Show/Hide
+Notes" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=1 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+
+ </div>
+ </td>
+</table>
+
+
+<table style='position:relative;width:70px' align=right cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_sldshwText" title="Full Screen Slide Show" align=center style='position:relative;margin-left:20px;padding:3px;
+ font-family:Arial;color:buttontext;font-size:9pt;cursor:default'>Slide
+Show</div>
+ <div id="nb_sldshwBorder" title="Full Screen Slide Show" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=5 style='position:absolute;top:0%;left:0%;width:100%;height:20px'>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_sldshw" style='position:relative;left:-254px'></div>
+ </div>
+ </td>
+ <td>
+ <div id="nb_voiceBorder" style='display:none;position:absolute;top:0;left:-40px;
+ width:20px;height:20px' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=4 class=button>
+ <div style='position:absolute;clip:rect(0px, 18px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_voice" title="Pause/Play Narration" style='position:
+ relative;left:-290px'></div>
+ </div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td nowrap>
+ <div id="nb_prevBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=2 class=button style='left:-30px'>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_prev" title="Previous Slide" style='position:relative;
+ left:0px'></div>
+ </div>
+ <span id="nav_text" style='position:relative;top:3px;width:100px;font-family:
+ Arial;color:buttontext;font-size:9pt'></span>
+ <div id="nb_nextBorder" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=3 class=button>
+ <div style='position:absolute;clip:rect(0px, 30px, 18px, 0px)'><img
+ src="buttons.gif" id="nb_next" title="Next Slide" style='position:relative;
+ left:-90px'></div>
+ </div>
+ </td>
+</table>
+</div>
+
+<div id=OtlNavObj onload="Load()" onmouseover="BtnOnOver()"
+onmousedown="BtnOnDown()" onmouseout="BtnOnOut()" onmouseup="BtnOnUp()"
+onkeypress="ExecBtn()" style='display:none;visibility:hidden'>
+
+<table style='position:relative;width:70px' align=left cellpadding=0 cellspacing=0>
+ <td nowrap><div title="Show/Hide
+Outline" id="nb_otl" onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=11
+ style='position:absolute;top:0%;left:0%;width:100%;height:100%;cursor:default'>
+ <div id="nb_otlElem" align=center style='position:relative;padding:3px;font-family:Arial;
+ color:buttontext;font-size:9pt'>Outline</div></div>
+ </td>
+</table>
+
+<table style='position:relative' align=center cellpadding=0 cellspacing=0>
+ <td>
+ <div style='position:absolute;left:-18px;width:24px;height:20px;border-style:
+ solid;border-width:1px;border-color:threedface' onfocus="BtnOnOver()" onblur="BtnOnOut()" TABINDEX=12 id="nb_otlTxtBorder">
+ <div style='position:absolute;clip:rect(0px, 22px, 18px, 0px)'><img
+ src=buttons.gif id="nb_otlTxt" title="Expand/Collapse Outline"
+ style='position:relative;left:-157px'></div>
+ </div>
+ </td>
+</table>
+
+</div>
+
+<div id=OtlObj style='display:none;visibility:hidden;'>
+
+
+<table width="100%" style='font-family:Arial;font-size:9pt'>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>1</font></div>
+  </td>
+  <td width="100%">
+  <div id=PPTP1 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0221.htm');" id=PPTL1>Introduction of
+  Bluetooth Technology</a></font></div>
+  <div id=PPTC1 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>WS KANG</li>
+   <li>Principal Engineer</li>
+   <li>Network Solution Lab.</li>
+   <li>Corporate R&amp;D Center</li>
+   <li>Samsung Electronics</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>2</font></div>
+  </td>
+  <td>
+  <div id=PPTP2 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0129.htm');" id=PPTL2>Who Started Bluetooth?</a></font></div>
+  <div id=PPTC2 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Bluetooth SIG (Special Interest Group) was formed in February 1998</li>
+   <ul>
+    <li>Ericsson</li>
+    <li>IBM</li>
+    <li>Intel</li>
+    <li>Nokia</li>
+    <li>Toshiba</li>
+    <li>Now 9 Promoter member<span style='mso-spacerun:yes'>&nbsp;
+        </span>3COM,LUCENT,MS ,Motorola (1999)</li>
+    <br>
+    <br>
+   </ul>
+   <li>There are 1800+ adopter companies</li>
+   <li>The Bluetooth SIG went “public” in May 1998</li>
+   <li>The Bluetooth SIG work (the spec: &gt;1,500 pages) became public on July
+       26, 1999</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>3</font></div>
+  </td>
+  <td>
+  <div id=PPTP3 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0130.htm');" id=PPTL3>The Bluetooth Technology</a></font></div>
+  <div id=PPTC3 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Creates an open industry standard to revolutionize wireless connectivity
+       for personal and mobile devices.</li>
+   <br>
+   <br>
+   <li>Substitutes a wireless air link for physical connections between
+       electronic devices located in a single area (the piconet).</li>
+   <br>
+   <br>
+   <li>Establishes rapid, ad-hoc connections between one or more devices with
+       required security (point to point, paired, or multipoint).</li>
+   <br>
+   <br>
+   <li>Permits instantaneous, effortless exchange of voice and data between
+       suitably configured devices (the profiles).</li>
+   <br>
+   <br>
+   <li>Accelerates the growth of mobile data connectivity.</li>
+   <br>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>4</font></div>
+  </td>
+  <td>
+  <div id=PPTP4 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0131.htm');" id=PPTL4>The Bluetooth Technology</a></font></div>
+  <div id=PPTC4 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Features</li>
+   <ul>
+    <li>Flexible network topology</li>
+    <li>Low energy consumption</li>
+    <li>Robust data</li>
+    <li>High quality voice transfer</li>
+   </ul>
+   <br>
+   <li>Bluetooth values			Trade Marked</li>
+   <ul>
+    <li>Freedom</li>
+    <li>Simplicity</li>
+    <li>Reliability</li>
+    <li>Versatility</li>
+    <li>Security</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>5</font></div>
+  </td>
+  <td>
+  <div id=PPTP5 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0132.htm');" id=PPTL5>What does Bluetooth do
+  for you?</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>6</font></div>
+  </td>
+  <td>
+  <div id=PPTP6 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0133.htm');" id=PPTL6>What is Bluetooth?</a></font></div>
+  <div id=PPTC6 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A Short Range Wireless Communication Technology</li>
+   <ul>
+    <li>Intended to create Personal Area Network or PAN(s)</li>
+    <li>Operating Range of 10 Meters(optional 100 meters mode)</li>
+   </ul>
+   <li>Operates in Free Scientific Communication Band</li>
+   <ul>
+    <li>2.4 GHz to 2.5 GHz</li>
+   </ul>
+   <li>Provides Multiple Levels of Security</li>
+   <ul>
+    <li>Frequency Hopping</li>
+    <li>Data Whitening</li>
+    <li>Data Encoding</li>
+    <li>Data Encryption</li>
+   </ul>
+   <li>Targeted at all types of Devices</li>
+   <ul>
+    <li>Wiresless Telephones(Cellular, Portables, Satellite, etc.)</li>
+    <li>Computers, PDAs, Peripherals, etc.</li>
+    <li>Set-top Boxes, Audio Systems, Cameras and Camcorders, etc.</li>
+    <li>Comsumer Electronics, Headsets, Remote controls, etc.</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>7</font></div>
+  </td>
+  <td>
+  <div id=PPTP7 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0134.htm');" id=PPTL7>What is in the Bluetooth
+  Specification?</a></font></div>
+  <div id=PPTC7 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A hardware/software description</li>
+   <li>An application framework</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>8</font></div>
+  </td>
+  <td>
+  <div id=PPTP8 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0135.htm');" id=PPTL8>Usage scenarios:
+  Synchronization</a></font></div>
+  <div id=PPTC8 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>User benefits</li>
+   <li>Proximity synchronization</li>
+   <li>Easily maintained database</li>
+   <li>Common information database</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>9</font></div>
+  </td>
+  <td>
+  <div id=PPTP9 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0136.htm');" id=PPTL9>Usage scenarios: Headset</a></font></div>
+  <div id=PPTC9 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>User benefits</li>
+   <li>Multiple device access</li>
+   <li>Cordless phone benefits</li>
+   <li>Hand’s free operation</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>10</font></div>
+  </td>
+  <td>
+  <div id=PPTP10 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0137.htm');" id=PPTL10>Usage scenarios: Data
+  access points</a></font></div>
+  <div id=PPTC10 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>User benefits</li>
+   <li>No more connectors</li>
+   <li>Easy internet access</li>
+   <li>Common connection experience</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>11</font></div>
+  </td>
+  <td>
+  <div id=PPTP11 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0138.htm');" id=PPTL11>Bluetooth System
+  Overview</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>12</font></div>
+  </td>
+  <td>
+  <div id=PPTP12 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0139.htm');" id=PPTL12>Radio</a></font></div>
+  <div id=PPTC12 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>frequency synthesis: frequency hopping</li>
+   <ul>
+    <li>2.402 + k MHz, k=0, …, 78</li>
+    <li>1,600 hops per second</li>
+   </ul>
+   <li>conversion bits into symbols: modulation</li>
+   <ul>
+    <li>GFSK (BT = 0.5; 0.28 &lt; h &lt; 0.35);</li>
+    <li>1 MSymbols/s</li>
+   </ul>
+   <li>transmit power</li>
+   <ul>
+    <li>0 dbm (up to 20dbm with power control)</li>
+   </ul>
+   <li>receiver sensitivity</li>
+   <ul>
+    <li>-70dBm @ 0.1% BER</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>13</font></div>
+  </td>
+  <td>
+  <div id=PPTP13 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0140.htm');" id=PPTL13>Radio Basics: Receiver</a></font></div>
+  <div id=PPTC13 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The RF Transceiver contains both Receiver and Transmitter.</li>
+   <li>The receiver selects the desired signal and removes all other signals
+       present at the antenna (strong interferers will be present both in and
+       out of the ISM band).</li>
+   <li>The desired signal is downconverted to baseband and demodulated.</li>
+   <li>A digital bit stream representing the demodulated data is output to the
+       baseband sub-system for further processing.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>14</font></div>
+  </td>
+  <td>
+  <div id=PPTP14 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0141.htm');" id=PPTL14>Radio Basics:
+  Transmitter</a></font></div>
+  <div id=PPTC14 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The transmitter accepts digital data at it’s input and performs
+       modulation, upconversion, filtering and amplification.</li>
+   <li>The RF signal at the antenna must meet strict criteria (spectral
+       occupancy, frequency accuracy, spurious emissions, radiated energy).</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>15</font></div>
+  </td>
+  <td>
+  <div id=PPTP15 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0142.htm');" id=PPTL15>The Baseband</a></font></div>
+  <div id=PPTC15 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The Bluetooth baseband processor manages all physical and link layer
+       functions including low level control of the system hardware</li>
+   <ul>
+    <li>A digital IC</li>
+    <li>Functions implemented in both hardware and software</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>16</font></div>
+  </td>
+  <td>
+  <div id=PPTP16 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0143.htm');" id=PPTL16>The Bluetooth network
+  topology</a></font></div>
+  <div id=PPTC16 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Radio designation</li>
+   <ul>
+    <li>Connected radios can be master or slave</li>
+    <li>Radios are symmetric (same radio can be master or slave)</li>
+   </ul>
+   <li>Piconet</li>
+   <ul>
+    <li>Master can connect to 7 simultaneous or 200+ inactive (parked) slaves
+        per piconet</li>
+    <li>Each piconet has maximum capacity (1 Mbps)</li>
+    <li>Unique hopping pattern/ID</li>
+   </ul>
+   <li>Scatternet</li>
+   <ul>
+    <li>High capacity system</li>
+    <li>Minimal impact with up to 10 piconets within range</li>
+    <li>Radios can share piconets!</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>17</font></div>
+  </td>
+  <td>
+  <div id=PPTP17 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0227.htm');" id=PPTL17>The Bluetooth network
+  topology</a></font></div>
+  <div id=PPTC17 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Master / Slave relationship between Devices</li>
+   <ul>
+    <li>Master controls entire piconet</li>
+    <ul>
+     <li>A piconet is a group of devices controlled by one master</li>
+    </ul>
+    <li>Maximum number of devices in a single Piconet</li>
+    <ul>
+     <li>One Master</li>
+     <li>7 Active Slave Devices</li>
+     <li>255 Standby Slave Devices</li>
+    </ul>
+   </ul>
+   <li>Devices can participate in more than one Piconet</li>
+   <ul>
+    <li>Devices can act as slave to other Piconets</li>
+    <li>Participation in more than on Piconet creats a scatternet</li>
+    <li>Slave devices to one Piconet can be Master to Another</li>
+    <ul>
+     <li>A device can only be Master to a single Piconet</li>
+    </ul>
+   </ul>
+   <li>Masters and Slaves can exchange roles</li>
+   <ul>
+    <li>Exchange of roles creates a new Piconet</li>
+    <li>All devices are informed and coordinated with new master</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>18</font></div>
+  </td>
+  <td>
+  <div id=PPTP18 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0212.htm');" id=PPTL18>Creating a Piconet</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>19</font></div>
+  </td>
+  <td>
+  <div id=PPTP19 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0222.htm');" id=PPTL19>Scatternet</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>20</font></div>
+  </td>
+  <td>
+  <div id=PPTP20 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0223.htm');" id=PPTL20>Scatternet</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>21</font></div>
+  </td>
+  <td>
+  <div id=PPTP21 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0145.htm');" id=PPTL21>Operational States</a></font></div>
+  <div id=PPTC21 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Standby</li>
+   <ul>
+    <li>Waiting to join a piconet</li>
+   </ul>
+   <li>Inquire</li>
+   <ul>
+    <li>Ask about radios to connect to</li>
+   </ul>
+   <li>Page</li>
+   <ul>
+    <li>Connect to a specific radio</li>
+   </ul>
+   <li>Connected</li>
+   <ul>
+    <li>Actively on a piconet (master or slave)</li>
+   </ul>
+   <li>Park/Hold</li>
+   <ul>
+    <li>Low-power connected states</li>
+   </ul>
+   <li>Sniff</li>
+   <ul>
+    <li>Duty cycle of the slave’s listen activity can be reduced</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>22</font></div>
+  </td>
+  <td>
+  <div id=PPTP22 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0214.htm');" id=PPTL22>Operational States</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>23</font></div>
+  </td>
+  <td>
+  <div id=PPTP23 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0213.htm');" id=PPTL23>Inquiry</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>24</font></div>
+  </td>
+  <td>
+  <div id=PPTP24 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0224.htm');" id=PPTL24>Sniff Mode</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>25</font></div>
+  </td>
+  <td>
+  <div id=PPTP25 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0225.htm');" id=PPTL25>Park Mode</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>26</font></div>
+  </td>
+  <td>
+  <div id=PPTP26 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0226.htm');" id=PPTL26>Park Mode</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>27</font></div>
+  </td>
+  <td>
+  <div id=PPTP27 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0146.htm');" id=PPTL27>Baseband link types</a></font></div>
+  <div id=PPTC27 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Polling-based (TDD) packet transmissions</li>
+   <ul>
+    <li>1 slot: 0.625msec (max 1600 slots/sec)</li>
+    <li>master/slave slots (even-/odd-numbered slots)</li>
+    <li>polling: master always “polls” slaves</li>
+   </ul>
+   <li>Synchronous connection-oriented (SCO) link</li>
+   <ul>
+    <li>“circuit-switched”</li>
+    <ul>
+     <li>periodic single-slot packet assignment</li>
+    </ul>
+    <li>symmetric 64Kbps full-duplex</li>
+   </ul>
+   <li>Asynchronous connection-less (ACL) link</li>
+   <ul>
+    <li>packet switching</li>
+    <li>asymmetric bandwidth</li>
+    <ul>
+     <li>variable packet size (1-5 slots)</li>
+     <ul>
+      <li>max. 721 kbps (57.6 kbps return channel)</li>
+      <li>108.8 - 432.6 kbps (symmetric)</li>
+     </ul>
+    </ul>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>28</font></div>
+  </td>
+  <td>
+  <div id=PPTP28 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0219.htm');" id=PPTL28>Mixed Link Example</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>29</font></div>
+  </td>
+  <td>
+  <div id=PPTP29 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0147.htm');" id=PPTL29>Addressing</a></font></div>
+  <div id=PPTC29 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Bluetooth Device Address (BD_ADDR)</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>48-bit IEEE 802 address</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>24-bit lower address part
+        (LAP)</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>8-bit upper address part
+        (UAP)</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'>&nbsp;</span>Active Member Address
+       (AM_ADDR)</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>3-bit active slave address</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>all-zero broadcast address</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'>&nbsp;</span>Parked Member Address
+       (PM_ADDR)</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>8-bit parked slave address</li>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>30</font></div>
+  </td>
+  <td>
+  <div id=PPTP30 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0148.htm');" id=PPTL30>FH/TDD Channel</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>31</font></div>
+  </td>
+  <td>
+  <div id=PPTP31 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0149.htm');" id=PPTL31>Frequency Hopping</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>32</font></div>
+  </td>
+  <td>
+  <div id=PPTP32 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0215.htm');" id=PPTL32>Physical Channel</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>33</font></div>
+  </td>
+  <td>
+  <div id=PPTP33 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0216.htm');" id=PPTL33>Hop Selection</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>34</font></div>
+  </td>
+  <td>
+  <div id=PPTP34 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0217.htm');" id=PPTL34>Packet Format</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>35</font></div>
+  </td>
+  <td>
+  <div id=PPTP35 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0218.htm');" id=PPTL35>Access Code</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>36</font></div>
+  </td>
+  <td>
+  <div id=PPTP36 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0151.htm');" id=PPTL36>Packet Header</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>37</font></div>
+  </td>
+  <td>
+  <div id=PPTP37 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0152.htm');" id=PPTL37>MULTI-SLOT PACKETS</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>38</font></div>
+  </td>
+  <td>
+  <div id=PPTP38 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0153.htm');" id=PPTL38>Packet Types</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>39</font></div>
+  </td>
+  <td>
+  <div id=PPTP39 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0154.htm');" id=PPTL39>Data Rates (kb/s)</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>40</font></div>
+  </td>
+  <td>
+  <div id=PPTP40 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0155.htm');" id=PPTL40>Error Correction</a></font></div>
+  <div id=PPTC40 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Forward-Error Correction (FEC)</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>1/3 rate: bit-repeat code</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>2/3 rate: (15,10) shortened
+        Hamming code</li>
+   </ul>
+   <li><span style='mso-spacerun:yes'>&nbsp;</span>Automatic Repeat reQuest
+       (ARQ)</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>1-bit fast ACK/NAK</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>1-bit sequence number</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>header piggy-backing</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>41</font></div>
+  </td>
+  <td>
+  <div id=PPTP41 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0220.htm');" id=PPTL41>ARQ Scheme</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>42</font></div>
+  </td>
+  <td>
+  <div id=PPTP42 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0156.htm');" id=PPTL42>Bluetooth Security
+  Features</a></font></div>
+  <div id=PPTC42 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Fast frequency hopping (79 channels)</li>
+   <li>Low transmit power (range &lt;= 10m)</li>
+   <li>Authentication of remote device</li>
+   <ul>
+    <li>based on link key (128 Bit)</li>
+    <li>May be performed in both directions</li>
+   </ul>
+   <li>Encryption of payload data</li>
+   <ul>
+    <li>Stream cipher algorithm (<font face=Symbol>&pound;</font><font face=Arial>
+        128 Bit)</font></li>
+    <li>Encryption Key (8-128 bit) derived from link key</li>
+    <li>Frequent resynchronized</li>
+    <li>Affects all traffic on a link</li>
+   </ul>
+   <li>Initialization(Pairing)</li>
+   <ul>
+    <li>PIN entry by user</li>
+   </ul>
+   <li>Application Level Security</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>43</font></div>
+  </td>
+  <td>
+  <div id=PPTP43 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0157.htm');" id=PPTL43>Bluetooth Security
+  Features</a></font></div>
+  <div id=PPTC43 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Based on Stored keys</li>
+   <li>No user intervention</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>44</font></div>
+  </td>
+  <td>
+  <div id=PPTP44 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0158.htm');" id=PPTL44>Bluetooth System
+  Interfaces</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>45</font></div>
+  </td>
+  <td>
+  <div id=PPTP45 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0159.htm');" id=PPTL45>Bluetooth Modules</a></font></div>
+  <div id=PPTC45 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>A complete Bluetooth system can be manufactured from a small Radio
+       module and other<span style='mso-spacerun:yes'>&nbsp; </span>components.</li>
+   <li>To allow a minimum size, the radio is assembled and tested on a
+       substrate with embedded RF features.</li>
+   <li>Then the radio is assembled with other components onto the complete
+       module, which can be tested more simply.</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>46</font></div>
+  </td>
+  <td>
+  <div id=PPTP46 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0160.htm');" id=PPTL46>The Components of
+  Bluetooth Modules</a></font></div>
+  <div id=PPTC46 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>RADIO - a mixed signal IC, analog and digital circuits:</li>
+   <ul>
+    <li>modulates RF carrier with data<span style='mso-spacerun:yes'>&nbsp;
+        </span>for transmission</li>
+    <li>demodulates received signals to extract data stream</li>
+    <li>synthesizes required frequencies for RX and TX</li>
+   </ul>
+   <li>BASEBAND PROCESSOR - mostly digital IC :</li>
+   <ul>
+    <li>extracts information for host from RX data stream; configures TX data
+        from host into Bluetooth packets</li>
+   </ul>
+   <li>MICROCONTROLLER - Manages the links;<span
+       style='mso-spacerun:yes'>&nbsp; </span>turns components on and off;<span
+       style='mso-spacerun:yes'>&nbsp; </span>a digital IC</li>
+   <li>MEMORY - integrated RAM, ROM; integrated or separate Flash ROM ;<span
+       style='mso-spacerun:yes'>&nbsp; </span>a digital IC :</li>
+   <ul>
+    <li>stores configuration information</li>
+    <li>stores short term operating information</li>
+   </ul>
+   <li>ANTENNA - transducer to convert signal between conducted and radiated
+       forms.<span style='mso-spacerun:yes'>&nbsp; </span>Usually best outside
+       the module.</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>47</font></div>
+  </td>
+  <td>
+  <div id=PPTP47 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0161.htm');" id=PPTL47>Logical Combinations of
+  Functionality Integrated in Modules</a></font></div>
+  <div id=PPTC47 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>RADIO ONLY</li>
+   <ul>
+    <li>Portable phones!<span style='mso-spacerun:yes'>&nbsp; </span>Phones
+        contain powerful processors and memory capable of providing baseband
+        and control functions</li>
+    <li>A cost-effective solution is often to provide a module containing only
+        the radio function</li>
+   </ul>
+   <li>RADIO + BASEBAND</li>
+   <ul>
+    <li>….if phone processor does not have excess capacity to support Bluetooth
+        TX data formatting and RX synchronization.</li>
+   </ul>
+   <li>RADIO + BASEBAND + MICROCONTROLLER + MEMORY</li>
+   <ul>
+    <li>For retrofit upgrade and unhosted applications - headsets, PC cards</li>
+    <li>Appropriate to include crystal and voltage regulation also</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>48</font></div>
+  </td>
+  <td>
+  <div id=PPTP48 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0162.htm');" id=PPTL48>Types of Applications
+  for Modules</a></font></div>
+  <div id=PPTC48 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>HOSTED:<span style='mso-spacerun:yes'>&nbsp; </span>ALREADY CONTAINS A
+       MICROCONTROLLER; may be able to share memory, crystal oscillator, codec</li>
+   <ul>
+    <li>Portable phones</li>
+    <li>Personal Computers</li>
+    <li>PDAs</li>
+   </ul>
+   <li>UNHOSTED:<span style='mso-spacerun:yes'>&nbsp; </span>Often an excessory
+       to a hosted application; must be complete and self-sufficient</li>
+   <ul>
+    <li>Headset for use with cell phone, or peronal audio</li>
+    <li>Mouse for PC</li>
+    <li>Joystick controller for video game</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>49</font></div>
+  </td>
+  <td>
+  <div id=PPTP49 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0163.htm');" id=PPTL49><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>50</font></div>
+  </td>
+  <td>
+  <div id=PPTP50 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0164.htm');" id=PPTL50><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>51</font></div>
+  </td>
+  <td>
+  <div id=PPTP51 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0166.htm');" id=PPTL51><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>52</font></div>
+  </td>
+  <td>
+  <div id=PPTP52 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0167.htm');" id=PPTL52>Link Manager</a></font></div>
+  <div id=PPTC52 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Link management</li>
+   <ul>
+    <li>setup and configuration</li>
+    <li>packet selection for quality of service required</li>
+    <li>packet transfers</li>
+    <br>
+    <br>
+   </ul>
+   <li>Security</li>
+   <ul>
+    <li>authentication</li>
+    <li>pairing</li>
+    <li>create/change link keys</li>
+    <li>encryption including key management</li>
+    <br>
+    <br>
+   </ul>
+   <li>Piconet management</li>
+   <ul>
+    <li>Attach and detach slaves</li>
+    <li>Establishing ACL/SCO connections</li>
+    <li>master/slave switching</li>
+    <li>name requests</li>
+    <li>Handling of low power modes : hold, park, sniff modes</li>
+    <br>
+    <br>
+   </ul>
+   <li>Hardware-dependent functionality and features</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>53</font></div>
+  </td>
+  <td>
+  <div id=PPTP53 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0168.htm');" id=PPTL53>Logical Link Control
+  and Adaptation Protocol (L2CAP)</a></font></div>
+  <div id=PPTC53 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Protocol multiplexing</li>
+   <ul>
+    <li>enables usage of several higher layer protocols simultaneously</li>
+    <li>identifies packets with required protocols</li>
+    <li>passes packets for higher layer protocols to appropriate handler</li>
+    <br>
+    <br>
+   </ul>
+   <li>Segmentation and Reassembly</li>
+   <ul>
+    <li>segments higher layer protocol packets into appropriate data link
+        packets and reassembles them again.</li>
+    <li>Adds logical channel bits for ACL packets</li>
+    <li>hides data link packet lengths for higher layer protocols</li>
+   </ul>
+   <br>
+   <li>Quality of Service</li>
+   <ul>
+    <li>negotiates service type for link</li>
+    <li>monitors link quality and adjusts for rate, latency, delay</li>
+    <li>allocates channels for SCO connections</li>
+    <br>
+    <br>
+   </ul>
+   <li>Hardware independent(ideally)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>54</font></div>
+  </td>
+  <td>
+  <div id=PPTP54 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0169.htm');" id=PPTL54>Host Controller
+  Interface (HCI)</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>55</font></div>
+  </td>
+  <td>
+  <div id=PPTP55 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0170.htm');" id=PPTL55>HCI Transport Protocols</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>56</font></div>
+  </td>
+  <td>
+  <div id=PPTP56 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0171.htm');" id=PPTL56>Service Discovery
+  Protocol(SDP)</a></font></div>
+  <div id=PPTC56 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Bluetooth SDP enables Bluetooth devices to discover the characteristics
+       and capabilities of other Bluetooth devices within RF proximity</li>
+   <li>Within Bluetooth SDP, a service is:</li>
+   <ul>
+    <li>any information, resource, or facility that is provided by (or through)
+        one Bluetooth device that is advertised as available to be used by
+        nearby Bluetooth devices</li>
+   </ul>
+   <li>Bluetooth SDP does not provide a general purpose service access/usage
+       mechanism; SDP only enables discovery of services</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>57</font></div>
+  </td>
+  <td>
+  <div id=PPTP57 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0228.htm');" id=PPTL57>Service Discovery
+  Protocol(SDP)</a></font></div>
+  <div id=PPTC57 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Motivation</li>
+   <ul>
+    <li>Bluetooth environment is qualitatively different from traditional
+        network environments</li>
+    <li>Highly dynamic</li>
+    <li>Based upon device proximity</li>
+    <li>Device-based, rather than network-based</li>
+   </ul>
+   <li>Focus</li>
+   <ul>
+    <li>Service discovery within Bluetooth environment</li>
+    <li>Optimized for dynamic nature of Bluetooth</li>
+    <li>Services offered by or through Bluetooth devices</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>58</font></div>
+  </td>
+  <td>
+  <div id=PPTP58 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0229.htm');" id=PPTL58>SDP Client and Server
+  Roles</a></font></div>
+  <div id=PPTC58 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>SDP Server: offers one or more services</li>
+   <ul>
+    <li>Maintains a database of service information containing one service
+        record for each service offered</li>
+    <li>Each service record contains a list of attributes describing the
+        service</li>
+   </ul>
+   <li>SDP Client: needs a service</li>
+   <ul>
+    <li>Searches for services based on the desired attributes of those services</li>
+    <li>Requests additional attributes of the found services</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>59</font></div>
+  </td>
+  <td>
+  <div id=PPTP59 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0230.htm');" id=PPTL59><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>60</font></div>
+  </td>
+  <td>
+  <div id=PPTP60 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0172.htm');" id=PPTL60>RFCOMM</a></font></div>
+  <div id=PPTC60 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Provide support for legacy applications that use serial cables</li>
+   <ul>
+    <li>It emulates the 9 wires of an RS232 serial cable</li>
+   </ul>
+   <li>Leverage the existing standard<br>
+              GSM TS 07.10</li>
+   <li>The scope is point-to-point communication between Bluetooth devices</li>
+   <li>It is a simple transport protocol</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>with framing, multiplexing</li>
+    <br>
+    <br>
+    <li>Plus additional provisions</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>RS232 signal status</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Remote line status</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Remote port setting</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Parameter negotiation</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>61</font></div>
+  </td>
+  <td>
+  <div id=PPTP61 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0231.htm');" id=PPTL61><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>62</font></div>
+  </td>
+  <td>
+  <div id=PPTP62 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0232.htm');" id=PPTL62>Profiles using RFCOMM</a></font></div>
+  <div id=PPTC62 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Serial Port Profile</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Serial port emulation for
+        legacy applications</li>
+   </ul>
+   <li>Not explicitly using serial port emulation:</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Dial-up networking</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Fax</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Headset</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Generic Obex (Object Push,
+        File Transfer, Synchronisation)</li>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>LAN Access</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>63</font></div>
+  </td>
+  <td>
+  <div id=PPTP63 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0173.htm');" id=PPTL63><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>64</font></div>
+  </td>
+  <td>
+  <div id=PPTP64 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0174.htm');" id=PPTL64><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>65</font></div>
+  </td>
+  <td>
+  <div id=PPTP65 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0175.htm');" id=PPTL65><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>66</font></div>
+  </td>
+  <td>
+  <div id=PPTP66 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0176.htm');" id=PPTL66><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>67</font></div>
+  </td>
+  <td>
+  <div id=PPTP67 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0177.htm');" id=PPTL67><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>68</font></div>
+  </td>
+  <td>
+  <div id=PPTP68 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0178.htm');" id=PPTL68><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>69</font></div>
+  </td>
+  <td>
+  <div id=PPTP69 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0179.htm');" id=PPTL69><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>70</font></div>
+  </td>
+  <td>
+  <div id=PPTP70 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0180.htm');" id=PPTL70><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>71</font></div>
+  </td>
+  <td>
+  <div id=PPTP71 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0181.htm');" id=PPTL71>Serial Port Profile</a></font></div>
+  <div id=PPTC71 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>This profile defines the interoperability<span
+       style='mso-spacerun:yes'>&nbsp; </span>requirements for Bluetooth
+       devices necessary for setting up emulated serial cable connections using
+       RFCOMM between two peer devices. Is built on the Generic Access Profile</li>
+   <li>Two roles: initiator &amp; responder (DevA &amp; DevB)</li>
+   <ul>
+    <li><span style='mso-spacerun:yes'>&nbsp;</span>Relates to which device
+        sets up RFCOMM connection, with no relation to application behaviour
+        (e.g. client/server roles)</li>
+   </ul>
+   <li>Requires a helper application to set up virtual serial port and
+       connection</li>
+   <li>Security is mandatory to support, but optional to use</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>72</font></div>
+  </td>
+  <td>
+  <div id=PPTP72 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0182.htm');" id=PPTL72><span
+  style='mso-spacerun:yes'>&nbsp;</span></a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>73</font></div>
+  </td>
+  <td>
+  <div id=PPTP73 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0183.htm');" id=PPTL73>Serial Port Profile -
+  Step by step</a></font></div>
+  <div id=PPTC73 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>What steps are required to set up a</li>
+   <li>virtual serial cable between two devices?</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>74</font></div>
+  </td>
+  <td>
+  <div id=PPTP74 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0184.htm');" id=PPTL74>Step by Step - Inquiry</a></font></div>
+  <div id=PPTC74 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The initiator device performs an INQUIRY to find the other device within
+       range</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>75</font></div>
+  </td>
+  <td>
+  <div id=PPTP75 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0185.htm');" id=PPTL75>Step by Step - Baseband</a></font></div>
+  <div id=PPTC75 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The device initiates a PAGE to synchronize with the chosen responder</li>
+   <li>The device creates a baseband ACL connection</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>76</font></div>
+  </td>
+  <td>
+  <div id=PPTP76 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0186.htm');" id=PPTL76>Step by Step - Service
+  Discovery</a></font></div>
+  <div id=PPTC76 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The device uses SDP to retrieve details of the Serial Port service -
+       RFCOMM server channel number in particular</li>
+   <li>The Service Name information may be presented to the user for
+       verification</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>77</font></div>
+  </td>
+  <td>
+  <div id=PPTP77 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0187.htm');" id=PPTL77>Step by Step - RFCOMM</a></font></div>
+  <div id=PPTC77 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Create L2CAP channel to RFCOMM entity in responder</li>
+   <li>Starts RFCOMM multiplexer session on L2CAP channel</li>
+   <li>(Optionally, negotiate parameters for the yet to be opened DLC)</li>
+   <li>Request an RFCOMM data link connection (DLC)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>78</font></div>
+  </td>
+  <td>
+  <div id=PPTP78 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0188.htm');" id=PPTL78>Step by Step - Security
+  (optional)</a></font></div>
+  <div id=PPTC78 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Either device may request that Pairing be performed. Pairing requires
+       the use of a shared secret PIN</li>
+   <li>Either device may request that the baseband link is encrypted</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>79</font></div>
+  </td>
+  <td>
+  <div id=PPTP79 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0189.htm');" id=PPTL79>Step by Step -
+  Application</a></font></div>
+  <div id=PPTC79 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>The application software is now able to communicate through the virtual
+       serial port</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>80</font></div>
+  </td>
+  <td>
+  <div id=PPTP80 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0190.htm');" id=PPTL80>Summary</a></font></div>
+  <div id=PPTC80 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Protocols defined for communication</li>
+   <ul>
+    <li>HCI supports common interface to hardware modules</li>
+    <li>L2CAP provides common base for data communication</li>
+    <li>SDP provides basis discovery mechnisms</li>
+   </ul>
+   <li>Profiles defined for interoperability</li>
+   <ul>
+    <li>Specifies protocol ladder from PHY to APP</li>
+    <br>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>81</font></div>
+  </td>
+  <td>
+  <div id=PPTP81 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0191.htm');" id=PPTL81>Role of Testing in the
+  Qualification Program</a></font></div>
+  <div id=PPTC81 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>BT Qualification Program</li>
+   <br>
+   <br>
+   <ul>
+    <li>Goal: 	To ensure interoperability between different BT 		devices even
+        from different vendors</li>
+    <br>
+    <br>
+    <li>Method:	Every BT device has to pass the Qualification		 	Process by
+        performing successfully the 			relevant test cases</li>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>82</font></div>
+  </td>
+  <td>
+  <div id=PPTP82 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0192.htm');" id=PPTL82>Authority delegation
+  for Bluetooth Qualification Program</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>83</font></div>
+  </td>
+  <td>
+  <div id=PPTP83 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0193.htm');" id=PPTL83>Bluetooth Qualification
+  Review Borad(BQRB)</a></font></div>
+  <div id=PPTC83 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Each bluetooth SIG Promoter company appoints one delegate</li>
+   <li>Responsible for setting up and maintaining Qualification criteria and
+       rules</li>
+   <li>Selects, hires and manages a BQA to a administer the program according
+       to policies</li>
+   <li>Definies the recognition requirements to become a BQTF and BQA</li>
+   <li>Rotating Chair</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>84</font></div>
+  </td>
+  <td>
+  <div id=PPTP84 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0194.htm');" id=PPTL84>Bluetooth Qualification
+  Administrator(BQA)</a></font></div>
+  <div id=PPTC84 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Implements the Qualification Program</li>
+   <li>Interface between BQRB and</li>
+   <ul>
+    <li>BQBs,</li>
+    <li>BQTFs,</li>
+    <li>prospective BQB candidates</li>
+    <li>prospective BQTF candidates</li>
+   </ul>
+   <li>Maintains listings of:</li>
+   <ul>
+    <li>Recognized BQBs</li>
+    <li>Accredited BQTFs</li>
+    <li>Qualified (listed) products</li>
+    <li>Approved waivers</li>
+   </ul>
+   <li>Disseminates information on the program</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>85</font></div>
+  </td>
+  <td>
+  <div id=PPTP85 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0195.htm');" id=PPTL85>Bluetooth Qualification
+  Body(BQB)</a></font></div>
+  <div id=PPTC85 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Authorized to list products as qualified based on:</li>
+   <ul>
+    <li>Applicable Test Results in accordance with the TCRL</li>
+    <li>Declarations of Compliance from the manufacturer</li>
+    <br>
+    <br>
+   </ul>
+   <li>Responsible for:</li>
+   <ul>
+    <li>Checking completeness of material received</li>
+    <li>Verifying authenticity of material received</li>
+    <li>Maintaining confidential material</li>
+    <li>Advising manufacturer on qualification process</li>
+    <br>
+    <br>
+   </ul>
+   <li>Independent of product development efforts</li>
+   <br>
+   <br>
+   <li>Over 12 BQB’s today</li>
+   <br>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>86</font></div>
+  </td>
+  <td>
+  <div id=PPTP86 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0196.htm');" id=PPTL86>Bluetooth Qualification
+  Test Facility(BQTF)</a></font></div>
+  <div id=PPTC86 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Independent testing facility which is accredited by BQRB to test
+       products for compliance with the Bluetooth test requirements</li>
+   <li>Required for testing Category A Test Cases</li>
+   <ul>
+    <li>No Category A Test Cases currently</li>
+    <li>Other services possible (interoperability testing)</li>
+   </ul>
+   <li>Accreditation Requirements include:</li>
+   <ul>
+    <li>Quality</li>
+    <li>Certification in accordance with ISO Guide 25, EN45001</li>
+    <li>Bluetooth knowledge &amp; test capability</li>
+    <li>Independent of product development efforts</li>
+   </ul>
+   <li>No accredited BQTF’s today</li>
+   <ul>
+    <li>BQRB is now reviewing applications</li>
+    <br>
+    <br>
+    <br>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>87</font></div>
+  </td>
+  <td>
+  <div id=PPTP87 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0197.htm');" id=PPTL87>Bluetooth Technical
+  Advisory Board(BTAB)</a></font></div>
+  <div id=PPTC87 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Consists of BQBs, BQTF representatives and other technical experts</li>
+   <li>Provides information and recommendations to the BQRB</li>
+   <li>Advisory Tasks</li>
+   <ul>
+    <li>Proposals and advice to BQRB</li>
+    <li>Proposals and advice to BQA</li>
+    <li>Proposals and advice to the Bluetooth “Specification Authors”</li>
+   </ul>
+   <li>Knowledge Depository Tasks</li>
+   <ul>
+    <li>Solutions to testing Bluetooth devices</li>
+    <li>Knowledge of inconstancy of the Bluetooth Specifications</li>
+    <br>
+    <br>
+    <br>
+    <br>
+   </ul>
+   <br>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>88</font></div>
+  </td>
+  <td>
+  <div id=PPTP88 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0198.htm');" id=PPTL88>Bluetooth Qualification
+  Process</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>89</font></div>
+  </td>
+  <td>
+  <div id=PPTP89 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0199.htm');" id=PPTL89>Bluetooth Qualification
+  Process</a></font></div>
+  <div id=PPTC89 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Manufacturer obtains required documents from Bluetooth website</li>
+   <br>
+   <br>
+   <li>Four categories of tests</li>
+   <ul>
+    <li>A - Validated and commercially available in at least 1 implementation</li>
+    <li>B - Declaration with evidence</li>
+    <li>C - Declaration without submitting evidence</li>
+    <li>D - Informative</li>
+    <br>
+    <br>
+   </ul>
+   <li>Bluetooth Qualification Test Facility (BQTF) needed for</li>
+   <ul>
+    <li>category A tests</li>
+    <li>interoperability with “Blue Units” from Ericsson and Nokia</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>90</font></div>
+  </td>
+  <td>
+  <div id=PPTP90 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0200.htm');" id=PPTL90>Bluetooth Qualification
+  Process</a></font></div>
+  <div id=PPTC90 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Compliance Folder provided to Bluetooth Qualification Body (BQB)</li>
+   <ul>
+    <li>Test results for category A, B, and C.<span
+        style='mso-spacerun:yes'>&nbsp; </span>D is optional</li>
+    <li>Declaration of Compliance</li>
+    <li>Implementation conformance statement(ICS) which specifies the Bluetooth
+        capabilities that are implemented in the product including profiles
+        implemented</li>
+    <ul>
+     <br>
+     <br>
+    </ul>
+   </ul>
+   <li>BQB reviews results and lists the product in the Approved Product
+       Database</li>
+   <ul>
+    <br>
+    <br>
+   </ul>
+   <li>Bluetooth Quality Administrator maintains the Approved Product Database
+       on the website</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>91</font></div>
+  </td>
+  <td>
+  <div id=PPTP91 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0201.htm');" id=PPTL91>Bluetooth Qualification
+  Requirements</a></font></div>
+  <div id=PPTC91 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Conformance Test Requirements</li>
+   <ul>
+    <li>Bluetooth RF-Test Specification</li>
+    <ul>
+     <li>defines RF conformance test cases</li>
+    </ul>
+    <li>Bluetooth Protocol and Profile Test Specification</li>
+    <ul>
+     <li>defines Protocol and Profile conformance test cases</li>
+    </ul>
+    <li>The objective of the RF and Protocol test specification</li>
+    <ul>
+     <li>To provide a basis for conformance tests for Bluetooth devices giving
+         a high probability of compliance with the Bluetooth Core
+         Specifications</li>
+    </ul>
+    <li>Conformance tests are performed by an accredited BQTF according to the
+        information in the test case reference list</li>
+    <li>RF, protocol and profile conformance testing results shall be reported
+        in a Test Report and submitted to the BQB for review</li>
+    <li></li>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>92</font></div>
+  </td>
+  <td>
+  <div id=PPTP92 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0202.htm');" id=PPTL92>Bluetooth Qualification
+  Requirements</a></font></div>
+  <div id=PPTC92 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Interoperability Test Requirements(application profile)</li>
+   <ul>
+    <li>Bluetooth Profile Interoperability Test Specification</li>
+    <ul>
+     <li>defines profile interoperability test cases</li>
+    </ul>
+    <li>Interoperability testing results shall be reported in a Test Report and
+        submitted to the BQB for review</li>
+   </ul>
+   <br>
+   <li>Bluetooth Components Requirements</li>
+   <ul>
+    <li>Bluetooth component</li>
+    <ul>
+     <li>A product marketed to a manufacturer for integration into an end-user
+         product, containing at least the hardware for Bluetooth radio and/or
+         baseband functions</li>
+    </ul>
+    <li>Example of Bluetooth component : A Bluetooth module to be permanently
+        mounted in a computer</li>
+    <li>The module may be pre-qualified in a reference design</li>
+    <li>It’s up to the test house to judge what tests that can be omitted when
+        qualifying the final product</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>93</font></div>
+  </td>
+  <td>
+  <div id=PPTP93 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0203.htm');" id=PPTL93>Bluetooth Qualification
+  Requirements</a></font></div>
+  <div id=PPTC93 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Bluetooth Accessory Products Requirements</li>
+   <ul>
+    <li>Bluetooth Accessory</li>
+    <ul>
+     <li>A product marketed to the end-user, containing at least the hardware
+         for Bluetooth radio and baseband</li>
+    </ul>
+    <li>Example of accessories : PC-card, USB dongle</li>
+    <li>Has to be submitted for Qualification installed in a host device</li>
+    <li>Complete Qualification is required</li>
+    <li></li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>94</font></div>
+  </td>
+  <td>
+  <div id=PPTP94 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0204.htm');" id=PPTL94>Types of Testing</a></font></div>
+  <div id=PPTC94 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Conformance Testing</li>
+   <ul>
+    <li>finally: 		BT device is tested against a validated BT 			test system in
+        a accredited test house (BQTF)</li>
+    <li>intermediate:	manufacturer has to provide evidence on 				test cases</li>
+    <li></li>
+   </ul>
+   <li>Interoperability Testing (application profile)</li>
+   <ul>
+    <li>finally:		device against device testing by using 				Designated Profile
+        Interoperability Testers 			(DPIT)</li>
+    <li>intermediate: 	engineering evidence</li>
+    <br>
+    <br>
+   </ul>
+   <li>Interoperability Testing against Blue Units (lower layers)</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>95</font></div>
+  </td>
+  <td>
+  <div id=PPTP95 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0205.htm');" id=PPTL95>BT Test Specifications</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>96</font></div>
+  </td>
+  <td>
+  <div id=PPTP96 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0206.htm');" id=PPTL96>Necessory Information
+  for<span style='mso-spacerun:yes'>&nbsp; </span>Testing</a></font></div>
+  <div id=PPTC96 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Test Specifications</li>
+   <li>Test Case Reference list(TCRL)</li>
+   <ul>
+    <li>List of all test cases</li>
+    <li>Provides status / information on each test case</li>
+    <li>Periodically updated</li>
+    <li>Specifies categories for each test case</li>
+    <ul>
+     <li>A <font face="Monotype Sorts">è</font><font face=Arial> Commercial
+         available and to be executed at BQTF</font></li>
+     <li>B <font face="Monotype Sorts">è</font><font face=Arial> Declare with
+         evidence that the issue has been tested</font></li>
+     <li>C <font face="Monotype Sorts">è</font><font face=Arial> Declare
+         without evidence that the issue has been tested</font></li>
+     <li>D <font face="Monotype Sorts">è</font><font face=Arial> For
+         information only</font></li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>97</font></div>
+  </td>
+  <td>
+  <div id=PPTP97 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0207.htm');" id=PPTL97>Necessory Information
+  for Testing</a></font></div>
+  <div id=PPTC97 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Bluetooth ICS / IXIT Proforma document</li>
+   <ul>
+    <li>ICS (Implementation Conformance Statement)</li>
+    <ul>
+     <li>reference document for the conformance assessment process related to
+         the Implementation Under Test(IUT)</li>
+     <li>Provides an overview of the implementation</li>
+    </ul>
+    <li>IXIT(Implementation Extra Information for Testing) proforma</li>
+    <ul>
+     <li>a questionnaire containing questions related to the parameterisation
+         of the tests and of the IUT</li>
+    </ul>
+    <li>The IXIT, in conjunction with the ICS, will be used by the BQTF to
+        produce the test plan</li>
+    <li>Device / implementation information document to be filled out by the
+        manufacturer</li>
+    <li>Derived by ETSI guidelines</li>
+    <li>Annex includes ( to be filled out )</li>
+    <ul>
+     <li>Implementation Conformance Statement (ICS) tables</li>
+     <li>Implementation Extra Information for Testing (IXIT) tables</li>
+     <li>ICS / IXIT tables cover</li>
+     <ul>
+      <li>RF</li>
+      <li>Protocols</li>
+      <li>Application / Transport Profiles</li>
+     </ul>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>98</font></div>
+  </td>
+  <td>
+  <div id=PPTP98 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0208.htm');" id=PPTL98>Bluetooth Product
+  Forecast</a></font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>99</font></div>
+  </td>
+  <td>
+  <div id=PPTP99 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0209.htm');" id=PPTL99>Wireless Market Trends</a></font></div>
+  <div id=PPTC99 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>Consumers want connectivity at all times - in the workplace, while
+       travelling and at home</li>
+   <li>General Packet Radio Service (GPRS) and other 3rd Generation cellular
+       network technologies will be available at the end of 2000.</li>
+   <li>Wireless technology and internet access is becoming pervasive in homes,
+       offices and pocket devices</li>
+   <li>This offers business opportunities to service providers, OEM
+       manufacturers and semiconductor companies</li>
+   <li>Three enabling wireless technologies - wireless LANs, cellular packet
+       data and Bluetooth</li>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>100</font></div>
+  </td>
+  <td>
+  <div id=PPTP100 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0210.htm');" id=PPTL100>Bluetooth Benefits</a></font></div>
+  <div id=PPTC100 class=CTxt style='display:none'><font size=2>
+  <ul>
+   <li>For Consumers</li>
+   <ul>
+    <li>Convenience of wireless connections</li>
+    <li>Reliable connections for secure transactions</li>
+    <li>Lower cost wireless solutions</li>
+    <br>
+    <br>
+   </ul>
+   <li>For Producers</li>
+   <ul>
+    <li>Standardized connectivity and protocols</li>
+    <li>Opportunities for product enhancement and differentiation</li>
+    <li>Reduced interoperability concerns</li>
+    <br>
+    <br>
+   </ul>
+   <li>For Providers</li>
+   <ul>
+    <li>Increased consumer acceptance of wireless solutions</li>
+    <li>Accelerated demand for wireless data services</li>
+   </ul>
+  </ul>
+  </font></div>
+  </td>
+ </tr>
+ <tr onmouseover="Over(this)" onmouseout="Out(this)" onclick="Follow(this)"
+  style='cursor:hand'>
+  <td align=right valign=top>
+  <div class=sldNum><font size=2>101</font></div>
+  </td>
+  <td>
+  <div id=PPTP101 class=PTxt><font size=2><a
+  href="javascript:GoToSld('slide0211.htm');" id=PPTL101>Bluetooth Evolution</a></font></div>
+  </td>
+ </tr>
+</table>
+
+
+
+</div>
+
+<div style='display:none'><a href=master03.htm></a><a href=master03.xml></a><a
+href=preview.wmf></a><a href="master03_image001.gif"></a><a
+href="master03_image002.gif"></a><a href=master04.htm></a><a href=master04.xml></a><a
+href=master02.htm></a><a href=pres.xml></a><a href=editdata.mso></a><a
+href=sound002.wav></a><a href=slide0221.htm></a><a href="master03_image003.gif"></a><a
+href="master03_image004.gif"></a><a href=slide0129.htm></a><a
+href=slide0130.htm></a><a href=slide0131.htm></a><a
+href="slide0131_image005.png"></a><a href="slide0131_image006.jpg"></a><a
+href=slide0132.htm></a><a href=slide0132.xml></a><a
+href="slide0132_image007.png"></a><a href="slide0132_image008.png"></a><a
+href="slide0132_image009.gif"></a><a href=oledata.mso></a><a
+href="slide0132_image010.wmz"></a><a href="slide0132_image011.png"></a><a
+href="slide0132_image012.wmz"></a><a href="slide0132_image013.wmz"></a><a
+href="slide0132_image014.png"></a><a href="slide0132_image015.png"></a><a
+href="slide0132_image016.png"></a><a href="slide0132_image017.png"></a><a
+href="slide0132_image018.png"></a><a href="slide0132_image019.png"></a><a
+href="slide0132_image020.gif"></a><a href=slide0133.htm></a><a
+href=slide0134.htm></a><a href="slide0134_image021.gif"></a><a
+href=slide0135.htm></a><a href="slide0135_image022.emz"></a><a
+href="slide0135_image023.emz"></a><a href="slide0135_image024.gif"></a><a
+href="slide0135_image025.wmz"></a><a href="slide0135_image026.gif"></a><a
+href="slide0135_image027.wmz"></a><a href="slide0135_image028.gif"></a><a
+href="slide0135_image029.png"></a><a href="slide0135_image030.gif"></a><a
+href="slide0135_image031.png"></a><a href="slide0135_image032.gif"></a><a
+href=slide0136.htm></a><a href="slide0136_image033.gif"></a><a
+href="slide0136_image034.gif"></a><a href="slide0136_image035.gif"></a><a
+href="slide0136_image036.png"></a><a href="slide0136_image037.gif"></a><a
+href="slide0136_image038.png"></a><a href="slide0136_image039.gif"></a><a
+href=slide0137.htm></a><a href="slide0137_image040.png"></a><a
+href="slide0137_image041.gif"></a><a href="slide0137_image042.png"></a><a
+href="slide0137_image043.gif"></a><a href="slide0137_image044.png"></a><a
+href="slide0137_image045.gif"></a><a href="slide0137_image046.gif"></a><a
+href="slide0137_image047.gif"></a><a href="slide0137_image048.png"></a><a
+href="slide0137_image049.wmz"></a><a href="slide0137_image050.gif"></a><a
+href=slide0138.htm></a><a href="slide0138_image051.gif"></a><a
+href="slide0138_image052.gif"></a><a href="slide0138_image053.gif"></a><a
+href="slide0138_image054.gif"></a><a href="slide0138_image055.gif"></a><a
+href="slide0138_image056.gif"></a><a href="slide0138_image057.gif"></a><a
+href="slide0138_image058.gif"></a><a href="slide0138_image059.wmz"></a><a
+href="slide0138_image060.gif"></a><a href="slide0138_image061.wmz"></a><a
+href="slide0138_image062.gif"></a><a href="slide0138_image063.gif"></a><a
+href="slide0138_image064.jpg"></a><a href="slide0138_image065.gif"></a><a
+href="slide0138_image066.gif"></a><a href="slide0138_image067.gif"></a><a
+href=slide0139.htm></a><a href=slide0140.htm></a><a
+href="slide0140_image068.gif"></a><a href="slide0140_image069.gif"></a><a
+href="slide0140_image070.gif"></a><a href="slide0140_image071.gif"></a><a
+href="slide0140_image072.gif"></a><a href=slide0141.htm></a><a
+href="slide0141_image073.gif"></a><a href=slide0142.htm></a><a
+href=slide0143.htm></a><a href="slide0143_image074.gif"></a><a
+href=slide0227.htm></a><a href=slide0212.htm></a><a
+href="slide0212_image075.gif"></a><a href="slide0212_image076.gif"></a><a
+href="slide0212_image077.gif"></a><a href="slide0212_image078.gif"></a><a
+href="slide0212_image079.gif"></a><a href="slide0212_image080.gif"></a><a
+href="slide0212_image081.gif"></a><a href="slide0212_image082.gif"></a><a
+href="slide0212_image083.gif"></a><a href="slide0212_image084.gif"></a><a
+href=slide0222.htm></a><a href="slide0222_image085.gif"></a><a
+href="slide0222_image086.gif"></a><a href="slide0222_image087.gif"></a><a
+href="slide0222_image088.gif"></a><a href=slide0223.htm></a><a
+href="slide0223_image089.gif"></a><a href=slide0145.htm></a><a
+href=slide0145.xml></a><a href="slide0145_image090.gif"></a><a
+href="slide0145_image091.gif"></a><a href="slide0145_image092.gif"></a><a
+href="slide0145_image093.gif"></a><a href="slide0145_image094.gif"></a><a
+href="slide0145_image095.gif"></a><a href="slide0145_image096.gif"></a><a
+href="slide0145_image097.gif"></a><a href="slide0145_image098.gif"></a><a
+href=slide0214.htm></a><a href="slide0214_image099.gif"></a><a
+href="slide0214_image100.gif"></a><a href="slide0214_image101.gif"></a><a
+href="slide0214_image102.gif"></a><a href="slide0214_image103.gif"></a><a
+href="slide0214_image104.gif"></a><a href="slide0214_image105.gif"></a><a
+href="slide0214_image106.gif"></a><a href=slide0213.htm></a><a
+href="slide0213_image107.gif"></a><a href=slide0224.htm></a><a
+href="slide0224_image108.gif"></a><a href="slide0224_image109.gif"></a><a
+href="slide0224_image110.gif"></a><a href="slide0224_image111.gif"></a><a
+href="slide0224_image112.gif"></a><a href="slide0224_image113.gif"></a><a
+href="slide0224_image114.gif"></a><a href="slide0224_image115.gif"></a><a
+href="slide0224_image116.gif"></a><a href="slide0224_image117.gif"></a><a
+href="slide0224_image118.gif"></a><a href="slide0224_image119.gif"></a><a
+href="slide0224_image120.gif"></a><a href="slide0224_image121.gif"></a><a
+href=slide0225.htm></a><a href="slide0225_image122.gif"></a><a
+href="slide0225_image123.gif"></a><a href=slide0226.htm></a><a
+href="slide0226_image124.gif"></a><a href="slide0226_image125.gif"></a><a
+href="slide0226_image126.gif"></a><a href="slide0226_image127.gif"></a><a
+href="slide0226_image128.gif"></a><a href="slide0226_image129.gif"></a><a
+href="slide0226_image130.gif"></a><a href="slide0226_image131.gif"></a><a
+href="slide0226_image132.gif"></a><a href="slide0226_image133.gif"></a><a
+href="slide0226_image134.gif"></a><a href="slide0226_image135.gif"></a><a
+href="slide0226_image136.gif"></a><a href="slide0226_image137.gif"></a><a
+href="slide0226_image138.gif"></a><a href="slide0226_image139.gif"></a><a
+href="slide0226_image140.gif"></a><a href="slide0226_image141.gif"></a><a
+href="slide0226_image142.gif"></a><a href="slide0226_image143.gif"></a><a
+href="slide0226_image144.gif"></a><a href="slide0226_image145.gif"></a><a
+href="slide0226_image146.gif"></a><a href="slide0226_image147.gif"></a><a
+href="slide0226_image148.gif"></a><a href="slide0226_image149.gif"></a><a
+href="slide0226_image150.gif"></a><a href=slide0146.htm></a><a
+href=slide0146.xml></a><a href="slide0146_image151.gif"></a><a
+href=slide0219.htm></a><a href="slide0219_image152.gif"></a><a
+href="slide0219_image153.gif"></a><a href="slide0219_image154.gif"></a><a
+href="slide0219_image155.gif"></a><a href="slide0219_image156.gif"></a><a
+href="slide0219_image157.gif"></a><a href="slide0219_image158.gif"></a><a
+href="slide0219_image159.gif"></a><a href="slide0219_image160.gif"></a><a
+href="slide0219_image161.gif"></a><a href="slide0219_image162.gif"></a><a
+href="slide0219_image163.gif"></a><a href="slide0219_image164.gif"></a><a
+href="slide0219_image165.gif"></a><a href="slide0219_image166.gif"></a><a
+href="slide0219_image167.gif"></a><a href=slide0147.htm></a><a
+href=slide0148.htm></a><a href=slide0148.xml></a><a
+href="slide0148_image168.gif"></a><a href="slide0148_image169.gif"></a><a
+href="slide0148_image170.gif"></a><a href="slide0148_image171.gif"></a><a
+href="slide0148_image172.gif"></a><a href="slide0148_image173.gif"></a><a
+href="slide0148_image174.gif"></a><a href=slide0149.htm></a><a
+href="slide0149_image175.gif"></a><a href="slide0149_image176.gif"></a><a
+href=slide0215.htm></a><a href="slide0215_image177.gif"></a><a
+href=slide0216.htm></a><a href="slide0216_image178.gif"></a><a
+href=slide0217.htm></a><a href="slide0217_image179.gif"></a><a
+href=slide0218.htm></a><a href="slide0218_image180.gif"></a><a
+href="slide0218_image181.gif"></a><a href="slide0218_image182.gif"></a><a
+href="slide0218_image183.gif"></a><a href="slide0218_image184.gif"></a><a
+href=slide0151.htm></a><a href="slide0151_image185.gif"></a><a
+href="slide0151_image186.gif"></a><a href="slide0151_image187.gif"></a><a
+href="slide0151_image188.gif"></a><a href=slide0152.htm></a><a
+href=slide0152.xml></a><a href="slide0152_image189.gif"></a><a
+href="slide0152_image190.gif"></a><a href="slide0152_image191.gif"></a><a
+href=slide0153.htm></a><a href=slide0153.xml></a><a
+href="slide0153_image192.gif"></a><a href=slide0154.htm></a><a
+href=slide0154.xml></a><a href="slide0154_image193.gif"></a><a
+href=slide0155.htm></a><a href=slide0220.htm></a><a
+href="slide0220_image194.gif"></a><a href="slide0220_image195.gif"></a><a
+href="slide0220_image196.gif"></a><a href="slide0220_image197.gif"></a><a
+href="slide0220_image198.gif"></a><a href="slide0220_image199.gif"></a><a
+href="slide0220_image200.gif"></a><a href="slide0220_image201.gif"></a><a
+href="slide0220_image202.gif"></a><a href="slide0220_image203.gif"></a><a
+href="slide0220_image204.gif"></a><a href="slide0220_image205.gif"></a><a
+href="slide0220_image206.gif"></a><a href="slide0220_image207.gif"></a><a
+href="slide0220_image208.gif"></a><a href="slide0220_image209.gif"></a><a
+href="slide0220_image210.gif"></a><a href="slide0220_image211.gif"></a><a
+href="slide0220_image212.gif"></a><a href="slide0220_image213.gif"></a><a
+href="slide0220_image214.gif"></a><a href="slide0220_image215.gif"></a><a
+href=slide0156.htm></a><a href=slide0157.htm></a><a
+href="slide0157_image216.png"></a><a href="slide0157_image217.jpg"></a><a
+href="slide0157_image218.png"></a><a href="slide0157_image219.jpg"></a><a
+href=slide0158.htm></a><a href=slide0158.xml></a><a
+href="slide0158_image220.gif"></a><a href=slide0159.htm></a><a
+href=slide0159.xml></a><a href="slide0159_image221.gif"></a><a
+href="slide0159_image222.gif"></a><a href="slide0159_image223.gif"></a><a
+href="slide0159_image224.gif"></a><a href="slide0159_image225.gif"></a><a
+href="slide0159_image226.gif"></a><a href="slide0159_image227.gif"></a><a
+href=slide0160.htm></a><a href=slide0161.htm></a><a href=slide0162.htm></a><a
+href=slide0163.htm></a><a href="slide0163_image228.jpg"></a><a
+href="slide0163_image229.gif"></a><a href="slide0163_image230.gif"></a><a
+href="slide0163_image231.gif"></a><a href="slide0163_image232.gif"></a><a
+href="slide0163_image233.gif"></a><a href="slide0163_image234.gif"></a><a
+href="slide0163_image235.jpg"></a><a href="slide0163_image236.jpg"></a><a
+href=slide0164.htm></a><a href="slide0164_image237.gif"></a><a
+href="slide0164_image238.gif"></a><a href="slide0164_image239.jpg"></a><a
+href=slide0166.htm></a><a href=slide0166.xml></a><a
+href="slide0166_image240.gif"></a><a href="slide0166_image241.gif"></a><a
+href="slide0166_image242.gif"></a><a href="slide0166_image243.gif"></a><a
+href="slide0166_image244.gif"></a><a href="slide0166_image245.gif"></a><a
+href="slide0166_image246.gif"></a><a href="slide0166_image247.gif"></a><a
+href="slide0166_image248.gif"></a><a href="slide0166_image249.gif"></a><a
+href="slide0166_image250.gif"></a><a href="slide0166_image251.gif"></a><a
+href="slide0166_image252.gif"></a><a href="slide0166_image253.gif"></a><a
+href="slide0166_image254.gif"></a><a href="slide0166_image255.gif"></a><a
+href="slide0166_image256.gif"></a><a href="slide0166_image257.gif"></a><a
+href="slide0166_image258.gif"></a><a href="slide0166_image259.gif"></a><a
+href="slide0166_image260.gif"></a><a href="slide0166_image261.gif"></a><a
+href="slide0166_image262.gif"></a><a href="slide0166_image263.gif"></a><a
+href="slide0166_image264.gif"></a><a href="slide0166_image265.gif"></a><a
+href="slide0166_image266.gif"></a><a href="slide0166_image267.gif"></a><a
+href="slide0166_image268.gif"></a><a href="slide0166_image269.gif"></a><a
+href="slide0166_image270.gif"></a><a href="slide0166_image271.gif"></a><a
+href="slide0166_image272.gif"></a><a href="slide0166_image273.gif"></a><a
+href="slide0166_image274.gif"></a><a href="slide0166_image275.gif"></a><a
+href="slide0166_image276.gif"></a><a href="slide0166_image277.gif"></a><a
+href="slide0166_image278.gif"></a><a href="slide0166_image279.gif"></a><a
+href="slide0166_image280.gif"></a><a href="slide0166_image281.gif"></a><a
+href="slide0166_image282.gif"></a><a href="slide0166_image283.gif"></a><a
+href="slide0166_image284.gif"></a><a href="slide0166_image285.gif"></a><a
+href="slide0166_image286.gif"></a><a href="slide0166_image287.gif"></a><a
+href="slide0166_image288.gif"></a><a href="slide0166_image289.gif"></a><a
+href="slide0166_image290.gif"></a><a href="slide0166_image291.gif"></a><a
+href=slide0167.htm></a><a href=slide0168.htm></a><a href=slide0169.htm></a><a
+href=slide0170.htm></a><a href=slide0171.htm></a><a href=slide0228.htm></a><a
+href=slide0229.htm></a><a href=slide0230.htm></a><a
+href="slide0230_image292.gif"></a><a href="slide0230_image293.gif"></a><a
+href="slide0230_image294.gif"></a><a href="slide0230_image295.gif"></a><a
+href="slide0230_image296.gif"></a><a href="slide0230_image297.gif"></a><a
+href="slide0230_image298.gif"></a><a href="slide0230_image299.gif"></a><a
+href="slide0230_image300.gif"></a><a href="slide0230_image301.gif"></a><a
+href="slide0230_image302.gif"></a><a href="slide0230_image303.gif"></a><a
+href="slide0230_image304.gif"></a><a href="slide0230_image305.gif"></a><a
+href="slide0230_image306.gif"></a><a href="slide0230_image307.gif"></a><a
+href="slide0230_image308.gif"></a><a href="slide0230_image309.gif"></a><a
+href="slide0230_image310.gif"></a><a href=slide0172.htm></a><a
+href="slide0172_image311.jpg"></a><a href="slide0172_image312.png"></a><a
+href="slide0172_image313.gif"></a><a href=slide0231.htm></a><a
+href="slide0231_image314.gif"></a><a href="slide0231_image315.gif"></a><a
+href=slide0232.htm></a><a href=slide0173.htm></a><a
+href="slide0173_image316.gif"></a><a href="slide0173_image317.gif"></a><a
+href="slide0173_image318.gif"></a><a href="slide0173_image319.gif"></a><a
+href="slide0173_image320.gif"></a><a href=slide0174.htm></a><a
+href=slide0174.xml></a><a href="slide0174_image321.gif"></a><a
+href="slide0174_image322.gif"></a><a href="slide0174_image323.gif"></a><a
+href="slide0174_image324.gif"></a><a href="slide0174_image325.gif"></a><a
+href="slide0174_image326.gif"></a><a href="slide0174_image327.gif"></a><a
+href="slide0174_image328.gif"></a><a href="slide0174_image329.gif"></a><a
+href="slide0174_image330.gif"></a><a href="slide0174_image331.gif"></a><a
+href="slide0174_image332.gif"></a><a href="slide0174_image333.gif"></a><a
+href="slide0174_image334.gif"></a><a href="slide0174_image335.gif"></a><a
+href="slide0174_image336.gif"></a><a href="slide0174_image337.gif"></a><a
+href="slide0174_image338.gif"></a><a href="slide0174_image339.gif"></a><a
+href="slide0174_image340.gif"></a><a href="slide0174_image341.gif"></a><a
+href="slide0174_image342.gif"></a><a href=slide0175.htm></a><a
+href="slide0175_image343.gif"></a><a href="slide0175_image344.gif"></a><a
+href="slide0175_image345.gif"></a><a href="slide0175_image346.gif"></a><a
+href="slide0175_image347.gif"></a><a href="slide0175_image348.gif"></a><a
+href="slide0175_image349.gif"></a><a href="slide0175_image350.gif"></a><a
+href="slide0175_image351.gif"></a><a href="slide0175_image352.gif"></a><a
+href="slide0175_image353.gif"></a><a href="slide0175_image354.gif"></a><a
+href="slide0175_image355.gif"></a><a href="slide0175_image356.gif"></a><a
+href="slide0175_image357.gif"></a><a href="slide0175_image358.gif"></a><a
+href="slide0175_image359.gif"></a><a href="slide0175_image360.gif"></a><a
+href="slide0175_image361.gif"></a><a href=slide0176.htm></a><a
+href=slide0177.htm></a><a href=slide0178.htm></a><a href=slide0179.htm></a><a
+href=slide0180.htm></a><a href=slide0181.htm></a><a href=slide0182.htm></a><a
+href="slide0182_image362.gif"></a><a href="slide0182_image363.gif"></a><a
+href="slide0182_image364.gif"></a><a href="slide0182_image365.gif"></a><a
+href="slide0182_image366.gif"></a><a href="slide0182_image367.gif"></a><a
+href=slide0183.htm></a><a href="slide0183_image368.png"></a><a
+href="slide0183_image369.gif"></a><a href="slide0183_image370.gif"></a><a
+href=slide0184.htm></a><a href="slide0184_image371.gif"></a><a
+href="slide0184_image372.gif"></a><a href="slide0184_image373.gif"></a><a
+href="slide0184_image374.gif"></a><a href="slide0184_image375.gif"></a><a
+href=slide0185.htm></a><a href="slide0185_image376.gif"></a><a
+href=slide0186.htm></a><a href="slide0186_image377.gif"></a><a
+href=slide0187.htm></a><a href="slide0187_image378.gif"></a><a
+href=slide0188.htm></a><a href="slide0188_image379.gif"></a><a
+href=slide0189.htm></a><a href="slide0189_image380.png"></a><a
+href="slide0189_image381.gif"></a><a href=slide0190.htm></a><a
+href=slide0191.htm></a><a href=slide0192.htm></a><a
+href="slide0192_image382.wmz"></a><a href="slide0192_image383.gif"></a><a
+href=slide0193.htm></a><a href=slide0194.htm></a><a href=slide0195.htm></a><a
+href=slide0196.htm></a><a href=slide0197.htm></a><a href=slide0198.htm></a><a
+href="slide0198_image384.gif"></a><a href="slide0198_image385.gif"></a><a
+href="slide0198_image386.gif"></a><a href="slide0198_image387.gif"></a><a
+href="slide0198_image388.gif"></a><a href="slide0198_image389.gif"></a><a
+href="slide0198_image390.gif"></a><a href="slide0198_image391.gif"></a><a
+href="slide0198_image392.gif"></a><a href="slide0198_image393.gif"></a><a
+href="slide0198_image394.gif"></a><a href="slide0198_image395.gif"></a><a
+href="slide0198_image396.gif"></a><a href="slide0198_image397.gif"></a><a
+href="slide0198_image398.gif"></a><a href="slide0198_image399.gif"></a><a
+href="slide0198_image400.gif"></a><a href="slide0198_image401.gif"></a><a
+href="slide0198_image402.gif"></a><a href=slide0199.htm></a><a
+href=slide0200.htm></a><a href=slide0201.htm></a><a href=slide0202.htm></a><a
+href=slide0203.htm></a><a href=slide0204.htm></a><a href=slide0205.htm></a><a
+href="slide0205_image403.gif"></a><a href="slide0205_image404.gif"></a><a
+href="slide0205_image405.gif"></a><a href="slide0205_image406.gif"></a><a
+href="slide0205_image407.gif"></a><a href="slide0205_image408.gif"></a><a
+href="slide0205_image409.gif"></a><a href=slide0206.htm></a><a
+href=slide0207.htm></a><a href=slide0208.htm></a><a
+href="slide0208_image410.wmz"></a><a href="slide0208_image411.gif"></a><a
+href=slide0209.htm></a><a href=slide0210.htm></a><a href=slide0211.htm></a><a
+href="slide0211_image412.gif"></a><a href="slide0211_image413.gif"></a><a
+href="slide0211_image414.gif"></a><a href="slide0211_image415.gif"></a><a
+href="slide0211_image416.gif"></a><a href="slide0211_image417.gif"></a><a
+href="slide0211_image418.gif"></a><a href="slide0211_image419.gif"></a><a
+href="slide0211_image420.gif"></a><a href="slide0211_image421.gif"></a><a
+href="slide0211_image422.gif"></a><a href="slide0211_image423.gif"></a><a
+href="slide0211_image424.gif"></a><a href="slide0211_image425.gif"></a><a
+href="slide0211_image426.gif"></a><a href="slide0211_image427.gif"></a><a
+href="slide0211_image428.gif"></a><a href="slide0211_image429.gif"></a><a
+href="slide0211_image430.gif"></a><a href="slide0211_image431.gif"></a><a
+href="slide0211_image432.gif"></a><a href="slide0211_image433.gif"></a><a
+href=master01.htm></a><a href="master03_stylesheet.css"></a><a href=script.js></a><a
+href="../Samsung-Bluetooth.htm"></a><a href=fullscreen.htm></a><a
+href="notes_flag.gif"></a><a href=buttons.gif></a><a href=frame.htm></a><a
+href=outline.htm></a></div>
+
+</body>
+
+</html>

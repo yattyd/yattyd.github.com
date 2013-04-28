@@ -1,0 +1,523 @@
+<xml xmlns:v="urn:schemas-microsoft-com:vml"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+ xmlns:oa="urn:schemas-microsoft-com:office:activation">
+ <p:slidetransition advancetime="4000" flag="1"/>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="221"/>
+ </o:shapelayout><p:shaperange id="_x0000_s226306">
+  <v:shapetype id="_x0000_t136" coordsize="21600,21600" o:spt="136" adj="10800"
+   path="m@7,l@8,m@5,21600l@6,21600e">
+   <v:formulas>
+    <v:f eqn="sum #0 0 10800"/>
+    <v:f eqn="prod #0 2 1"/>
+    <v:f eqn="sum 21600 0 @1"/>
+    <v:f eqn="sum 0 0 @2"/>
+    <v:f eqn="sum 21600 0 @3"/>
+    <v:f eqn="if @0 @3 0"/>
+    <v:f eqn="if @0 21600 @1"/>
+    <v:f eqn="if @0 0 @2"/>
+    <v:f eqn="if @0 @4 21600"/>
+    <v:f eqn="mid @5 @6"/>
+    <v:f eqn="mid @8 @5"/>
+    <v:f eqn="mid @7 @8"/>
+    <v:f eqn="mid @6 @7"/>
+    <v:f eqn="sum @6 0 @5"/>
+   </v:formulas>
+   <v:path textpathok="t" o:connecttype="custom" o:connectlocs="@9,0;@10,10800;@11,21600;@12,10800"
+    o:connectangles="270,180,90,0"/>
+   <v:textpath on="t" fitshape="t"/>
+   <v:handles>
+    <v:h position="#0,bottomRight" xrange="6629,14971"/>
+   </v:handles>
+   <o:lock v:ext="edit" text="t" shapetype="t"/>
+  </v:shapetype><v:shape id="_x0000_s226306" type="#_x0000_t136" style='position:absolute;
+   left:42.75pt;top:146.875pt;width:181.25pt;height:36pt;rotation:339'
+   fillcolor="yellow" strokecolor="black [1]">
+   <v:fill color2="#f93" angle="-135" focusposition=".5,.5" focussize=""
+    focus="100%" type="gradientRadial">
+    <o:fill v:ext="view" type="gradientCenter"/>
+   </v:fill>
+   <v:shadow on="t" color="silver" offset="6pt,6pt"/>
+   <v:textpath style='font-family:"Impact";v-text-kern:t' trim="t" fitpath="t"
+    string="Profiles"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226307">
+  <v:line id="_x0000_s226307" style='position:absolute;v-text-anchor:middle'
+   from="24.5pt,405pt" to="696.125pt,405pt" strokecolor="black [1]"
+   strokeweight="6pt">
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+  </v:line></p:shaperange>
+ <p:shaperange id="_x0000_s226308">
+  <v:shapetype id="_x0000_t68" coordsize="21600,21600" o:spt="68" adj="5400,5400"
+   path="m0@0l@1@0@1,21600@2,21600@2@0,21600@0,10800,xe">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="val #0"/>
+    <v:f eqn="val #1"/>
+    <v:f eqn="sum 21600 0 #1"/>
+    <v:f eqn="prod #0 #1 10800"/>
+    <v:f eqn="sum #0 0 @3"/>
+   </v:formulas>
+   <v:path o:connecttype="custom" o:connectlocs="10800,0;0,@0;10800,21600;21600,@0"
+    o:connectangles="270,180,90,0" textboxrect="@1,@4,@2,21600"/>
+   <v:handles>
+    <v:h position="#1,#0" xrange="0,10800" yrange="0,21600"/>
+   </v:handles>
+  </v:shapetype><v:shape id="_x0000_s226308" type="#_x0000_t68" style='position:absolute;
+   left:283pt;top:380.375pt;width:33.625pt;height:47.25pt;mso-wrap-style:none;
+   v-text-anchor:middle' adj="15086,5380" fillcolor="#039" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226309" type="#_x0000_t68" style='position:absolute;
+   left:281.625pt;top:212.875pt;width:33.625pt;height:145.125pt;
+   v-text-anchor:middle' adj="6400,5380" fillcolor="#039" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226310">
+  <v:shape id="_x0000_s226310" type="#_x0000_t68" style='position:absolute;
+   left:444.625pt;top:212.375pt;width:33.625pt;height:76.875pt;v-text-anchor:middle'
+   adj="10493,5380" fillcolor="#039" stroked="f" strokecolor="gray [2]"
+   strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226311">
+  <v:shapetype id="_x0000_t13" coordsize="21600,21600" o:spt="13" adj="16200,5400"
+   path="m@0,l@0@1,0@1,0@2@0@2@0,21600,21600,10800xe">
+   <v:stroke joinstyle="miter"/>
+   <v:formulas>
+    <v:f eqn="val #0"/>
+    <v:f eqn="val #1"/>
+    <v:f eqn="sum height 0 #1"/>
+    <v:f eqn="sum 10800 0 #1"/>
+    <v:f eqn="sum width 0 #0"/>
+    <v:f eqn="prod @4 @3 10800"/>
+    <v:f eqn="sum width 0 @5"/>
+   </v:formulas>
+   <v:path o:connecttype="custom" o:connectlocs="@0,0;0,10800;@0,21600;21600,10800"
+    o:connectangles="270,180,90,0" textboxrect="0,@1,@6,@2"/>
+   <v:handles>
+    <v:h position="#0,#1" xrange="0,21600" yrange="0,10800"/>
+   </v:handles>
+  </v:shapetype><v:shape id="_x0000_s226311" type="#_x0000_t13" style='position:absolute;
+   left:130.75pt;top:287.375pt;width:260.125pt;height:25.75pt;v-text-anchor:middle'
+   adj="17467,5452" fillcolor="#039" stroked="f" strokecolor="gray [2]"
+   strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226312" type="#_x0000_t68" style='position:absolute;
+   left:106.75pt;top:267.25pt;width:35.875pt;height:39.5pt;v-text-anchor:middle'
+   adj="10696,6924" fillcolor="#039" stroked="f" strokecolor="gray [2]"
+   strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:rect id="_x0000_s226313" style='position:absolute;left:59.75pt;
+   top:68.75pt;width:600pt;height:42pt;v-text-anchor:bottom' filled="f"
+   fillcolor="#0c9 [4]" stroked="f" strokecolor="black [1]">
+   <v:fill color2="white [0]"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:rect></p:shaperange>
+ <p:shaperange id="_x0000_s226314">
+  <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+   <v:stroke joinstyle="miter"/>
+   <v:path gradientshapeok="t" o:connecttype="rect"/>
+  </v:shapetype><v:shape id="_x0000_s226314" type="#_x0000_t202" style='position:absolute;
+   left:229.25pt;top:450pt;width:144.125pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#060" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226315" type="#_x0000_t202" style='position:absolute;
+   left:316.625pt;top:427.625pt;width:56.75pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="white [0]" strokecolor="black [1]">
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226316" type="#_x0000_t202" style='position:absolute;
+   left:390.875pt;top:450pt;width:144.125pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#060" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226317" type="#_x0000_t202" style='position:absolute;
+   left:478.25pt;top:427.625pt;width:56.75pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#f90" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226318" type="#_x0000_t202" style='position:absolute;
+   left:552pt;top:450pt;width:144.125pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#060" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226319">
+  <v:shape id="_x0000_s226319" type="#_x0000_t202" style='position:absolute;
+   left:59.75pt;top:358pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#060" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226320" type="#_x0000_t202" style='position:absolute;
+   left:130.75pt;top:358pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#060" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226321" type="#_x0000_t202" style='position:absolute;
+   left:390.875pt;top:358pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#f90" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226322" type="#_x0000_t202" style='position:absolute;
+   left:461.875pt;top:358pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#f90" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226323">
+  <v:shape id="_x0000_s226323" type="#_x0000_t202" style='position:absolute;
+   left:390.875pt;top:288.375pt;width:71pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226324" type="#_x0000_t202" style='position:absolute;
+   left:461.875pt;top:288.375pt;width:71pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226325" type="#_x0000_t202" style='position:absolute;
+   left:64pt;top:313.125pt;width:134.5pt;height:45.75pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226326" type="#_x0000_t202" style='position:absolute;
+   left:384.5pt;top:313.375pt;width:156pt;height:45.75pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226327" type="#_x0000_t202" style='position:absolute;
+   left:234.5pt;top:249.375pt;width:127.25pt;height:45.75pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226328" type="#_x0000_t202" style='position:absolute;
+   left:50.25pt;top:219.375pt;width:162pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226329" type="#_x0000_t202" style='position:absolute;
+   left:247.875pt;top:61.375pt;width:96.375pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226330" type="#_x0000_t202" style='position:absolute;
+   left:235.875pt;top:165.625pt;width:131pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226331" type="#_x0000_t202" style='position:absolute;
+   left:219pt;top:112.625pt;width:160.375pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226332" type="#_x0000_t202" style='position:absolute;
+   left:383.375pt;top:112.625pt;width:165pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226333" type="#_x0000_t202" style='position:absolute;
+   left:389.5pt;top:61.25pt;width:138.875pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226334" type="#_x0000_t202" style='position:absolute;
+   left:540.5pt;top:146.875pt;width:167.25pt;height:45.75pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226335" type="#_x0000_t202" style='position:absolute;
+   left:556pt;top:61.375pt;width:136.5pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226336" type="#_x0000_t202" style='position:absolute;
+   left:380.25pt;top:165.75pt;width:162.25pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226337">
+  <v:shape id="_x0000_s226337" type="#_x0000_t202" style='position:absolute;
+   left:554.125pt;top:190pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#c9f" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226338" type="#_x0000_t202" style='position:absolute;
+   left:625.125pt;top:190pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#c9f" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226339">
+  <v:shape id="_x0000_s226339" type="#_x0000_t202" style='position:absolute;
+   left:552.5pt;top:85.25pt;width:143.625pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#c9f" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226340">
+  <v:shape id="_x0000_s226340" type="#_x0000_t202" style='position:absolute;
+   left:393pt;top:190.5pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226341" type="#_x0000_t202" style='position:absolute;
+   left:464pt;top:190.5pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226342">
+  <v:shape id="_x0000_s226342" type="#_x0000_t202" style='position:absolute;
+   left:392pt;top:137.75pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226343" type="#_x0000_t202" style='position:absolute;
+   left:463pt;top:137.75pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226344">
+  <v:shape id="_x0000_s226344" type="#_x0000_t202" style='position:absolute;
+   left:390.875pt;top:85.5pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226345" type="#_x0000_t202" style='position:absolute;
+   left:461.875pt;top:85.5pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226346">
+  <v:shape id="_x0000_s226346" type="#_x0000_t202" style='position:absolute;
+   left:228.5pt;top:190.375pt;width:71pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226347" type="#_x0000_t202" style='position:absolute;
+   left:299.5pt;top:190.375pt;width:71pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226348">
+  <v:shape id="_x0000_s226348" type="#_x0000_t202" style='position:absolute;
+   left:227.625pt;top:137.75pt;width:71pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226349" type="#_x0000_t202" style='position:absolute;
+   left:298.625pt;top:137.75pt;width:71pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226350">
+  <v:shape id="_x0000_s226350" type="#_x0000_t202" style='position:absolute;
+   left:229.125pt;top:86pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226351" type="#_x0000_t202" style='position:absolute;
+   left:300.125pt;top:86pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226352">
+  <v:shape id="_x0000_s226352" type="#_x0000_t202" style='position:absolute;
+   left:59pt;top:244.875pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226353" type="#_x0000_t202" style='position:absolute;
+   left:130pt;top:244.875pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226354">
+  <v:shape id="_x0000_s226354" type="#_x0000_t68" style='position:absolute;
+   left:444.625pt;top:380.375pt;width:33.625pt;height:47.25pt;mso-wrap-style:none;
+   v-text-anchor:middle' adj="15086,5380" fillcolor="#f90" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226355">
+  <v:shape id="_x0000_s226355" type="#_x0000_t68" style='position:absolute;
+   left:609.25pt;top:212.875pt;width:33.625pt;height:214.75pt;v-text-anchor:middle'
+   adj="5655,5380" fillcolor="#c9f" stroked="f" strokecolor="gray [2]"
+   strokeweight="1pt">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226356">
+  <v:shape id="_x0000_s226356" type="#_x0000_t202" style='position:absolute;
+   left:552pt;top:427.625pt;width:144.125pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#c9f" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226357" type="#_x0000_t202" style='position:absolute;
+   left:390.875pt;top:427.625pt;width:87.375pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="white [0]" strokecolor="black [1]">
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226358" type="#_x0000_t202" style='position:absolute;
+   left:229.25pt;top:427.625pt;width:87.375pt;height:22.375pt;flip:x;
+   v-text-anchor:middle' fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226359">
+  <v:shape id="_x0000_s226359" type="#_x0000_t202" style='position:absolute;
+   left:226.75pt;top:358pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226360" type="#_x0000_t202" style='position:absolute;
+   left:297.75pt;top:358pt;width:71pt;height:22.375pt;flip:x;v-text-anchor:middle'
+   fillcolor="#039" strokecolor="black [1]">
+   <v:fill color2="fill darken(118)" angle="-135" method="linear sigma"
+    focus="100%" type="gradient"/>
+   <v:shadow color="gray [2]"/>
+   <v:textbox style='mso-fit-shape-to-text:t'/>
+  </v:shape><v:shape id="_x0000_s226361" type="#_x0000_t202" style='position:absolute;
+   left:224pt;top:331.875pt;width:149pt;height:26.5pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape><v:shape id="_x0000_s226362" type="#_x0000_t202" style='position:absolute;
+   left:398pt;top:243.5pt;width:128.5pt;height:45.75pt;mso-wrap-style:none;
+   v-text-anchor:middle' filled="f" fillcolor="#ccecff" stroked="f"
+   strokecolor="gray [2]" strokeweight="1pt">
+   <v:fill opacity=".5"/>
+   <v:shadow color="gray [2]" offset="6pt,6pt"/>
+   <v:textbox style='mso-fit-shape-to-text:t' inset="7.25pt,1.2788mm,7.25pt,1.2788mm"/>
+  </v:shape></p:shaperange>
+ <p:shaperange id="_x0000_s226363">
+  <v:shape id="_x0000_s226363" type="#_x0000_t136" style='position:absolute;
+   left:50.25pt;top:427.625pt;width:151.75pt;height:52.25pt;rotation:-1358280fd'
+   fillcolor="yellow" strokecolor="black [1]">
+   <v:fill color2="#f93" angle="-135" focusposition=".5,.5" focussize=""
+    focus="100%" type="gradientRadial">
+    <o:fill v:ext="view" type="gradientCenter"/>
+   </v:fill>
+   <v:shadow on="t" color="silver" offset="6pt,6pt"/>
+   <v:textpath style='font-family:"Impact";v-text-kern:t' trim="t" fitpath="t"
+    string="Protocols"/>
+  </v:shape></p:shaperange>
+</xml>
