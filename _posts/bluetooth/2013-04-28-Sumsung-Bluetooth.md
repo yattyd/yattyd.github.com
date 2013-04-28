@@ -7,4 +7,7 @@ categories: "Training"
 
 # {{ page.title }}
 
-- </www/training/Samsung-Bluetooth.htm>
+
+- [Samsung Bluetooth][456]
+
+  [456]: /www/training/Samsung-Bluetooth.htm "Samsung Bluetooth"
