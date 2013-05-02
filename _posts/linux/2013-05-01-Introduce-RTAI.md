@@ -47,7 +47,7 @@ Real-Time Linux 简介
 接下来，我们先简介一下现存的各种 real-time Linux OS。
 
 
-　　NMT RT-Linux
+##　　NMT RT-Linux
 　　NMT 是新墨西哥科技大学(New Mexico Technology) 的缩写。这一套系统可以说是 所有 Real-time Linux 的鼻祖。它目前已经发展到 3.0 版。这个系统是由 Victor Yodaiken 和它的学生 Michael Barabanov 所完成。这个系统的概念是”架空” Linux kernel，使得它的 real-time 行程得以尽快的被执行。下面的图例说明了 NMT RT-Linux 和其它类似产品的系统架构。
 
 你可以看到基本上RT-Linux 中的实时工作(realtime task) 其实并不是 一个 Linux 的行程，而是一个 Linux 的可加载式核心模块( loadable kernel module)。
@@ -58,7 +58,7 @@ Real-Time Linux 简介
 从这个角度看，NMT RT-Linux 其实是一个实时驱动程序的架构，算不上是真 正的 real-time Linux. 但由于它出现的早，且其架构很符合自动控制的需求。 使用者非常的多，且多半是有关自动控制的应用。
 
 
-　　RTAI
+##　　RTAI
 　　RTAI 是 Real-Time Application Interface 的缩写。顾名思义知道它是一套可 以用来写实时应用程序的界面。大致而言，RTAI 和 NMT RT-Linux 是相同的东西。 它同样的架空了 Linux，而直接用可加载式核心模块( loadable kernel module) 实作 real-time process。每一个实时行程实际上就是一个可加载式核心模块。
 
 RTAI 和 NMT RT-Linux 最大的不同地方在于它非常小心的在 Linux 上定义了 一组 RTHAL (Real-Time Hardware Abstraction Layer)。RTHAL 将 RTAI 需要 在 Linux 中修改的部份定义成一组程序界面，RTAI 只使用这组界面和 Linux 沟通。这样做的好处在于我们可以将直接修改 Linux 核心的程序代码减至最小， 这使得将 RTHAL 移植到新版 Linux 的工作量减至最低。
@@ -68,18 +68,18 @@ RTAI 采取这种途径最大的原因在于 NMT RT-Linux 在由 2.0 版移植�
 于是 RTAI 便诞生了，它是一个比 NMT RT-Linux 更好的 NMT RT-Linux，虽 然后来 NMT RT-Linux 也随后完成移植的工作，但那已经是 RTAI 诞生半年以 后的事了。
 
 
-　　LXRT
+##　　LXRT
 　　由于 RTAI 无法直接使用 Linux 的系统呼叫，解决的方法是使用 RT-FIFO 将一个 RTAI real-time kernel module 和真正的 Linux 行程连接在一起，由这个行程做 代理人的工作为其呼叫 Linux 系统呼叫。下图说明了 LXRT proxy 行程的概念
 
 
 红色的部份表示一组 RTAI 的实时行程和它在使用者模式 (user space) 的 伙伴。你可以了解，当 proxy 激活后，它不再可以被任何的抢先 (preempt)， 所以原本有的优势就不再保有了。
 
 
-　　KURT
+##　　KURT
 　　KURT 是由 kansas 大学所创造的系统，它和 NMT RT-Linux 及 RTAI 有很大的不同。KURT 是第一个可以使用系统呼叫的 real-time Linux。由于 KURT只是简单的将 Linux 的排程器用一个很简单的时间驱动式(time driven)排程器加以取代，实时行程的执行很容易很其它非实时行程的影响。
 
 
-　　RED-Linux
+##　　RED-Linux
 - <http://www.se.rit.edu/~jrv/research/RT_Embedded.html>
 - <http://www.ece.ufrgs.br/~cpereira/temporeal_pos/www/redlinux.html>
 
