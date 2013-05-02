@@ -1,6 +1,5 @@
 ---
 layout: default
-date: 2013-05-01
 title: Linux内核系统编译安装RTAI
 tag: "Linux"
 categories: "Driver"
