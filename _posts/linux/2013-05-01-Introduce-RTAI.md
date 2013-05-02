@@ -80,6 +80,8 @@ RTAI 采取这种途径最大的原因在于 NMT RT-Linux 在由 2.0 版移植�
 
 
 　　RED-Linux
+<http://www.se.rit.edu/~jrv/research/RT_Embedded.html>
+
 　　这是小弟在下不才我在加州大学 Irvine 分校所做的系统，它和 KURT 类似，是一个 可以使用所以 Linux 系统呼叫的 real-time Linux。它的特点是使用”抢先检查点 (preemption point)”改善系统的反应速度。前面说过 KURT 的最大问题在于它受 限于原有的 Linux 架构，使得系统的反应时间很难控制。然而在 RED-Linux 这一 点已经被大大的改善，由在 2.0 版的经验得知其反应延迟约在 100 us 左右。
 
 RED-Linux 非常有弹性的排程器架构也是其特点之一，这部份基本上就是我博士 论文的主轴。它使得 RED-Linux 可以符合各种不同复杂度系统的需求。基本上，它将排程器分成 dispartcher 和 allocator 二部份，dispatcher 在核心中执行而 allocator 在使用者模式执行。allocator 可以是应用程序的一部份，也可以是一个独立的单位。通常它可能是 middleware 的一部份，负责将应用程序的 resource request 转换成 kerner 可以了解的格式。
