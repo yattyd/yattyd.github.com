@@ -80,6 +80,7 @@ RTAI 采取这种途径最大的原因在于 NMT RT-Linux 在由 2.0 版移植�
 
 
 ##　　RED-Linux
+
 - <http://www.se.rit.edu/~jrv/research/RT_Embedded.html>
 - <http://www.ece.ufrgs.br/~cpereira/temporeal_pos/www/redlinux.html>
 
