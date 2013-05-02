@@ -1,6 +1,6 @@
 ---
 layout: default
-date: 2008-08-17
+date: 2013-05-01
 title: Real-Time Linux 简介
 tag: "Linux"
 categories: "Driver"
