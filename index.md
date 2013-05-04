@@ -39,15 +39,21 @@ title: YaTTYD
 <a name="links"></a>
 ##Links 
 
-- [Google][1]
+- [Google][1] [GMail][101] [GVoice][102] [GDrv][103]
+- [Hotmail][201] [Y!Mail][202]
 - [Downloads][4]
 - [Bug report][5]
-- [Hardware][101]
+- [Hardware][7]
 - [more][6]
 
 
-  [101]: ./links/hardware         "hardware links"
+  [7]: ./links/hardware         "hardware links"
   [1]: http://google.com/         "Google"
+  [101]: https://gmail.google.com/         "GMail"
+  [102]: https://www.google.com/voice         "GVoice"
+  [103]: https://accounts.google.com/ServiceLogin?service=writely&passive=true&nui=1&continue=https%3A%2F%2Fdocs.google.com%2F&followup=https%3A%2F%2Fdocs.google.com%2F&ltmpl=homepage&rm=false    "GDrive"
+  [201]: http://www.hotmail.com/  "HotMail"
+  [202]: https://mail.yahoo.com  "YahooMail"
   [4]: ./Downloads                "Downloads"
   [5]: mailto:yattyd@gmail.com    "E-mail"
   [6]: ./links "more links"
