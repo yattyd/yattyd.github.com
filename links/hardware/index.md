@@ -8,3 +8,4 @@ title: Hardware
 
 - <http://www.raspberrypi.org/>
 - <http://www.adapteva.com/introduction/> 
+- <http://beagleboard.org/> <http://www.deyisUPport.com>

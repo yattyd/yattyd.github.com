@@ -9,5 +9,8 @@ categories: "Jobs"
 
 
 - <http://www.imagevideo.com/contact.html>
+- <http://www.flextronics.com/>
+- <http://harris.com/>
+
 
 
