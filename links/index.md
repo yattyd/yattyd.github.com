@@ -47,4 +47,7 @@ title: Links
 
 - [Utilities][103]
 
-  [103]: ./utilities "utilities"
+  [103]: ./utilities "utilities"   
+  
+- <http://www.cgeo.org/>
+- <http://www.csdn.net/article/2013-05-03/2815127-Android-open-source-projects>
