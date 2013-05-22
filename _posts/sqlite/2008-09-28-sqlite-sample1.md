@@ -75,7 +75,7 @@ SQLite3 -- C 例程
 		//关闭数据库
 		sqlite3_close(db);
 		return 0;
-		}
+	}
 
 同时加上头文件#include <stdio.h> #icnlude <sqlite3.h> 编译运行gcc -o sample sample.c ./sample
 结果如下：
