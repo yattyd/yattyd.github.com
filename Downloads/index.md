@@ -15,6 +15,11 @@ title: Downloads
 
 - [QQ][401]
   [401]: ./QQ          "QQ"
+
+- [SQLite][501]
+  [501]: ./sqlite          "SQLite"
+  
+  
 ***********  
 - 解压 <http://www.7-zip.org/>
 - 编辑器 <http://www.pspad.com/en/>
