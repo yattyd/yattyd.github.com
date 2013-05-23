@@ -10,6 +10,8 @@ categories: "Training"
 SQLite3 -- C 例程
 
 一个简单的使用实例：
+	#include <stdio.h> 
+	#icnlude <sqlite3.h>
 	int main( int argc, char **argv )
 	{
 		sqlite3 *db;
@@ -18,7 +20,7 @@ SQLite3 -- C 例程
 
 		//打开数据库
 		int r = sqlite3_open("mysqlite.db",&db)
-		if(r){
+		if (r != 0) {
 			printf("%s",sqlite3_errmsg(db));
 		}
 
@@ -68,7 +70,7 @@ SQLite3 -- C 例程
 			name = sqlite3_column_text( stmt,1 );
 			number = sqlite3_column_int( stmt, 2 );
 			printf("ID: %d  Name: %s  Age: %d \n",id,name,number);
-			sqlite3_step(stmt);
+			r = sqlite3_step(stmt);
 		}
 		sqlite3_finalize(stmt);
 
@@ -77,7 +79,7 @@ SQLite3 -- C 例程
 		return 0;
 	}
 
-同时加上头文件#include <stdio.h> #icnlude <sqlite3.h> 编译运行gcc -o sample sample.c ./sample
+编译运行gcc -o sample sample.c ./sample
 
 结果如下：
 

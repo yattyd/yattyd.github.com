@@ -18,8 +18,10 @@ title: Downloads
 
 - [SQLite][501]
   [501]: ./sqlite          "SQLite"
-  
-  
+ 
+- [C++ Builder Teechart demo avi][601]
+  [601]: ./C++builder/teechart-demo.7z          "Teechart"
+   
 ***********  
 - 解压 <http://www.7-zip.org/>
 - 编辑器 <http://www.pspad.com/en/>
