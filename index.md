@@ -66,7 +66,6 @@ title: YaTTYD
   [11]: mailto:yattyd@gmail.com    "E-mail"
 - [Phone: +1(289)588-7111][12]
   [12]: tel:+1(289)588-7111        "Phone"
-- QQ: 128-303-3011 1283033011
 
 ******************************
 <!-- BEGIN: Powered by Supercounters.com -->
